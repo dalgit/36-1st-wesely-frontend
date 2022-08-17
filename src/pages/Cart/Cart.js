@@ -1,5 +1,9 @@
-function Cart() {
-  return <h1>Cart입니다.</h1>;
-}
+import React from 'react';
+import './Cart.scss';
+import CartItem from './CartItem/CartItem';
+
+const Cart = () => {
+  return <CartItem />;
+};
 
 export default Cart;
