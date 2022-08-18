@@ -1,5 +1,13 @@
+import './Main.scss';
+import MainCategory from './MainCategory/MainCategory';
 function Main() {
-  return <h1>Main입니다.</h1>;
+  return (
+    <div className="Main">
+      <h1>Header</h1>
+      <div>Carousel</div>
+      <MainCategory />
+    </div>
+  );
 }
 
 export default Main;

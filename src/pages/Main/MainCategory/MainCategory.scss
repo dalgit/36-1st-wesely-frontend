@@ -1,0 +1,26 @@
+.MainCategory {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  .categoryWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .categoryName {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 164px;
+      padding: 12px 16px;
+      margin: 4px 16px;
+      border: 1px solid #f0f0f0;
+      border-radius: 2px;
+
+      font-size: 18px;
+      font-weight: 400;
+      color: #838383;
+      cursor: pointer;
+    }
+  }
+}
