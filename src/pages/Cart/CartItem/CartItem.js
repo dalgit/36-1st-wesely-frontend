@@ -1,17 +1,20 @@
 import React from 'react';
 import './CartItem.scss';
 
-const CartItem = () => {
+const CartItem = ({ products_name, type, price, thumb_img_url }) => {
+  console.log('다현님사랑해', type);
   return (
     <div className="itemContainer">
-      <img src="images\item1.png" alt="" className="itemImg" />
+      <div className="imgCover">
+        <img src={thumb_img_url} alt="" className="itemImg" />
+      </div>
       <div className="itemBox">
         <div className="itemInfo">
           <div>
-            <div className="itemName">유기농 순면 생리대 중형/대형</div>
-            <div className="itemType">중형(14개입)</div>
+            <div className="itemName">{products_name}</div>
+            <div className="itemType">{type}</div>
           </div>
-          <div className="itemPrice">2,300원</div>
+          <div className="itemPrice">{price}</div>
         </div>
         <div className="iconBox">
           <div>
@@ -19,11 +22,11 @@ const CartItem = () => {
           </div>
           <div className="quantityBox">
             <button className="minusBtn">
-              <img src="images/minus.png" alt="minus" />
+              <i className="fa-solid fa-minus" />
             </button>
             <div className="quantityNum">1</div>
             <button className="plusBtn">
-              <img src="images/plus.png" alt="plus" />
+              <i className="fa-solid fa-plus" />
             </button>
           </div>
         </div>
