@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom';
 import './MainCategory.scss';
 const MainCategory = () => {
   return (
-    <div className="MainCategory">
-      <nav className="categoryWrapper">
-        {categoryData.map(category => (
-          <div key={category.id} className="categoryName">
-            <Link to={category.connectURL}>{category.categoryName}</Link>
-          </div>
-        ))}
+    <section className="MainCategory">
+      <nav>
+        <ul className="categoryWrapper">
+          {categoryData.map(category => (
+            <li key={category.id} className="categoryName">
+              <Link to={category.connectURL}>{category.categoryName}</Link>
+            </li>
+          ))}
+        </ul>
       </nav>
-    </div>
+    </section>
   );
 };
 
