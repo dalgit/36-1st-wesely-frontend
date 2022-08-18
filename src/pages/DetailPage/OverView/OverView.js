@@ -1,12 +1,9 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import Toast from '../Toast/Toast';
 import './OverView.scss';
 
 function OverView() {
   const [toast, setToast] = useState(false);
-
-  const { state } = useLocation();
 
   return (
     <>
@@ -35,20 +32,17 @@ function OverView() {
               </div>
               <div className="productBuy">
                 <button
-                  className="subscribeButton"
+                  className="productBuyButton"
                   onClick={() => setToast(!toast)}
                 >
-                  정기구독
-                </button>
-                <button className="normalButton" Click={() => setToast(!toast)}>
-                  일반구매
+                  구매
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {toast === true && <Toast />}
+      {toast === true && <Toast setToast={setToast} />}
     </>
   );
 }
