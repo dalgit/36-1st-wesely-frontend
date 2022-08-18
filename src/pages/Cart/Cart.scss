@@ -1,3 +1,145 @@
-.menu {
+.cartContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 130px;
+
+  .cartTitle {
+    font-size: 43px;
+    font-weight: bold;
+    margin-bottom: 42px;
+  }
+
+  .cartMenu {
+    width: 72%;
+    padding-top: 5px;
+    margin-right: 60%;
+    width: 212px;
+    height: 72px;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+
+    .itemTotal {
+      margin-left: 5px;
+      color: #6795da;
+    }
+  }
+
+  .cartSpace {
+    padding-top: 36px;
+    background-color: #fafafa;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .cartBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48%;
+      background-color: white;
+      border: 1px solid #fafafa;
+      border-radius: 12px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 0px 60px;
+
+      .subscribeBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+        padding-top: 55px;
+        padding-bottom: 30px;
+
+        .subscribeTitle {
+          font-size: 19px;
+          font-weight: bold;
+        }
+
+        .subscribeList {
+          border-radius: 25px;
+          background-color: #f0f0f0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .subscribe {
+            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 72px;
+            height: 42px;
+            background-color: white;
+            border-radius: 25px;
+            margin: 5px;
+            border: 1px solid #f0f0f0;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+        }
+      }
+
+      .billBox {
+        padding-top: 60px;
+        width: 100%;
+
+        .bill {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          font-size: 18px;
+          margin-bottom: 19px;
+
+          .billPrice {
+            color: gray;
+          }
+        }
+
+        .billGuide {
+          text-align: right;
+          color: #4565c8;
+          border-bottom: 1px solid #f0f0f0;
+          padding-bottom: 20px;
+
+          .fontBold {
+            font-weight: bold;
+          }
+        }
+
+        .totalBill {
+          display: flex;
+          justify-content: space-between;
+          font-size: 20px;
+          font-weight: bold;
+          margin-top: 25px;
+        }
+      }
+
+      .cartBtnBox {
+        margin-top: 53px;
+        .KeepBtn {
+          width: 200px;
+          height: 65px;
+          border: 1px solid black;
+          margin-right: 12px;
+          border-radius: 9px;
+          font-size: 18px;
+        }
+
+        .purchaseBtn {
+          width: 200px;
+          height: 65px;
+          background-color: black;
+          color: white;
+          border-radius: 9px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }

@@ -15,15 +15,15 @@ const CartItem = () => {
         </div>
         <div className="iconBox">
           <div>
-            <i class="fa-solid fa-xmark fa-lg" />
+            <img src="images/close.png" alt="close" className="closeImg" />
           </div>
           <div className="quantityBox">
             <button className="minusBtn">
-              <i class="fa-solid fa-minus" />
+              <img src="images/minus.png" alt="minus" />
             </button>
             <div className="quantityNum">1</div>
             <button className="plusBtn">
-              <i class="fa-solid fa-plus" />
+              <img src="images/plus.png" alt="plus" />
             </button>
           </div>
         </div>
