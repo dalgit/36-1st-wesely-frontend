@@ -1,0 +1,16 @@
+.toast {
+  width: 100%;
+  position: fixed;
+  top: 38%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: #00000014 0 0 24px;
+
+  .toastContainer {
+    display: flex;
+    width: 1100px;
+    height: 580.5px;
+    justify-content: space-between;
+  }
+}

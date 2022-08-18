@@ -1,1 +1,42 @@
+.overView {
+  width: 1140px;
+  margin: auto;
 
+  .overViewContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 66px 0px 66px;
+
+    img {
+      width: 480px;
+      height: 480px;
+    }
+
+    .productInfoWrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 400px;
+
+      h2 {
+        font-size: 20px;
+        color: #58c3cc;
+      }
+
+      h3 {
+        font-size: 32px;
+        color: #1c1c1c;
+      }
+
+      p {
+        font-size: 20px;
+        color: #838383;
+      }
+
+      .productLike {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
