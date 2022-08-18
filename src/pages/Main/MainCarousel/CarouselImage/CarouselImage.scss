@@ -1,0 +1,29 @@
+.carousel {
+  .carouselWrapper {
+    position: relative;
+
+    .img {
+      transition: opacity 0.5s;
+    }
+
+    .active-true {
+      opacity: 1;
+      position: relative;
+      z-index: 10;
+    }
+
+    .active-false {
+      position: absolute;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .movePrev {
+      transform: translateX(-100%);
+    }
+
+    .moveNext {
+      transform: translateX(100%);
+    }
+  }
+}

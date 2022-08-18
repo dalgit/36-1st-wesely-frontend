@@ -1,0 +1,22 @@
+.MainCarousel {
+  height: 37rem;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+
+  .currentIndex {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5%;
+    right: 15.5%;
+    width: 2rem;
+    height: 1rem;
+    z-index: 100;
+    font-weight: 200;
+    border-radius: 25%;
+    color: #fff;
+    background-color: #838383;
+  }
+}
