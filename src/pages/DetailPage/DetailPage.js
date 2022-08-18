@@ -1,11 +1,10 @@
-import ImageAutoSlide from './OverView/OverView';
-
+import OverView from './OverView/OverView';
 function DetailPage() {
   return (
-    <>
-      <h1>DetailPage입니다.</h1>
-      <ImageAutoSlide />
-    </>
+    <div>
+      <h1>header</h1>
+      <OverView />
+    </div>
   );
 }
 

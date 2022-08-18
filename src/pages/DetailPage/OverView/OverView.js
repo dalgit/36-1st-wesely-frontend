@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Toast from '../Toast/Toast';
 import './OverView.scss';
 
-function ImageAutoSlide() {
+function OverView() {
   const [toast, setToast] = useState(false);
+
+  const { state } = useLocation();
+
   return (
     <>
       <div className="overView">
@@ -22,12 +26,23 @@ function ImageAutoSlide() {
             </div>
             <div className="productMain">
               <div className="productLike">
-                <p>☆☆☆☆☆ 4.7(630)</p>
-                <span>5,800원</span>
+                <div className="totalReview">
+                  <p className="star">★★★★☆</p>
+                  <p className="number">4.7</p>
+                  <span>(630)</span>
+                </div>
+                <span className="price">5,800원</span>
               </div>
               <div className="productBuy">
-                <button onClick={() => setToast(!toast)}>정기구독</button>
-                <button onClick={() => setToast(!toast)}>일반구매</button>
+                <button
+                  className="subscribeButton"
+                  onClick={() => setToast(!toast)}
+                >
+                  정기구독
+                </button>
+                <button className="normalButton" Click={() => setToast(!toast)}>
+                  일반구매
+                </button>
               </div>
             </div>
           </div>
@@ -38,4 +53,4 @@ function ImageAutoSlide() {
   );
 }
 
-export default ImageAutoSlide;
+export default OverView;

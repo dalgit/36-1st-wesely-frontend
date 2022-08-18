@@ -7,11 +7,13 @@ import SignUp from './pages/SignUp/SignUp';
 import Cart from './pages/Cart/Cart';
 import ListPage from './pages/ListPage/ListPage';
 import DetailPage from './pages/DetailPage/DetailPage';
+import Test from './pages/DetailPage/Test';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/test" element={<Test />} />
         <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
