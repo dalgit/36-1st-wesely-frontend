@@ -1,29 +1,27 @@
 .carousel {
-  .carouselWrapper {
+  position: relative;
+
+  .img {
+    transition: opacity 500ms ease 0s;
+  }
+
+  .active-true {
+    opacity: 1;
     position: relative;
+    z-index: 10;
+  }
 
-    .img {
-      transition: opacity 0.5s;
-    }
+  .active-false {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+  }
 
-    .active-true {
-      opacity: 1;
-      position: relative;
-      z-index: 10;
-    }
+  .movePrev {
+    transform: translateX(-100%);
+  }
 
-    .active-false {
-      position: absolute;
-      opacity: 0;
-      z-index: 1;
-    }
-
-    .movePrev {
-      transform: translateX(-100%);
-    }
-
-    .moveNext {
-      transform: translateX(100%);
-    }
+  .moveNext {
+    transform: translateX(100%);
   }
 }

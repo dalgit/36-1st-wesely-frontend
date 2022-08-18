@@ -28,13 +28,6 @@ const MainCarousel = () => {
 
   const isMoving = useRef(false);
 
-  useEffect(() => {
-    isMoving.current = true;
-    setTimeout(() => {
-      isMoving.current = false;
-    }, 500);
-  }, [carouselIndex]);
-
   const movePrev = () => {
     if (!isMoving.current) {
       if (carouselIndex === 0) {
@@ -55,6 +48,13 @@ const MainCarousel = () => {
     }
   };
 
+  useEffect(() => {
+    isMoving.current = true;
+    setTimeout(() => {
+      isMoving.current = false;
+    }, 500);
+  }, [carouselIndex]);
+
   useInterval(() => {
     setCarouselIndex(carouselIndex =>
       carouselIndex === totalImage - 1 ? setCarouselIndex(0) : carouselIndex + 1
@@ -67,23 +67,21 @@ const MainCarousel = () => {
   return (
     <div className="MainCarousel">
       <div className="carousel">
-        <div className="carouselWrapper">
-          {imgData.map((imgData, idx) => (
-            <CarouselImage
-              key={idx}
-              src={imgData.imgUrl}
-              active={idx === carouselIndex}
-              prev={idx === prev}
-              next={idx === next}
-            />
-          ))}
-          <CarouselButton btnType="prev" handleCarousel={movePrev} />
-          <CarouselButton btnType="next" handleCarousel={moveNext} />
-          <div className="currentIndex">
-            <span>{carouselIndex + 1}</span>
-            <span>/</span>
-            <span>{totalImage}</span>
-          </div>
+        {imgData.map((imgData, idx) => (
+          <CarouselImage
+            key={idx}
+            src={imgData.imgUrl}
+            active={idx === carouselIndex}
+            prev={idx === prev}
+            next={idx === next}
+          />
+        ))}
+        <CarouselButton btnType="prev" handleCarousel={movePrev} />
+        <CarouselButton btnType="next" handleCarousel={moveNext} />
+        <div className="currentIndex">
+          <span>{carouselIndex + 1}</span>
+          <span>/</span>
+          <span>{totalImage}</span>
         </div>
       </div>
     </div>
