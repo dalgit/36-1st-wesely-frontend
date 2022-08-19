@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
+  const [isSubscribe, setIsSubscribe] = useState('');
 
   useEffect(() => {
     fetch('data/cartData.json', {
@@ -15,26 +16,47 @@ const Cart = () => {
   }, []);
 
   if (setProducts.length === 0) return;
-
+  console.log(products);
   return (
     <div className="cartContainer">
       <div className="cartTitle">장바구니</div>
       <div className="cartMenu">
-        일반구매 <span className="itemTotal">{products.length}</span>
+        {isSubscribe === '' ? '일반구매' : '정기구독'}
+        <span className="itemTotal">{products.length}</span>
       </div>
       <div className="cartSpace">
         <div className="cartBox">
           <div className="subscribeBox">
-            <div className="subscribeTitle">정기 구독 주기</div>
+            <div className={`subscribeTitle ${isSubscribe !== ''}`}>
+              정기 구독 주기
+            </div>
             <ul className="subscribeList">
-              <li className="subscribe">4주</li>
-              <li className="subscribe">8주</li>
-              <li className="subscribe">12주</li>
-              <li className="subscribe">16주</li>
+              {periods.map((period, idx) => {
+                return (
+                  <button
+                    className={`subscribe ${isSubscribe === idx}`}
+                    key={idx}
+                    onClick={() =>
+                      isSubscribe === idx
+                        ? setIsSubscribe('')
+                        : setIsSubscribe(idx)
+                    }
+                  >
+                    {period}
+                  </button>
+                );
+              })}
             </ul>
           </div>
           {products.map(product => {
-            return <CartItem key={product.id} {...product} />;
+            return (
+              <CartItem
+                key={product.id}
+                {...product}
+                products={products}
+                setProducts={setProducts}
+              />
+            );
           })}
 
           <div className="billBox">
@@ -65,3 +87,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+const periods = ['4주', '8주', '12주', '16주'];

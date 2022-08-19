@@ -53,12 +53,10 @@
     align-items: flex-end;
     width: 72px;
 
-    .closeImg {
-      width: 11px;
-    }
-
     .fa-xmark {
       margin-right: 5px;
+      color: #b2b2b2;
+      cursor: pointer;
     }
 
     .quantityBox {
@@ -81,10 +79,6 @@
         .fa-minus {
           color: #b2b2b2;
         }
-        img {
-          width: 13px;
-          opacity: 0.6;
-        }
       }
 
       .plusBtn {
@@ -92,9 +86,6 @@
         border-left: 1px solid #cbcbcb;
         .fa-plus {
           color: #b2b2b2;
-        }
-        img {
-          width: 13px;
         }
       }
     }

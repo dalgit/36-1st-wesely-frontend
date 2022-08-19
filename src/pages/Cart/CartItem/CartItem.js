@@ -1,8 +1,14 @@
 import React from 'react';
 import './CartItem.scss';
-
-const CartItem = ({ products_name, type, price, thumb_img_url }) => {
-  console.log('다현님사랑해', type);
+const CartItem = ({
+  products_name,
+  type,
+  price,
+  thumb_img_url,
+  setProducts,
+  id,
+  products,
+}) => {
   return (
     <div className="itemContainer">
       <div className="imgCover">
@@ -18,7 +24,12 @@ const CartItem = ({ products_name, type, price, thumb_img_url }) => {
         </div>
         <div className="iconBox">
           <div>
-            <img src="images/close.png" alt="close" className="closeImg" />
+            <i
+              className="fa-solid fa-xmark"
+              onClick={() =>
+                setProducts(products.filter(product => product.id !== id))
+              }
+            />
           </div>
           <div className="quantityBox">
             <button className="minusBtn">
