@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-function Item({ setItem }) {
-  const [count, setCount] = useState(1);
+function Item({ item, setItem }) {
+  const [count, setCount] = useState(0);
 
   const countUp = () => {
     setCount(count + 1);
@@ -12,37 +12,40 @@ function Item({ setItem }) {
       setCount(count - 1);
     }
   };
-
   return (
     <section className="itemContainer">
-      <div>
-        <div className="itemMain">
-          <h1 className="itemImage">
-            <img
-              src="http://holtzforman.com/shopimages/holtzforma/0010000000102.jpg"
-              alt=""
-            />
-          </h1>
-          <div className="itemInfoWrap">
-            <div>
-              <div className="titleWrap">
-                <h3>활력충전 멀티 비타민</h3>
-                <button onClick={() => setItem(false)}>×</button>
-              </div>
-              <p>필수 영양소 멀티비타민</p>
-            </div>
-            <div>
-              <div className="itemCount">
-                <span className="price">5,800원</span>
-                <div className="count">
-                  <button onClick={countDown}>-</button>
-                  <span>{count}</span>
-                  <button onClick={countUp}>+</button>
+      <div className="itemContent">
+        {item.map((list, idx) => {
+          return (
+            <div key={idx} className="itemMain">
+              <h1 className="itemImage">
+                <img
+                  src="http://holtzforman.com/shopimages/holtzforma/0010000000102.jpg"
+                  alt=""
+                />
+              </h1>
+              <div className="itemInfoWrap">
+                <div>
+                  <div className="titleWrap">
+                    <h3>활력충전 멀티 비타민</h3>
+                    <button>×</button>
+                  </div>
+                  <p>필수 영양소 멀티비타민</p>
+                </div>
+                <div>
+                  <div className="itemCount">
+                    <span className="price">5,800원</span>
+                    <div className="count">
+                      <button onClick={countDown}>-</button>
+                      <span>{count}</span>
+                      <button onClick={countUp}>+</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
         <div className="itemTotal">
           <span>
             총 수량 <strong>{count}</strong>개
