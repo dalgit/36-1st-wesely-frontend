@@ -2,14 +2,14 @@ import React from 'react';
 import './CartItem.scss';
 
 const CartItem = ({
+  id,
   products_name,
   type,
   price,
-  thumb_img_url,
-  setProducts,
-  id,
-  products,
   quantity,
+  thumb_img_url,
+  products,
+  setProducts,
 }) => {
   function quantityPlus() {
     setProducts(
@@ -34,7 +34,7 @@ const CartItem = ({
   return (
     <div className="itemContainer">
       <div className="imgCover">
-        <img src={thumb_img_url} alt="" className="itemImg" />
+        <img src={thumb_img_url} alt="itemImg" className="itemImg" />
       </div>
       <div className="itemBox">
         <div className="itemInfo">

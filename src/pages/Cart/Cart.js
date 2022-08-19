@@ -7,6 +7,13 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [isSubscribe, setIsSubscribe] = useState('');
 
+  const totalPrice = products.reduce(
+    (acc, cur) => acc + Number(cur.price * cur.quantity),
+    0
+  );
+
+  const parcel = totalPrice < 30000 ? 2500 : 0;
+
   useEffect(() => {
     fetch('data/cartData.json', {
       method: 'GET',
@@ -16,7 +23,7 @@ const Cart = () => {
   }, []);
 
   if (setProducts.length === 0) return;
-  console.log(products);
+
   return (
     <div className="cartContainer">
       <div className="cartTitle">장바구니</div>
@@ -62,18 +69,27 @@ const Cart = () => {
           <div className="billBox">
             <div className="bill">
               <span>합계</span>
-              <span className="billPrice">19,000원</span>
+              <span className="billPrice">
+                {totalPrice.toLocaleString() + '원'}
+              </span>
             </div>
             <div className="bill">
               <span>배송비</span>
-              <span className="billPrice">2,500원</span>
+              <span className="billPrice">
+                {parcel !== 0 ? parcel.toLocaleString() + '원' : '무료'}
+              </span>
             </div>
             <div className="billGuide">
-              23,100원 추가 주문 시, <span className="fontBold">무료배송</span>
+              {totalPrice < 30000 ? (
+                <span>
+                  {(30000 - totalPrice).toLocaleString()}원 추가 주문 시
+                  <span className="fontBold"> 무료배송</span>
+                </span>
+              ) : null}
             </div>
             <div className="totalBill">
               <span>결제 예정 금액</span>
-              <span>9,400원</span>
+              <span>{(totalPrice + parcel).toLocaleString() + '원'}</span>
             </div>
           </div>
           <div className="cartBtnBox">
