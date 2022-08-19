@@ -5,22 +5,23 @@ import CarouselImage from './CarouselImage/CarouselImage';
 
 import './MainCarousel.scss';
 
-const useInterval = (callback, delay) => {
-  const savedCallback = useRef();
-  useEffect(() => {
-    savedCallback.current = callback;
-  }, [callback]);
+//* 이 커스텀 훅은 나중에 이 코드에 대한 이해도가 높아지면 사용하기
+// const useInterval = (callback, delay) => {
+//   const savedCallback = useRef();
+//   useEffect(() => {
+//     savedCallback.current = callback;
+//   }, [callback]);
 
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
-};
+//   useEffect(() => {
+//     function tick() {
+//       savedCallback.current();
+//     }
+//     if (delay !== null) {
+//       let id = setInterval(tick, delay);
+//       return () => clearInterval(id);
+//     }
+//   }, [delay]);
+// };
 
 const MainCarousel = () => {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -55,11 +56,20 @@ const MainCarousel = () => {
     }, 500);
   }, [carouselIndex]);
 
-  useInterval(() => {
-    setCarouselIndex(carouselIndex =>
-      carouselIndex === totalImage - 1 ? setCarouselIndex(0) : carouselIndex + 1
-    );
-  }, 5000);
+  // useInterval(() => {
+  //   setCarouselIndex(carouselIndex =>
+  //     carouselIndex === totalImage - 1 ? setCarouselIndex(0) : carouselIndex + 1
+  //   );
+  // }, 5000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex(carouselIndex =>
+        carouselIndex === totalImage - 1 ? 0 : carouselIndex + 1
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const prev = carouselIndex === 0 ? totalImage - 1 : carouselIndex - 1;
   const next = carouselIndex === totalImage - 1 ? 0 : carouselIndex + 1;
