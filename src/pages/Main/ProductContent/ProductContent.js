@@ -8,9 +8,9 @@ const ProductContent = () => {
   const [productData, setProductData] = useState([]);
   const [productPos, setProductPos] = useState(0);
 
-  const container_Carousel = useRef();
+  const productList = useRef();
   useEffect(() => {
-    container_Carousel.current.style.transform = `translateX(${productPos}px)`;
+    productList.current.style.transform = `translateX(${productPos}px)`;
   }, [productPos]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const ProductContent = () => {
       <section className="content">
         <h1 className="contentTitle">와이즐리 베스트 TOP6</h1>
         <p className="contentInfo">지난 달 가장 많은 판매량을 기록했어요</p>
-        <ul className="productList" ref={container_Carousel}>
+        <ul className="productList" ref={productList}>
           {productData.map(data => (
             <Product key={data.id} {...data} />
           ))}
