@@ -1,5 +1,6 @@
 import React from 'react';
 import './CartItem.scss';
+
 const CartItem = ({
   products_name,
   type,
@@ -8,7 +9,28 @@ const CartItem = ({
   setProducts,
   id,
   products,
+  quantity,
 }) => {
+  function quantityPlus() {
+    setProducts(
+      products.map(product =>
+        product.id === id
+          ? { ...product, quantity: Number(quantity) + 1 }
+          : product
+      )
+    );
+  }
+
+  function quantityMinus() {
+    setProducts(
+      products.map(product =>
+        product.id === id && product.quantity > 1
+          ? { ...product, quantity: Number(quantity) - 1 }
+          : product
+      )
+    );
+  }
+
   return (
     <div className="itemContainer">
       <div className="imgCover">
@@ -20,7 +42,9 @@ const CartItem = ({
             <div className="itemName">{products_name}</div>
             <div className="itemType">{type}</div>
           </div>
-          <div className="itemPrice">{price}</div>
+          <div className="itemPrice">
+            {Number(price * quantity).toLocaleString() + '원'}
+          </div>
         </div>
         <div className="iconBox">
           <div>
@@ -32,11 +56,11 @@ const CartItem = ({
             />
           </div>
           <div className="quantityBox">
-            <button className="minusBtn">
+            <button className="minusBtn" onClick={quantityMinus}>
               <i className="fa-solid fa-minus" />
             </button>
-            <div className="quantityNum">1</div>
-            <button className="plusBtn">
+            <div className="quantityNum">{quantity}</div>
+            <button className="plusBtn" onClick={quantityPlus}>
               <i className="fa-solid fa-plus" />
             </button>
           </div>

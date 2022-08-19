@@ -62,7 +62,7 @@ const Cart = () => {
           <div className="billBox">
             <div className="bill">
               <span>합계</span>
-              <span className="billPrice">17,000원</span>
+              <span className="billPrice">19,000원</span>
             </div>
             <div className="bill">
               <span>배송비</span>
