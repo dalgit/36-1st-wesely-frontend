@@ -5,7 +5,7 @@ import './Toast.scss';
 function Toast({ setToast }) {
   const [arrow, setArrow] = useState(true);
 
-  const [item, setItem] = useState(true);
+  const [item, setItem] = useState(false);
 
   return (
     <>
