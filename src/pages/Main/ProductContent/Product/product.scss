@@ -1,0 +1,25 @@
+.productRigth {
+  margin-right: 21px;
+
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .productImg {
+      width: 250px;
+      height: 250px;
+    }
+
+    .productInfo {
+      margin-top: 24px;
+      font-size: 18px;
+      line-height: 28px;
+      color: #838383;
+    }
+
+    .productTitle {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

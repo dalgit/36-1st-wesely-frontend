@@ -1,5 +1,17 @@
+import './Main.scss';
+import ProductContent from './ProductContent/ProductContent';
+
 function Main() {
-  return <h1>Main입니다.</h1>;
+  return (
+    <div className="Main">
+      <h1>Header</h1>
+      <div>Carousel</div>
+      <div>
+        <h1>카테고리</h1>
+      </div>
+      <ProductContent />
+    </div>
+  );
 }
 
 export default Main;

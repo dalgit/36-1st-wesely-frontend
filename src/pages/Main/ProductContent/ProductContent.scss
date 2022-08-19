@@ -1,0 +1,27 @@
+.ProductContent {
+  max-width: 1140px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .content {
+    margin-bottom: 150px;
+    position: relative;
+
+    .contentTitle {
+      font-size: 38px;
+      line-height: 50px;
+    }
+
+    .contentInfo {
+      font-size: 20px;
+      line-height: 30px;
+      color: #838383;
+    }
+
+    .productList {
+      display: flex;
+      margin-top: 54px;
+    }
+  }
+}
