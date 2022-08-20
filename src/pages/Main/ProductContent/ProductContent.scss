@@ -1,7 +1,8 @@
 .ProductContent {
   max-width: 1140px;
   margin: 0 auto;
-  overflow-x: hidden;
+  padding: 0 16px;
+  overflow-x: scroll;
   overflow-y: hidden;
 
   .content {

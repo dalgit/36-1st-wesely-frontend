@@ -9,6 +9,8 @@ const ProductContent = () => {
   const [productPos, setProductPos] = useState(0);
 
   const productList = useRef();
+  // console.log(productList.current.getBoundingClientRect());
+
   useEffect(() => {
     productList.current.style.transform = `translateX(${productPos}px)`;
   }, [productPos]);
@@ -19,26 +21,25 @@ const ProductContent = () => {
       return res.json();
     };
     const uploadProductData = data => {
-      setProductData([...data]);
+      setProductData(data);
     };
-    const getProductData = url =>
-      fetch(url, {
-        method: 'GET',
-      });
 
-    getProductData('/data/ProductContent.json')
+    fetch('/data/ProductContent.json', {
+      method: 'GET',
+    })
       .then(checkStatus)
       .then(uploadProductData)
       .catch(error => console.error(error));
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const movePrev = () => {
-    setProductPos(prop => prop + 271);
+    setProductPos(prev => prev + 271);
   };
 
   const moveNext = () => {
-    setProductPos(prop => prop - 271);
+    setProductPos(prev => prev - 271);
   };
 
   return (

@@ -2,7 +2,7 @@ import './product.scss';
 
 const Product = ({ imgUrl, desc, price }) => {
   return (
-    <li className="productRigth">
+    <li className="ProductInfo">
       <div className="product">
         <img className="productImg" src={imgUrl} alt="" />
         <p className="productInfo">{desc}</p>
