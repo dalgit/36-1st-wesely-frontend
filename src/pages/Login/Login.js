@@ -6,17 +6,13 @@ function Login() {
     password: '',
   });
 
-  let isValidation = true;
   function validation() {
-    isValidation = false;
     if (userId.email === '') {
       return '필수 입력창입니다.';
     } else if (!regEmail.test(userId.email)) {
       return '이메일 형식을 확인해주세요.';
     }
-    isValidation = true;
   }
-
   return (
     <div className="login">
       <div className="loginContainer">
@@ -36,8 +32,8 @@ function Login() {
           />
           <div className="plzCheck">{validation()}</div>
           <button
-            className={`loginBtn ${isValidation}`}
-            disabled={!isValidation}
+            className={`loginBtn ${validation() === undefined}`}
+            disabled={validation() !== undefined}
           >
             다음
           </button>
