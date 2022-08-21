@@ -1,19 +1,11 @@
 import React from 'react';
 import './Cart.scss';
-import CartItem from './CartItem/CartItem';
 import { useState, useEffect } from 'react';
+import ProductsCart from './ProductsCart/ProductsCart';
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const [isSubscribe, setIsSubscribe] = useState('');
-
-  const totalPrice = products.reduce(
-    (acc, cur) => acc + Number(cur.price * cur.quantity),
-    0
-  );
-
-  const parcel = totalPrice < 30000 ? 2500 : 0;
-
   useEffect(() => {
     fetch('data/cartData.json', {
       method: 'GET',
@@ -33,69 +25,24 @@ const Cart = () => {
       </div>
       <div className="cartSpace">
         <div className="cartBox">
-          <div className="subscribeBox">
-            <div className={`subscribeTitle ${isSubscribe !== ''}`}>
-              정기 구독 주기
-            </div>
-            <ul className="subscribeList">
-              {periods.map((period, idx) => {
-                return (
-                  <button
-                    className={`subscribe ${isSubscribe === idx}`}
-                    key={idx}
-                    onClick={() =>
-                      isSubscribe === idx
-                        ? setIsSubscribe('')
-                        : setIsSubscribe(idx)
-                    }
-                  >
-                    {period}
-                  </button>
-                );
-              })}
-            </ul>
-          </div>
-          {products.map(product => {
-            return (
-              <CartItem
-                key={product.id}
-                {...product}
-                products={products}
-                setProducts={setProducts}
+          {products.length === 0 ? (
+            <div className="emptyCart">
+              <img
+                src="images/emptyBox.png"
+                alt="emptyBox"
+                className="emptyImg"
               />
-            );
-          })}
-
-          <div className="billBox">
-            <div className="bill">
-              <span>합계</span>
-              <span className="billPrice">
-                {totalPrice.toLocaleString() + '원'}
-              </span>
+              <div className="emptyTitle">담은 상품이 없습니다 :(</div>
+              <button className="buyBtn">구매하러 가기</button>
             </div>
-            <div className="bill">
-              <span>배송비</span>
-              <span className="billPrice">
-                {parcel !== 0 ? parcel.toLocaleString() + '원' : '무료'}
-              </span>
-            </div>
-            <div className="billGuide">
-              {totalPrice < 30000 ? (
-                <span>
-                  {(30000 - totalPrice).toLocaleString()}원 추가 주문 시
-                  <span className="fontBold"> 무료배송</span>
-                </span>
-              ) : null}
-            </div>
-            <div className="totalBill">
-              <span>결제 예정 금액</span>
-              <span>{(totalPrice + parcel).toLocaleString() + '원'}</span>
-            </div>
-          </div>
-          <div className="cartBtnBox">
-            <button className="KeepBtn"> 더 담으러 가기</button>
-            <button className="purchaseBtn"> 구매하기</button>
-          </div>
+          ) : (
+            <ProductsCart
+              products={products}
+              setProducts={setProducts}
+              isSubscribe={isSubscribe}
+              setIsSubscribe={setIsSubscribe}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -103,5 +50,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-const periods = ['4주', '8주', '12주', '16주'];
