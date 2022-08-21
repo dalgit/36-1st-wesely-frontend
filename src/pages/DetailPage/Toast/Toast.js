@@ -1,19 +1,29 @@
 import { useState } from 'react';
-import Item from './ItemInfo';
+import ItemList from './ItemList';
 import './Toast.scss';
 
-function Toast({ setToast }) {
+function Toast({ setToast, location }) {
   const [arrow, setArrow] = useState(true);
-  const [item, setItem] = useState([]);
-  const [parentCount, setParentCount] = useState(0);
+  const [selectedItem, setSelectedItem] = useState([]);
 
   const selectItem = ({ target }) => {
-    if (item.includes(target.id)) {
-      setParentCount(parentCount + 1);
-    } else {
-      setItem([...item, target.id]);
-      setParentCount(parentCount + 1);
+    if (!selectedItem.includes(location.option[Number(target.id)])) {
+      setSelectedItem([
+        ...selectedItem,
+        Object.assign(location.option[Number(target.id)], {
+          quantity: 1,
+          price: location.price,
+        }),
+      ]);
     }
+  };
+
+  const deleteItem = id => {
+    const filteredItem = [...selectedItem].filter(item => item.id !== id);
+    // const removeItem = selectedItem.splice(Number(id)); // mutable
+    /* console.log('filteredItem : ', filteredItem); */
+    setSelectedItem(filteredItem);
+    /* Number(itemInfoWrap.parentElement.id); */
   };
 
   return (
@@ -34,23 +44,39 @@ function Toast({ setToast }) {
               </div>
               {arrow === true && (
                 <div className="selectOption">
-                  <div className="option" id="1" onClick={selectItem}>
-                    item01
-                  </div>
-                  <div className="option" id="2" onClick={selectItem}>
-                    item02
-                  </div>
-                  <div className="option" id="3" onClick={selectItem}>
-                    item03
-                  </div>
-                  <div className="option" id="4" onClick={selectItem}>
-                    item04
-                  </div>
+                  {location.option.map((list, idx) => {
+                    return (
+                      <div
+                        className="option"
+                        key={idx}
+                        id={idx}
+                        onClick={selectItem}
+                      >
+                        {list.option}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
           </section>
-          <Item item={item} />
+          <section className="itemContainer">
+            <ItemList selectedItem={selectedItem} deleteItem={deleteItem} />
+            <div className="itemBuy">
+              <button
+                className="cartButton"
+                /* onClick={() => setToast(!toast)} */
+              >
+                장바구니
+              </button>
+              <button
+                className="buyButton"
+                /* onClick={() => setToast(!toast)} */
+              >
+                일반구매
+              </button>
+            </div>
+          </section>
         </div>
       </div>
     </>

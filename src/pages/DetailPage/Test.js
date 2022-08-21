@@ -5,9 +5,14 @@ function Test() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch('data/mockdata.json')
+    fetch('data/mockData.json')
       .then(res => res.json())
-      .then(setList);
+      .then(data => {
+        const newData = data.map(item => ({ ...item, quantity: 1 }));
+        setList(newData);
+      });
+
+    // data 의 형식은 []
   }, []);
 
   return <Card list={list} />;
