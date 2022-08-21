@@ -6,6 +6,17 @@ function Login() {
     password: '',
   });
 
+  let isValidation = true;
+  function validation() {
+    isValidation = false;
+    if (userId.email === '') {
+      return '필수 입력창입니다.';
+    } else if (!regEmail.test(userId.email)) {
+      return '이메일 형식을 확인해주세요.';
+    }
+    isValidation = true;
+  }
+
   return (
     <div className="login">
       <div className="loginContainer">
@@ -15,9 +26,21 @@ function Login() {
           <div>시작합니다.</div>
         </div>
         <form className="loginBox">
-          <input type="text" placeholder="이메일" className="email" />
-          <div className="plzCheck">이메일 형식을 확인해주세요.</div>
-          <button className="loginBtn">다음</button>
+          <input
+            onChange={e => {
+              setuserId({ ...userId, [e.target.className]: e.target.value });
+            }}
+            type="text"
+            placeholder="이메일"
+            className="email"
+          />
+          <div className="plzCheck">{validation()}</div>
+          <button
+            className={`loginBtn ${isValidation}`}
+            disabled={!isValidation}
+          >
+            다음
+          </button>
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>
       </div>
@@ -26,3 +49,6 @@ function Login() {
 }
 
 export default Login;
+
+const regEmail =
+  /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[a-zA-Z])*\.[a-zA-Z]{2,}$/;
