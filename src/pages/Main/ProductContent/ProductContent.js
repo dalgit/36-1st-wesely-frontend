@@ -9,6 +9,7 @@ const ProductContent = () => {
   const [productPos, setProductPos] = useState(0);
 
   const productList = useRef();
+  const productSlideSize = 271;
   // console.log(productList.current.getBoundingClientRect());
 
   useEffect(() => {
@@ -35,11 +36,11 @@ const ProductContent = () => {
   }, []);
 
   const movePrev = () => {
-    setProductPos(prev => prev + 271);
+    setProductPos(prev => prev + productSlideSize);
   };
 
   const moveNext = () => {
-    setProductPos(prev => prev - 271);
+    setProductPos(prev => prev - productSlideSize);
   };
 
   return (
