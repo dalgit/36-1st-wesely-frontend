@@ -39,7 +39,7 @@
 
         .email {
           width: 100%;
-          border-bottom: 2px solid black;
+          border-bottom: 2px solid #cbcbcb;
           height: 30px;
           padding-left: 10px;
           padding-bottom: 13px;
@@ -48,6 +48,13 @@
           &::placeholder {
             font-size: 15px;
             color: #cbcdd5;
+          }
+          &:focus {
+            border-bottom: 2px solid black;
+          }
+          &.true {
+            border-bottom: 2px solid #d91d1d;
+            caret-color: #d91d1d;
           }
         }
 
