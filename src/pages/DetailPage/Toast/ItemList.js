@@ -9,12 +9,11 @@ function ItemList({ selectedItem, deleteItem }) {
     total3: 0,
     total4: 0,
   });
-  console.log('test', totalCount);
+
   /*  const [quantity, setQuantity] = useState(0); */
   /* console.log('vvv', item); */
 
   const deleteCount = id => {
-    console.log(id);
     if (id === 1) {
       return setTotalCount({ ...totalCount, total1: 0 });
     } else if (id === 2) {
@@ -33,7 +32,6 @@ function ItemList({ selectedItem, deleteItem }) {
     0
   );
 
-  console.log('total', total);
   const totalQuantity =
     selectedItem.reduce((previousValue, currentValue) => {
       return previousValue + currentValue.quantity;
@@ -45,7 +43,7 @@ function ItemList({ selectedItem, deleteItem }) {
     }, 0) * totalQuantity;
 
   return (
-    <div className="itemContent">
+    <div className="itemContentBox">
       {selectedItem.map(list => {
         return (
           <div key={list.id} className="itemMain">
