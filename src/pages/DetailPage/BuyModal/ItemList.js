@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Item from './Item';
+import QuantityButton from './QuantityButton';
 import './ItemList.scss';
 
 function ItemList({ selectedItem, deleteItem }) {
@@ -9,9 +9,6 @@ function ItemList({ selectedItem, deleteItem }) {
     total3: 0,
     total4: 0,
   });
-
-  /*  const [quantity, setQuantity] = useState(0); */
-  /* console.log('vvv', item); */
 
   const deleteCount = id => {
     if (id === 1) {
@@ -69,7 +66,7 @@ function ItemList({ selectedItem, deleteItem }) {
                 <div className="itemCount">
                   <span className="price">{list.price}</span>
                   <div className="count">
-                    <Item
+                    <QuantityButton
                       totalCount={totalCount}
                       setTotalCount={setTotalCount}
                       listId={list.id}

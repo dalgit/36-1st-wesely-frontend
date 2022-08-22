@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import './QuantityButton.scss';
 
-function Item({ totalCount, setTotalCount, listId }) {
+function QuantityButton({ totalCount, setTotalCount, listId }) {
   const [count, setCount] = useState(1);
 
   const countUp = ({ target }) => {
@@ -32,15 +33,15 @@ function Item({ totalCount, setTotalCount, listId }) {
   };
   return (
     <>
-      <button id={listId} onClick={countDown}>
+      <button id={listId} onClick={countDown} className="quantityDownButton">
         -
       </button>
-      <span>{count}</span>
-      <button id={listId} onClick={countUp}>
+      <span className="quantityCount">{count}</span>
+      <button id={listId} onClick={countUp} className="quantityUpButton">
         +
       </button>
     </>
   );
 }
 
-export default Item;
+export default QuantityButton;
