@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react';
 import './ListPage.scss';
 import ProductCard from './ContentItem/ProductCard';
+import { useSearchParams } from 'react-router-dom';
 
 function ListPage() {
   const [productData, setProductData] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [offset, setOffSet] = useState(0);
+
+  console.log(offset);
+
+  // setOffSet(prev => searchParams.set(prev + 10));
 
   useEffect(() => {
     const checkStatus = res => {
@@ -13,16 +20,16 @@ function ListPage() {
     const uploadProductData = data => {
       setProductData(data);
     };
-
-    fetch('/data/sample.json', {
+    //* `http://10.58.0.28:3000/product/home?_start=${offset}&_limit=10`
+    fetch(`http://10.58.0.28:3000/product/home?category=1`, {
       method: 'GET',
     })
       .then(checkStatus)
       .then(uploadProductData)
       .catch(error => console.error(error));
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [offset]);
+  console.log(productData);
 
   return (
     <div className="ListPage">
@@ -44,7 +51,7 @@ function ListPage() {
       <main className="productWrapper">
         <div className="productList">
           {productData.map(product => (
-            <ProductCard key={product.categoryId} {...product} />
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
       </main>
