@@ -1,15 +1,15 @@
-.OpenDetailViewContainer {
+.openDetailViewContainer {
   width: 1080px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .OpenDetailViewClose {
+  .openDetailViewClose {
     height: 1200px;
     overflow: hidden;
 
-    .OpenDetailViewImage {
+    .openDetailViewImage {
       height: auto;
       display: flex;
       align-items: center;
@@ -21,7 +21,7 @@
       }
     }
   }
-  .OpenDetailViewButton {
+  .openDetailViewButton {
     width: 100%;
     padding: 30px;
     display: flex;
@@ -38,5 +38,13 @@
       background-color: #fff;
       color: #1c1c1c;
     }
+  }
+
+  .dropDownContainer {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
