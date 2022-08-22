@@ -60,7 +60,7 @@ function Toast({ setToast, location }) {
               )}
             </div>
           </section>
-          <section className="itemContainer">
+          <section className="itemContainerWrap">
             <ItemList selectedItem={selectedItem} deleteItem={deleteItem} />
             <div className="itemBuy">
               <button
