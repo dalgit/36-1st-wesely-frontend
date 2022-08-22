@@ -24,7 +24,7 @@ function BuyModal({ setBuyModalToggle, location }) {
   };
 
   return (
-    <>
+    <div className="buyModalBox">
       <div className="closeBox" onClick={() => setBuyModalToggle(false)}>
         ×
       </div>
@@ -63,23 +63,13 @@ function BuyModal({ setBuyModalToggle, location }) {
           <section className="itemContainerWrap">
             <ItemList selectedItem={selectedItem} deleteItem={deleteItem} />
             <div className="itemBuy">
-              <button
-                className="cartButton"
-                /* onClick={() => setToast(!toast)} */
-              >
-                장바구니
-              </button>
-              <button
-                className="buyButton"
-                /* onClick={() => setToast(!toast)} */
-              >
-                일반구매
-              </button>
+              <button className="cartButton">장바구니</button>
+              <button className="buyButton">일반구매</button>
             </div>
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
