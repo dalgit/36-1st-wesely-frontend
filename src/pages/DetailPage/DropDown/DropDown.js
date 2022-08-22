@@ -5,12 +5,17 @@ function DropDown() {
   const [dropDown, setDropDown] = useState(false);
   return (
     <>
-      <div className="dropDownBox">
+      <div
+        className="dropDownBox"
+        onClick={() => {
+          setDropDown(!dropDown);
+        }}
+      >
         <div>주문 빛 배송 안내</div>
         <button
-          onClick={() => {
+        /* onClick={() => {
             setDropDown(!dropDown);
-          }}
+          }} */
         >
           ˅
         </button>
