@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import ItemList from './ItemList';
-import './Toast.scss';
+import './BuyModal.scss';
 
-function Toast({ setToast, location }) {
-  const [arrow, setArrow] = useState(true);
+function BuyModal({ setBuyModalToggle, location }) {
+  const [arrowToggle, setArrowToggle] = useState(true);
   const [selectedItem, setSelectedItem] = useState([]);
 
   const selectItem = ({ target }) => {
@@ -20,15 +20,12 @@ function Toast({ setToast, location }) {
 
   const deleteItem = id => {
     const filteredItem = [...selectedItem].filter(item => item.id !== id);
-    // const removeItem = selectedItem.splice(Number(id)); // mutable
-    /* console.log('filteredItem : ', filteredItem); */
     setSelectedItem(filteredItem);
-    /* Number(itemInfoWrap.parentElement.id); */
   };
 
   return (
     <>
-      <div className="closeBox" onClick={() => setToast(false)}>
+      <div className="closeBox" onClick={() => setBuyModalToggle(false)}>
         ×
       </div>
       <div className="toast">
@@ -38,11 +35,14 @@ function Toast({ setToast, location }) {
             <div className="selectBox">
               <div className="boxHandle">
                 <span className="defaultText">타입</span>
-                <span className="arrowButton" onClick={() => setArrow(!arrow)}>
-                  ∨
+                <span
+                  className="arrowButton"
+                  onClick={() => setArrowToggle(!arrowToggle)}
+                >
+                  ˅
                 </span>
               </div>
-              {arrow === true && (
+              {arrowToggle === true && (
                 <div className="selectOption">
                   {location.option.map((list, idx) => {
                     return (
@@ -83,4 +83,4 @@ function Toast({ setToast, location }) {
   );
 }
 
-export default Toast;
+export default BuyModal;

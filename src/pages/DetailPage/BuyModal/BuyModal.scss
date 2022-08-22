@@ -46,6 +46,15 @@
         height: 56px;
         padding: 16px;
         border-bottom: 1px solid #cbcbcb;
+
+        .defaultText {
+          color: #cbcbcb;
+          font-weight: 900;
+        }
+
+        .arrowButton {
+          font-size: 30px;
+        }
       }
     }
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Toast from '../Toast/Toast';
+import BuyModal from '../BuyModal/BuyModal';
 import './OverView.scss';
 
 function OverView({ location }) {
-  const [toast, setToast] = useState(false);
+  const [buyModalToggle, setBuyModalToggle] = useState(false);
 
   return (
     <>
@@ -30,7 +30,7 @@ function OverView({ location }) {
               <div className="productBuy">
                 <button
                   className="productBuyButton"
-                  onClick={() => setToast(!toast)}
+                  onClick={() => setBuyModalToggle(!buyModalToggle)}
                 >
                   구매
                 </button>
@@ -39,8 +39,11 @@ function OverView({ location }) {
           </div>
         </div>
       </div>
-      {toast === true && (
-        <Toast setToast={setToast} location={location.state} />
+      {buyModalToggle === true && (
+        <BuyModal
+          setBuyModalToggle={setBuyModalToggle}
+          location={location.state}
+        />
       )}
     </>
   );
