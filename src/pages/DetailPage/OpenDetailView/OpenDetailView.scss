@@ -1,0 +1,42 @@
+.OpenDetailViewContainer {
+  width: 1080px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .OpenDetailViewClose {
+    height: 1200px;
+    overflow: hidden;
+
+    .OpenDetailViewImage {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 1010px;
+        display: block;
+      }
+    }
+  }
+  .OpenDetailViewButton {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: #fff 0px -20px 20px;
+
+    button {
+      width: 400px;
+      height: 58px;
+      font-size: 18px;
+      border: 1px solid #1c1c1c;
+      border-radius: 10px;
+      background-color: #fff;
+      color: #1c1c1c;
+    }
+  }
+}
