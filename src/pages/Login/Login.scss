@@ -17,15 +17,6 @@
     width: 500px;
     padding-top: 65px;
 
-    .loginTitle {
-      font-size: 41px;
-      width: 100%;
-
-      .fontBold {
-        font-weight: bold;
-      }
-    }
-
     .loginBox {
       display: flex;
       flex-direction: column;
@@ -33,85 +24,6 @@
       width: 100%;
       font-size: 18px;
       margin-bottom: 50px;
-
-      .emailBox {
-        position: relative;
-
-        .email {
-          width: 100%;
-          border-bottom: 2px solid #cbcbcb;
-          height: 30px;
-          padding-left: 10px;
-          padding-bottom: 13px;
-          margin-bottom: 5px;
-
-          &::placeholder {
-            font-size: 15px;
-            color: #cbcdd5;
-          }
-          &:focus {
-            border-bottom: 2px solid black;
-          }
-          &.true {
-            border-bottom: 2px solid #d91d1d;
-            caret-color: #d91d1d;
-          }
-        }
-
-        .fa-check {
-          position: absolute;
-          right: 7px;
-        }
-      }
-
-      .plzCheck {
-        font-size: 12px;
-        color: #d91d1d;
-      }
-
-      .passwordBox {
-        position: relative;
-        .password {
-          border-bottom: 2px solid black;
-          height: 30px;
-          padding-left: 10px;
-          padding-bottom: 13px;
-          margin-top: 30px;
-          width: 100%;
-
-          &::placeholder {
-            font-size: 15px;
-            color: #cbcdd5;
-          }
-        }
-        .eyeBox {
-          position: absolute;
-          right: 6px;
-          bottom: 10px;
-          cursor: pointer;
-
-          .fa-eye-slash {
-            position: absolute;
-            right: -1px;
-            bottom: 0px;
-          }
-        }
-      }
-
-      .loginBtn {
-        margin-top: 30px;
-        color: white;
-        background-color: #cbcbcb;
-        width: 400px;
-        height: 60px;
-        border-radius: 10px;
-        cursor: default;
-
-        &.true {
-          background-color: black;
-          cursor: pointer;
-        }
-      }
     }
   }
 }
