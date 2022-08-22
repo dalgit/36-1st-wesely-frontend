@@ -12,13 +12,7 @@ function DropDown() {
         }}
       >
         <div>주문 빛 배송 안내</div>
-        <button
-        /* onClick={() => {
-            setDropDown(!dropDown);
-          }} */
-        >
-          ˅
-        </button>
+        <button>˅</button>
       </div>
       {dropDown === true && (
         <div className="modalImage">
