@@ -10,8 +10,6 @@ function ListPage() {
   const [category, setCategory] = useState(0);
   const [offset, setOffSet] = useState(0);
 
-  // console.log(productData);
-
   useEffect(() => {
     const checkStatus = res => {
       if (!res.ok) throw new Error(`Again Check Status: ${res.status}`);

@@ -8,13 +8,12 @@ const ProductCard = ({
   price,
   thumbImg,
   countRating,
+  stock,
   id,
 }) => {
   const displayRating = Math.floor(avgRating * 10) / 10;
 
   const maxScore = 5;
-
-  console.log(id);
 
   const rating = (rating, i) => {
     if (rating > i) {
@@ -50,8 +49,8 @@ const ProductCard = ({
   };
 
   return (
-    <article className="productCard">
-      <Link to={`/DetailPage/${id}`}>
+    <Link to={`/DetailPage/${id}`} className="detailPageLink">
+      <article className="productCard">
         <div
           className="productImage"
           style={{
@@ -60,7 +59,13 @@ const ProductCard = ({
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
           }}
-        />
+        >
+          {!stock && (
+            <div className="noStockStyle">
+              <div className="noStock">일시 품절</div>
+            </div>
+          )}
+        </div>
 
         <div className="productInfo">
           <div className="productInfoTop">
@@ -85,8 +90,8 @@ const ProductCard = ({
             </strong>
           </div>
         </div>
-      </Link>
-    </article>
+      </article>
+    </Link>
   );
 };
 

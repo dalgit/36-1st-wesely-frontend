@@ -1,56 +1,79 @@
-.productCard {
-  display: flex;
+.detailPageLink {
   width: calc(50% - 48px);
-  margin: 32px 8px;
-  cursor: pointer;
 
-  .productImage {
-    width: 240px;
-    height: 240px;
-    flex: 0 0 auto;
-  }
-
-  .productInfo {
+  .productCard {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: 16px;
+    margin: 32px 8px;
+    cursor: pointer;
 
-    .productInfoTop {
-      .productName {
-        font-size: 18px;
-        line-height: 28px;
-      }
-      .productDesc {
-        line-height: 26px;
-        color: #838383;
+    .productImage {
+      position: relative;
+      width: 240px;
+      height: 240px;
+      flex: 0 0 auto;
+
+      .noStockStyle {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+
+        .noStock {
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 30px;
+          color: #fff;
+        }
       }
     }
 
-    .productInfoBottom {
+    .productInfo {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      width: 100%;
+      padding-left: 16px;
 
-      .ratingWrapper {
-        display: flex;
-        align-items: center;
-
-        .ratings {
-          .star {
-            color: black;
-          }
+      .productInfoTop {
+        .productName {
+          font-size: 18px;
+          line-height: 28px;
         }
-
-        .sales {
-          color: #cbcbcb;
+        .productDesc {
+          line-height: 26px;
+          color: #838383;
         }
       }
 
-      .productPrice {
-        font-size: 20px;
-        line-height: 30px;
+      .productInfoBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ratingWrapper {
+          display: flex;
+          align-items: center;
+
+          .ratings {
+            .star {
+              color: black;
+            }
+          }
+
+          .sales {
+            color: #cbcbcb;
+          }
+        }
+
+        .productPrice {
+          font-size: 20px;
+          line-height: 30px;
+        }
       }
     }
   }
