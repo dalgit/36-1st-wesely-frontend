@@ -1,14 +1,16 @@
-import './Main.scss';
 import ProductContent from './ProductContent/ProductContent';
+
+import MainCarousel from './MainCarousel/MainCarousel';
+import MainCategory from './MainCategory/MainCategory';
+
+import './Main.scss';
 
 function Main() {
   return (
     <div className="Main">
       <h1>Header</h1>
-      <div>Carousel</div>
-      <div>
-        <h1>카테고리</h1>
-      </div>
+      <MainCarousel />
+      <MainCategory />
       <ProductContent />
     </div>
   );
