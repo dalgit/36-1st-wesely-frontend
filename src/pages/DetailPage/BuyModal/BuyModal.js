@@ -25,11 +25,11 @@ function BuyModal({ setBuyModalToggle, location }) {
 
   return (
     <div className="buyModalBox">
-      <div className="closeBox" onClick={() => setBuyModalToggle(false)}>
-        ×
-      </div>
       <div className="toast">
         <div className="toastContainer">
+          <div className="closeBox" onClick={() => setBuyModalToggle(false)}>
+            ×
+          </div>
           <section>
             <h1>탄력/잡티/모공/세럼</h1>
             <div className="selectBox">

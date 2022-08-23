@@ -1,26 +1,11 @@
 .buyModalBox {
   position: relative;
 
-  .closeBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 72px;
-    height: 56px;
-    bottom: 230px;
-    right: 420px;
-    font-size: 30px;
-    z-index: 1;
-    border-radius: 4px 4px 0 0;
-    color: #1c1c1c;
-    background-color: #fff;
-    box-shadow: #00000014 0 -12px 24px;
-    cursor: pointer;
-  }
   .toast {
     width: 100%;
+    height: 100vh;
     position: fixed;
+    z-index: 1;
     top: 38%;
     display: flex;
     justify-content: center;
@@ -33,6 +18,24 @@
       padding: 40px 16px 56px;
       height: 580.5px;
       justify-content: space-between;
+
+      .closeBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 72px;
+        height: 56px;
+        top: -50px;
+        right: 420px;
+        font-size: 30px;
+        z-index: 2;
+        border-radius: 4px 4px 0 0;
+        color: #1c1c1c;
+        background-color: #fff;
+        box-shadow: #00000014 0 -12px 24px;
+        cursor: pointer;
+      }
 
       .selectBox {
         width: 398px;
