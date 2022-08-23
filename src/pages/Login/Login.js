@@ -6,8 +6,9 @@ import PasswordBox from './PasswordBox/PasswordBox';
 import LoginButton from './LoginButton/LoginButton';
 
 function Login() {
-  const [isEmailValidPass, setIsEmailValidPass] = useState(false);
   const [isBasicValidPass, setIsBasicValidPass] = useState(false);
+  const [isEmailValidPass, setIsEmailValidPass] = useState(false);
+  const [wrongPassword, setWrongPassword] = useState(false);
   const [userName, setUserName] = useState('');
   const [userId, setUserId] = useState({
     email: '',
@@ -29,7 +30,11 @@ function Login() {
           />
 
           {isEmailValidPass && (
-            <PasswordBox userId={userId} setUserId={setUserId} />
+            <PasswordBox
+              userId={userId}
+              setUserId={setUserId}
+              wrongPassword={wrongPassword}
+            />
           )}
 
           <LoginButton
@@ -38,6 +43,7 @@ function Login() {
             isBasicValidPass={isBasicValidPass}
             isEmailValidPass={isEmailValidPass}
             setIsEmailValidPass={setIsEmailValidPass}
+            setWrongPassword={setWrongPassword}
           />
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>

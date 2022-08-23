@@ -8,38 +8,45 @@ const LoginButton = ({
   isBasicValidPass,
   isEmailValidPass,
   setIsEmailValidPass,
+  setWrongPassword,
 }) => {
   const navigate = useNavigate();
   const isPasswordInputActive = userId.password.length > 0;
 
   const emailValidation = e => {
     e.preventDefault();
-    fetch('http://10.58.0.32:3000/users/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: userId.email }),
+    fetch('./data/loginData.json', {
+      method: 'GET',
     })
       .then(response => response.json())
-      .then(name =>
-        name.length > 0
-          ? (setUserName(name), setIsEmailValidPass(true))
+      .then(userData =>
+        userData[0].name.length > 0
+          ? setUserName(nameMasking(userData[0].name))
           : navigate('/signUp')
       );
   };
 
-  const passwordlValidation = () => {
-    fetch('http://10.58.0.32:3000/users/signin', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: userId.email, password: userId.password }),
+  function nameMasking(name) {
+    setIsEmailValidPass(true);
+    if (name.length === 2) {
+      return name[0] + '*';
+    } else {
+      return name[0] + '*'.repeat(name.length - 2) + name.substr(-1);
+    }
+  }
+
+  const passwordlValidation = e => {
+    e.preventDefault();
+    fetch('./data/loginData.json', {
+      method: 'GET',
     })
       .then(res => res.json())
-      .then(data => {
-        if (data.message === 'success') {
-          localStorage.setItem('token', data.token);
+      .then(userData => {
+        if (userData[0].password === userId.password) {
+          localStorage.setItem('token', userData.token);
           navigate('/main');
-        } else if (data.message === 'invalid') {
-          alert('아이디 또는 비밀번호를 확인해주세요');
+        } else {
+          setWrongPassword(true);
         }
       });
   };

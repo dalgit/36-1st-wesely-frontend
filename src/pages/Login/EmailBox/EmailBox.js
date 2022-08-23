@@ -1,6 +1,6 @@
 import React from 'react';
-import './EmailBox.scss';
 import { useEffect } from 'react';
+import './EmailBox.scss';
 
 const EmailBox = ({
   userId,
@@ -10,21 +10,22 @@ const EmailBox = ({
   isBasicValidPass,
   setIsBasicValidPass,
 }) => {
-  const basciValidation = () => {
-    if (userId.email === '') {
-      return '필수 입력창입니다.';
-    } else if (!regEmail.test(userId.email)) {
-      return '이메일 형식을 확인해주세요.';
-    }
-  };
+  const basciValidation =
+    userId.email === ''
+      ? '필수 입력창입니다.'
+      : !regEmail.test(userId.email)
+      ? '이메일 양식을 확인해주세요.'
+      : '';
 
-  basciValidation() === undefined
-    ? setIsBasicValidPass(true)
-    : setIsBasicValidPass(false);
+  useEffect(() => {
+    basciValidation === ''
+      ? setIsBasicValidPass(true)
+      : setIsBasicValidPass(false);
+  }, [basciValidation, setIsBasicValidPass]);
 
   return (
-    <>
-      <div className="emailBox">
+    <div className="emailBox">
+      <div className="emailInput">
         <input
           onChange={e => {
             setUserId({ ...userId, [e.target.name]: e.target.value });
@@ -42,8 +43,8 @@ const EmailBox = ({
         />
         {isBasicValidPass ? <i className="fa-solid fa-check" /> : null}
       </div>
-      <div className="plzCheck">{basciValidation()}</div>
-    </>
+      <div className="plzCheck">{basciValidation}</div>
+    </div>
   );
 };
 

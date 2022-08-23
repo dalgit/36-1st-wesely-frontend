@@ -4,7 +4,7 @@ import './LoginTitle.scss';
 const LoginTitle = ({ userName }) => {
   return userName.length > 0 ? (
     <div className="loginTitle">
-      <span className="fontBold">{userName}회원님</span>
+      <span className="fontBold">{userName} 회원님</span>
       <div>다시 만나서 반가워요!</div>
     </div>
   ) : (
