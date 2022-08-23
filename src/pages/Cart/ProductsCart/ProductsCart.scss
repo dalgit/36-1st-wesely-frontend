@@ -1,0 +1,91 @@
+@import '../../../styles/variables.scss';
+
+.subscribeBox {
+  @include flexSort(space-between, center);
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  padding-top: 55px;
+  padding-bottom: 30px;
+
+  .subscribeTitle {
+    font-size: 19px;
+    font-weight: bold;
+    color: #cbcbcb;
+
+    &.true {
+      color: black;
+      font-weight: bold;
+    }
+  }
+
+  .subscribeList {
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    @include flexSort(center, center);
+
+    .subscribe {
+      font-size: 17px;
+      @include flexSort(center, center);
+      width: 72px;
+      height: 42px;
+      background-color: #f0f0f0;
+      border-radius: 25px;
+      margin: 5px;
+      color: #cbcbcb;
+      cursor: pointer;
+
+      &.true {
+        background-color: white;
+        color: black;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+    }
+  }
+}
+
+.billBox {
+  padding-top: 60px;
+  width: 100%;
+
+  .bill {
+    @include flexSort(space-between, none);
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 19px;
+
+    .billPrice {
+      color: gray;
+    }
+  }
+
+  .totalBill {
+    @include flexSort(space-between, none);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #f0f0f0;
+  }
+}
+
+.cartBtnBox {
+  margin-top: 53px;
+
+  .keepBtn {
+    width: 200px;
+    height: 65px;
+    border: 1px solid black;
+    margin-right: 12px;
+    border-radius: 9px;
+    font-size: 18px;
+  }
+
+  .purchaseBtn {
+    width: 200px;
+    height: 65px;
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+    font-size: 18px;
+  }
+}
