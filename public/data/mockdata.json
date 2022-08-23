@@ -1,126 +1,56 @@
 [
   {
-    "id": 1,
-    "title": "해비추얼",
-    "subTitle": "활력충전 멀티 비타민1",
-    "p": "필수 영양소 멀티비타민",
-    "price": 6600,
-    "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg",
-    "option": [
-      {
-        "id": 1,
-        "option": "탄력케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 2,
-        "option": "잡티케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F59v8i%2FbtrJ3uCPt8G%2FhFWf1D4XAi8BEDk7rUSrlk%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 3,
-        "option": "모공케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRdqe1%2FbtrJ5Nhews9%2FYaVkrTjxpcv6KnQwjs0u40%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      }
-    ]
+    "countRating": "7",
+    "avgRating": "2.8571",
+    "productId": 1,
+    "userId": 1,
+    "reviewContent": "품질 별로에요 개선이 필요합니다",
+    "imageId": 1,
+    "options": "빨강",
+    "optionImg": "url_빨강",
+    "sales": 100,
+    "stock": 0,
+    "categoryId": 2,
+    "productName": "피부에 좋은 세럼",
+    "price": "50000",
+    "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+    "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+    "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
   },
   {
-    "id": 2,
-    "title": "해비추얼",
-    "subTitle": "활력충전 멀티 비타민2",
-    "p": "필수 영양소 멀티비타민",
-    "price": 5800,
-    "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F59v8i%2FbtrJ3uCPt8G%2FhFWf1D4XAi8BEDk7rUSrlk%2Fimg.jpg",
-    "option": [
-      {
-        "id": 1,
-        "option": "탄력케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 2,
-        "option": "잡티케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F59v8i%2FbtrJ3uCPt8G%2FhFWf1D4XAi8BEDk7rUSrlk%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 3,
-        "option": "모공케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRdqe1%2FbtrJ5Nhews9%2FYaVkrTjxpcv6KnQwjs0u40%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      }
-    ]
+    "countRating": "7",
+    "avgRating": "2.8571",
+    "productId": 1,
+    "userId": 2,
+    "reviewContent": "좋아요 빠른배송",
+    "imageId": 1,
+    "options": "빨강",
+    "optionImg": "url_빨강",
+    "sales": 100,
+    "stock": 0,
+    "categoryId": 2,
+    "productName": "피부에 좋은 세럼",
+    "price": "50000",
+    "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+    "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+    "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
   },
   {
-    "id": 3,
-    "title": "해비추얼",
-    "subTitle": "활력충전 멀티 비타민3",
-    "p": "필수 영양소 멀티비타민",
-    "price": 7400,
-    "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRdqe1%2FbtrJ5Nhews9%2FYaVkrTjxpcv6KnQwjs0u40%2Fimg.jpg",
-    "option": [
-      {
-        "id": 1,
-        "option": "탄력케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 2,
-        "option": "잡티케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F59v8i%2FbtrJ3uCPt8G%2FhFWf1D4XAi8BEDk7rUSrlk%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 3,
-        "option": "모공케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRdqe1%2FbtrJ5Nhews9%2FYaVkrTjxpcv6KnQwjs0u40%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "title": "해비추얼",
-    "subTitle": "활력충전 멀티 비타민4",
-    "p": "필수 영양소 멀티비타민",
-    "price": 10200,
-    "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FICHSQ%2FbtrJ4cVR8Ed%2FRyZBuKHjKoS0t5qBbGYto0%2Fimg.jpg",
-    "option": [
-      {
-        "id": 1,
-        "option": "탄력케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 2,
-        "option": "잡티케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F59v8i%2FbtrJ3uCPt8G%2FhFWf1D4XAi8BEDk7rUSrlk%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      },
-      {
-        "id": 3,
-        "option": "모공케어",
-        "image": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRdqe1%2FbtrJ5Nhews9%2FYaVkrTjxpcv6KnQwjs0u40%2Fimg.jpg",
-        "title": "활력충전 멀티 비타민",
-        "subTitle": "필수 영양소 멀티비타민"
-      }
-    ]
+    "countRating": "7",
+    "avgRating": "2.8571",
+    "productId": 1,
+    "userId": 3,
+    "reviewContent": "음.. 생각보다 별로에요",
+    "imageId": 1,
+    "options": "빨강",
+    "optionImg": "url_빨강",
+    "sales": 100,
+    "stock": 0,
+    "categoryId": 2,
+    "productName": "피부에 좋은 세럼",
+    "price": "50000",
+    "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+    "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+    "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
   }
 ]

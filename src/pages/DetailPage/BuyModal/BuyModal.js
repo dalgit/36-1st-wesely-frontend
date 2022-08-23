@@ -2,17 +2,16 @@ import { useState } from 'react';
 import ItemList from './ItemList';
 import './BuyModal.scss';
 
-function BuyModal({ setBuyModalToggle, location }) {
+function BuyModal({ setBuyModalToggle, product }) {
   const [arrowToggle, setArrowToggle] = useState(true);
   const [selectedItem, setSelectedItem] = useState([]);
-
   const selectItem = ({ target }) => {
-    if (!selectedItem.includes(location.option[Number(target.id)])) {
+    if (!selectedItem.includes(product[0].options[Number(target.id)])) {
       setSelectedItem([
         ...selectedItem,
-        Object.assign(location.option[Number(target.id)], {
+        Object.assign(product[0].options[Number(target.id)], {
           quantity: 1,
-          price: location.price,
+          price: product[0].price,
         }),
       ]);
     }
@@ -49,7 +48,7 @@ function BuyModal({ setBuyModalToggle, location }) {
               </div>
               {arrowToggle && (
                 <div className="selectOption">
-                  {location.option.map((list, idx) => {
+                  {/* {product?.option.map((list, idx) => {
                     return (
                       <div
                         className="option"
@@ -60,7 +59,7 @@ function BuyModal({ setBuyModalToggle, location }) {
                         {list.option}
                       </div>
                     );
-                  })}
+                  })} */}
                 </div>
               )}
             </div>
