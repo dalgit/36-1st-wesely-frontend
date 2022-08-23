@@ -46,7 +46,7 @@ const ProductCard = ({
   };
 
   return (
-    <article className="ProductCard">
+    <article className="productCard">
       <div
         className="productImage"
         style={{
