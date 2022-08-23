@@ -1,4 +1,3 @@
-import React from 'react';
 import './SignUp.scss';
 import { useState } from 'react';
 
@@ -9,12 +8,13 @@ const SignUp = () => {
     phoneNumber: '',
     name: '',
   });
+
   const [validStartList, setValidStartList] = useState({
     password: false,
     phoneNumber: false,
     name: false,
   });
-  console.log(PASS_REG.test(signUpinput.password));
+
   function passwordVaild() {
     if (validStartList.password === true) {
       return signUpinput.password === ''
@@ -45,6 +45,25 @@ const SignUp = () => {
     }
   }
 
+  const a = e => {
+    setSignUpinput({
+      ...signUpinput,
+      [e.target.name]: e.target.value.replace(/\-/g, ''),
+    });
+  };
+
+  function hyphenNumber(number) {
+    number = number.replace(/\-/g, '');
+    if (number.length >= 8) {
+      return (
+        number.slice(0, 3) + '-' + number.slice(3, 7) + '-' + number.slice(7)
+      );
+    } else if (number.length >= 4) {
+      return number.slice(0, 3) + '-' + number.slice(3);
+    }
+    return number;
+  }
+
   return (
     <div className="signUp">
       <div className="signUpContainer">
@@ -56,7 +75,7 @@ const SignUp = () => {
           <div className="signUpInputBox">
             <div className="inputTitle">아이디</div>
             <div className="inputSpace">
-              <div className="input">dsadas</div>
+              <div className="input">hahahoho33@navvar.com</div>
             </div>
           </div>
           <div className="signUpInputBox">
@@ -67,6 +86,7 @@ const SignUp = () => {
                 placeholder="비밀번호 (6자 이상)"
                 className="input"
                 name="password"
+                maxLength="20"
                 onChange={e => {
                   setSignUpinput({
                     ...signUpinput,
@@ -104,22 +124,19 @@ const SignUp = () => {
             <div className="inputTitle">휴대폰번호</div>
             <div className="inputSpace">
               <input
-                type="number"
+                type="text"
                 placeholder="휴대폰 번호 ('-'제외)"
                 name="phoneNumber"
                 className="input"
-                onChange={e => {
-                  setSignUpinput({
-                    ...signUpinput,
-                    [e.target.name]: e.target.value,
-                  });
-                }}
+                maxLength="13"
+                onChange={e => a(e)}
                 onBlur={e => {
                   setValidStartList({
                     ...validStartList,
                     [e.target.name]: true,
                   });
                 }}
+                value={hyphenNumber(signUpinput.phoneNumber)}
               />
               <div className="plzCheck">{phoneNumberVaild()}</div>
               {PHONE_REG.test(signUpinput.phoneNumber) && (
@@ -135,6 +152,7 @@ const SignUp = () => {
                 placeholder="이름"
                 name="name"
                 className="input"
+                maxLength="20"
                 onChange={e => {
                   setSignUpinput({
                     ...signUpinput,
