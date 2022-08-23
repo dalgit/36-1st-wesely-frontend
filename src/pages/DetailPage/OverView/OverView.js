@@ -39,7 +39,7 @@ function OverView({ location }) {
           </div>
         </div>
       </div>
-      {buyModalToggle === true && (
+      {buyModalToggle && (
         <BuyModal
           setBuyModalToggle={setBuyModalToggle}
           location={location.state}

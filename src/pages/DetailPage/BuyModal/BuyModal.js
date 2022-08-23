@@ -23,11 +23,19 @@ function BuyModal({ setBuyModalToggle, location }) {
     setSelectedItem(filteredItem);
   };
 
+  const buyModalToggleChange = () => {
+    setArrowToggle(!arrowToggle);
+  };
+
+  const closeBuyModal = () => {
+    setBuyModalToggle(false);
+  };
+
   return (
     <div className="buyModalBox">
       <div className="toast">
         <div className="toastContainer">
-          <div className="closeBox" onClick={() => setBuyModalToggle(false)}>
+          <div className="closeBox" onClick={closeBuyModal}>
             ×
           </div>
           <section>
@@ -35,14 +43,11 @@ function BuyModal({ setBuyModalToggle, location }) {
             <div className="selectBox">
               <div className="boxHandle">
                 <span className="defaultText">타입</span>
-                <span
-                  className="arrowButton"
-                  onClick={() => setArrowToggle(!arrowToggle)}
-                >
+                <span className="arrowButton" onClick={buyModalToggleChange}>
                   ˅
                 </span>
               </div>
-              {arrowToggle === true && (
+              {arrowToggle && (
                 <div className="selectOption">
                   {location.option.map((list, idx) => {
                     return (

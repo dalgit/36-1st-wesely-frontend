@@ -15,7 +15,6 @@ function QuantityButton({ totalCount, setTotalCount, listId }) {
     } else if (target.id === '4') {
       setTotalCount({ ...totalCount, total4: totalCount.total4 + 1 });
     }
-    /* setTotalCount(totalCount + 1); */
   };
 
   const countDown = ({ target }) => {
