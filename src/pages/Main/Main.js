@@ -1,5 +1,16 @@
+import MainCarousel from './MainCarousel/MainCarousel';
+import MainCategory from './MainCategory/MainCategory';
+
+import './Main.scss';
+
 function Main() {
-  return <h1>Main입니다.</h1>;
+  return (
+    <div className="Main">
+      <h1>Header</h1>
+      <MainCarousel />
+      <MainCategory />
+    </div>
+  );
 }
 
 export default Main;
