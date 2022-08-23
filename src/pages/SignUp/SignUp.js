@@ -14,12 +14,12 @@ const SignUp = () => {
     phoneNumber: false,
     name: false,
   });
-  console.log(validStartList);
+  console.log(PASS_REG.test(signUpinput.password));
   function passwordVaild() {
     if (validStartList.password === true) {
       return signUpinput.password === ''
         ? '비밀번호는 필수 입력 창입니다.'
-        : !PASS_REG.test()
+        : !PASS_REG.test(signUpinput.password)
         ? '6자리 이상의 비밀번호를 설정해 주세요.'
         : '';
     }
@@ -29,7 +29,7 @@ const SignUp = () => {
     if (validStartList.phoneNumber === true) {
       return signUpinput.phoneNumber === ''
         ? '휴대폰번호는 필수 입력 창입니다.'
-        : !PHONE_REG.test()
+        : !PHONE_REG.test(signUpinput.phoneNumber)
         ? '휴대폰번호를 올바르게 입력해주세요.'
         : '';
     }
@@ -39,11 +39,12 @@ const SignUp = () => {
     if (validStartList.name === true) {
       return signUpinput.name === ''
         ? '이름은 필수 입력 창입니다.'
-        : !NAME_REG.test()
+        : !NAME_REG.test(signUpinput.name)
         ? '이름을 올바르게 입력해주세요.'
         : '';
     }
   }
+
   return (
     <div className="signUp">
       <div className="signUpContainer">
@@ -91,7 +92,7 @@ const SignUp = () => {
                       <i className="fa-solid fa-eye-slash" />
                     )}
                   </span>
-                  {signUpinput.password.length > 5 && (
+                  {PASS_REG.test(signUpinput.password) && (
                     <i className="fa-solid fa-check" />
                   )}
                 </div>
@@ -121,7 +122,7 @@ const SignUp = () => {
                 }}
               />
               <div className="plzCheck">{phoneNumberVaild()}</div>
-              {signUpinput.phoneNumber.length > 5 && (
+              {PHONE_REG.test(signUpinput.phoneNumber) && (
                 <i className="fa-solid fa-check" />
               )}
             </div>
@@ -148,7 +149,7 @@ const SignUp = () => {
                 }}
               />
               <div className="plzCheck">{nameVaild()}</div>
-              {signUpinput.name.length > 2 && (
+              {NAME_REG.test(signUpinput.name) && (
                 <i className="fa-solid fa-check" />
               )}
             </div>
