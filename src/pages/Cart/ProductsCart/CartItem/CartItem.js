@@ -3,11 +3,11 @@ import './CartItem.scss';
 
 const CartItem = ({
   id,
-  products_name,
+  name,
   type,
   price,
   quantity,
-  thumb_img_url,
+  img_url,
   products,
   setProducts,
 }) => {
@@ -31,15 +31,19 @@ const CartItem = ({
     );
   }
 
+  function productDelete() {
+    setProducts(products.filter(product => product.id !== id));
+  }
+
   return (
     <div className="itemContainer">
       <div className="imgCover">
-        <img src={thumb_img_url} alt="itemImg" className="itemImg" />
+        <img src={img_url} alt="itemImg" className="itemImg" />
       </div>
       <div className="itemBox">
         <div className="itemInfo">
           <div>
-            <div className="itemName">{products_name}</div>
+            <div className="itemName">{name}</div>
             <div className="itemType">{type}</div>
           </div>
           <div className="itemPrice">
@@ -48,12 +52,7 @@ const CartItem = ({
         </div>
         <div className="iconBox">
           <div>
-            <i
-              className="fa-solid fa-xmark"
-              onClick={() =>
-                setProducts(products.filter(product => product.id !== id))
-              }
-            />
+            <i className="fa-solid fa-xmark" onClick={productDelete} />
           </div>
           <div className="quantityBox">
             <button className="minusBtn" onClick={quantityMinus}>

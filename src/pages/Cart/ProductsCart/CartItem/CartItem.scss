@@ -1,18 +1,16 @@
+@import '../../../../styles/variables.scss';
+
 .itemContainer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  @include flexSort(flex-end, center);
   width: 100%;
   height: 184px;
   border-bottom: 1px solid #f0f0f0;
   padding: 20px 0px 20px 0px;
 
   .imgCover {
+    @include flexSort(center, center);
     height: 100%;
     width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .itemImg {
     width: 80%;
@@ -20,16 +18,13 @@
   }
 
   .itemBox {
-    display: flex;
-    justify-content: space-between;
+    @include flexSort(space-between, none);
     height: 100%;
     width: 100%;
     padding: 23px 0px 20px 0px;
 
     .itemInfo {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      @include flexColumnSort(space-between, none);
       .itemName {
         font-size: 18px;
       }
@@ -47,10 +42,7 @@
   }
 
   .iconBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    @include flexColumnSort(space-between, flex-end);
     width: 72px;
 
     .fa-xmark {
@@ -60,8 +52,7 @@
     }
 
     .quantityBox {
-      display: flex;
-      align-items: center;
+      @include flexSort(none, center);
       height: 30px;
       border: 1px solid #cbcbcb;
       border-radius: 2px;

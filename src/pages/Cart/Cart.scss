@@ -1,7 +1,7 @@
+@import '../../styles/variables.scss';
+
 .cartContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexColumnSort(none, center);
   padding-top: 130px;
 
   .cartTitle {
@@ -17,9 +17,7 @@
     width: 212px;
     height: 72px;
     border-bottom: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexSort(center, center);
     font-size: 18px;
     font-weight: bold;
 
@@ -33,14 +31,11 @@
     padding-top: 36px;
     background-color: #fafafa;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    @include flexSort(center, none);
     padding-bottom: 80px;
 
     .cartBox {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flexColumnSort(none, center);
       width: 48%;
       background-color: white;
       border: 1px solid #fafafa;
@@ -51,10 +46,7 @@
 
       .emptyCart {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @include flexColumnSort(center, center);
         padding: 100px 0px 40px 0px;
 
         .emptyImg {

@@ -1,7 +1,7 @@
+@import '../../../styles/variables.scss';
+
 .subscribeBox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flexSort(space-between, center);
   width: 100%;
   border-bottom: 1px solid #f0f0f0;
   padding-top: 55px;
@@ -21,15 +21,11 @@
   .subscribeList {
     border-radius: 25px;
     background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexSort(center, center);
 
     .subscribe {
       font-size: 17px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexSort(center, center);
       width: 72px;
       height: 42px;
       background-color: #f0f0f0;
@@ -52,8 +48,7 @@
   width: 100%;
 
   .bill {
-    display: flex;
-    justify-content: space-between;
+    @include flexSort(space-between, none);
     width: 100%;
     font-size: 18px;
     margin-bottom: 19px;
@@ -63,30 +58,20 @@
     }
   }
 
-  .billGuide {
-    text-align: right;
-    color: #4565c8;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 20px;
-
-    .fontBold {
-      font-weight: bold;
-    }
-  }
-
   .totalBill {
-    display: flex;
-    justify-content: space-between;
+    @include flexSort(space-between, none);
     font-size: 20px;
     font-weight: bold;
     margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #f0f0f0;
   }
 }
 
 .cartBtnBox {
   margin-top: 53px;
 
-  .KeepBtn {
+  .keepBtn {
     width: 200px;
     height: 65px;
     border: 1px solid black;

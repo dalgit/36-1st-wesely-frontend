@@ -5,33 +5,35 @@ import './ProductsCart.scss';
 const ProductsCart = ({
   products,
   setProducts,
-  isSubscribe,
-  setIsSubscribe,
+  subscriptionCycle,
+  setSubscriptionCycle,
 }) => {
-  const totalPrice = products.reduce(
+  const totalPrice = products?.reduce(
     (acc, cur) => acc + Number(cur.price * cur.quantity),
     0
   );
 
-  const parcel = totalPrice < 30000 ? 2500 : 0;
+  const totalWon = totalPrice.toLocaleString() + '원';
 
   return (
     <>
       <div className="subscribeBox">
-        <div className={`subscribeTitle ${isSubscribe !== ''}`}>
+        <div className={`subscribeTitle ${subscriptionCycle !== ''}`}>
           정기 구독 주기
         </div>
         <ul className="subscribeList">
-          {periods.map((period, idx) => {
+          {PERIOD_LIST.map(info => {
             return (
               <button
-                className={`subscribe ${isSubscribe === idx}`}
-                key={idx}
+                className={`subscribe ${subscriptionCycle === info.id}`}
+                key={info.id}
                 onClick={() =>
-                  isSubscribe === idx ? setIsSubscribe('') : setIsSubscribe(idx)
+                  subscriptionCycle === info.id
+                    ? setSubscriptionCycle('')
+                    : setSubscriptionCycle(info.id)
                 }
               >
-                {period}
+                {info.period}
               </button>
             );
           })}
@@ -50,31 +52,19 @@ const ProductsCart = ({
       <div className="billBox">
         <div className="bill">
           <span>합계</span>
-          <span className="billPrice">
-            {totalPrice.toLocaleString() + '원'}
-          </span>
+          <span className="billPrice">{totalWon}</span>
         </div>
         <div className="bill">
           <span>배송비</span>
-          <span className="billPrice">
-            {parcel !== 0 ? parcel.toLocaleString() + '원' : '무료'}
-          </span>
-        </div>
-        <div className="billGuide">
-          {totalPrice < 30000 ? (
-            <span>
-              {(30000 - totalPrice).toLocaleString()}원 추가 주문 시
-              <span className="fontBold"> 무료배송</span>
-            </span>
-          ) : null}
+          <span className="billPrice">무료</span>
         </div>
         <div className="totalBill">
           <span>결제 예정 금액</span>
-          <span>{(totalPrice + parcel).toLocaleString() + '원'}</span>
+          <span>{totalWon}</span>
         </div>
       </div>
       <div className="cartBtnBox">
-        <button className="KeepBtn"> 더 담으러 가기</button>
+        <button className="keepBtn"> 더 담으러 가기</button>
         <button className="purchaseBtn"> 구매하기</button>
       </div>
     </>
@@ -83,4 +73,9 @@ const ProductsCart = ({
 
 export default ProductsCart;
 
-const periods = ['4주', '8주', '12주', '16주'];
+const PERIOD_LIST = [
+  { id: 1, period: '4주' },
+  { id: 2, period: '8주' },
+  { id: 3, period: '12주' },
+  { id: 5, period: '16주' },
+];

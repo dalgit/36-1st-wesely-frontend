@@ -5,7 +5,7 @@ import ProductsCart from './ProductsCart/ProductsCart';
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
-  const [isSubscribe, setIsSubscribe] = useState('');
+  const [subscriptionCycle, setSubscriptionCycle] = useState('');
   useEffect(() => {
     fetch('data/cartData.json', {
       method: 'GET',
@@ -20,7 +20,7 @@ const Cart = () => {
     <div className="cartContainer">
       <div className="cartTitle">장바구니</div>
       <div className="cartMenu">
-        {isSubscribe === '' ? '일반구매' : '정기구독'}
+        {subscriptionCycle === '' ? '일반구매' : '정기구독'}
         <span className="itemTotal">{products.length}</span>
       </div>
       <div className="cartSpace">
@@ -39,8 +39,8 @@ const Cart = () => {
             <ProductsCart
               products={products}
               setProducts={setProducts}
-              isSubscribe={isSubscribe}
-              setIsSubscribe={setIsSubscribe}
+              subscriptionCycle={subscriptionCycle}
+              setSubscriptionCycle={setSubscriptionCycle}
             />
           )}
         </div>
