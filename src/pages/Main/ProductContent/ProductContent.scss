@@ -1,15 +1,8 @@
 .ProductContent {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 16px;
   overflow-x: hidden;
   overflow-y: hidden;
-
-  -webkit-touch-callout: none;
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
 
   .content {
     margin-bottom: 150px;
@@ -29,7 +22,7 @@
     .productList {
       display: flex;
       margin-top: 54px;
-      transition: transform 0.5s;
+      // padding: 0 24px;
     }
   }
 }

@@ -1,8 +1,8 @@
 .button {
   position: absolute;
-  top: 65%;
-  width: 4rem;
-  height: 4rem;
+  top: 60%;
+  width: 3rem;
+  height: 3rem;
   background-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-50%);
   border-radius: 50%;
@@ -12,8 +12,8 @@
   &:after {
     content: '';
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     top: 50%;
     left: 54%;
     border-right: 2px solid rgba(0, 0, 0, 0.5);
@@ -22,7 +22,7 @@
   }
 }
 .next {
-  right: 0%;
+  right: 2%;
 
   &:after {
     left: 47%;

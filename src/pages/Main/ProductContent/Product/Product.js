@@ -1,12 +1,14 @@
 import './product.scss';
 
-const Product = ({ imgUrl, desc, price }) => {
+const Product = ({ thumbImg, name, price }) => {
   return (
-    <li className="ProductInfo">
+    <li className="productRigth">
       <div className="product">
-        <img className="productImg" src={imgUrl} alt="" />
-        <p className="productInfo">{desc}</p>
-        <h2 className="productTitle">{price}</h2>
+        <img className="productImg" src={thumbImg} alt="" />
+        <p className="productInfo">{name}</p>
+        <h2 className="productTitle">
+          {price.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+        </h2>
       </div>
     </li>
   );
