@@ -16,7 +16,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/ListPage" element={<ListPage />} />
+        <Route path="/product/home" element={<ListPage />} />
         <Route path="/DetailPage/:id" element={<DetailPage />} />
       </Routes>
     </BrowserRouter>
