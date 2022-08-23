@@ -10,7 +10,7 @@ function ListPage() {
   const [category, setCategory] = useState(0);
   const [offset, setOffSet] = useState(0);
 
-  console.log(productData);
+  // console.log(productData);
 
   useEffect(() => {
     const checkStatus = res => {
@@ -75,6 +75,7 @@ function ListPage() {
               onClick={() => {
                 moveCategory(category.id);
               }}
+              id={category.id}
             >
               {category.categoryName}
             </li>
