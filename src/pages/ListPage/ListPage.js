@@ -4,6 +4,8 @@ import ProductCard from './ContentItem/ProductCard';
 import { useSearchParams } from 'react-router-dom';
 import PageBtn from './PageBtn/PageBtn';
 
+import API from '../../config';
+
 function ListPage() {
   const [productData, setProductData] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,7 +24,7 @@ function ListPage() {
     };
 
     fetch(
-      `http://10.58.0.224:3000/product/home?${
+      `${API.product}?${
         category === 0
           ? `offset=${offset}&limit=${maxLimit}`
           : `offset=${offset}&limit=${maxLimit}&categoryId=${category}`
