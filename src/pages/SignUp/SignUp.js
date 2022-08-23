@@ -1,8 +1,49 @@
 import React from 'react';
 import './SignUp.scss';
 import { useState } from 'react';
+
 const SignUp = () => {
   const [viewPassword, setViewPassword] = useState(false);
+  const [signUpinput, setSignUpinput] = useState({
+    password: '',
+    phoneNumber: '',
+    name: '',
+  });
+  const [validStartList, setValidStartList] = useState({
+    password: false,
+    phoneNumber: false,
+    name: false,
+  });
+  console.log(validStartList);
+  function passwordVaild() {
+    if (validStartList.password === true) {
+      return signUpinput.password === ''
+        ? '비밀번호는 필수 입력 창입니다.'
+        : !PASS_REG.test()
+        ? '6자리 이상의 비밀번호를 설정해 주세요.'
+        : '';
+    }
+  }
+
+  function phoneNumberVaild() {
+    if (validStartList.phoneNumber === true) {
+      return signUpinput.phoneNumber === ''
+        ? '휴대폰번호는 필수 입력 창입니다.'
+        : !PHONE_REG.test()
+        ? '휴대폰번호를 올바르게 입력해주세요.'
+        : '';
+    }
+  }
+
+  function nameVaild() {
+    if (validStartList.name === true) {
+      return signUpinput.name === ''
+        ? '이름은 필수 입력 창입니다.'
+        : !NAME_REG.test()
+        ? '이름을 올바르게 입력해주세요.'
+        : '';
+    }
+  }
   return (
     <div className="signUp">
       <div className="signUpContainer">
@@ -11,66 +52,108 @@ const SignUp = () => {
           <span className="fontBold">가입을 진행합니다.</span>
         </div>
         <form className="singUpBox">
-          <div className="emailBox">
+          <div className="signUpInputBox">
             <div className="inputTitle">아이디</div>
-            <div className="emailInput">
-              <input
-                type="text"
-                placeholder="이메일"
-                name="email"
-                className="email"
-                autoFocus
-              />
-              <i className="fa-solid fa-check" />
+            <div className="inputSpace">
+              <div className="input">dsadas</div>
             </div>
-            <div className="plzCheck">ss</div>
           </div>
-          <div className="emailBox">
-            <input
-              type={viewPassword ? 'text' : 'password'}
-              placeholder="비밀번호 (6자 이상)"
-              className="password"
-              autoFocus
-            />
-            <div
-              className="eyeBox"
-              onClick={() => setViewPassword(!viewPassword)}
-            >
-              {viewPassword ? (
-                <i className="fa-solid fa-eye" />
-              ) : (
-                <i className="fa-solid fa-eye-slash" />
+          <div className="signUpInputBox">
+            <div className="inputTitle">비밀번호</div>
+            <div className="inputSpace">
+              <input
+                type={viewPassword ? 'text' : 'password'}
+                placeholder="비밀번호 (6자 이상)"
+                className="input"
+                name="password"
+                onChange={e => {
+                  setSignUpinput({
+                    ...signUpinput,
+                    [e.target.name]: e.target.value,
+                  });
+                }}
+                onBlur={e => {
+                  setValidStartList({
+                    ...validStartList,
+                    [e.target.name]: true,
+                  });
+                }}
+              />
+              <div className="iconBox">
+                <div>
+                  <span
+                    className="eyeBtn"
+                    onClick={() => setViewPassword(!viewPassword)}
+                  >
+                    {viewPassword ? (
+                      <i className="fa-solid fa-eye" />
+                    ) : (
+                      <i className="fa-solid fa-eye-slash" />
+                    )}
+                  </span>
+                  {signUpinput.password.length > 5 && (
+                    <i className="fa-solid fa-check" />
+                  )}
+                </div>
+              </div>
+              <div className="plzCheck">{passwordVaild()}</div>
+            </div>
+          </div>
+          <div className="signUpInputBox">
+            <div className="inputTitle">휴대폰번호</div>
+            <div className="inputSpace">
+              <input
+                type="number"
+                placeholder="휴대폰 번호 ('-'제외)"
+                name="phoneNumber"
+                className="input"
+                onChange={e => {
+                  setSignUpinput({
+                    ...signUpinput,
+                    [e.target.name]: e.target.value,
+                  });
+                }}
+                onBlur={e => {
+                  setValidStartList({
+                    ...validStartList,
+                    [e.target.name]: true,
+                  });
+                }}
+              />
+              <div className="plzCheck">{phoneNumberVaild()}</div>
+              {signUpinput.phoneNumber.length > 5 && (
+                <i className="fa-solid fa-check" />
               )}
             </div>
           </div>
-          <div className="emailBox">
-            <div className="inputTitle">휴대폰번호</div>
-            <div className="emailInput">
-              <input
-                type="text"
-                placeholder="휴대폰 번호 ('-'wpdhl)"
-                name="email"
-                className="email"
-                autoFocus
-              />
-              <i className="fa-solid fa-check" />
-            </div>
-            <div className="plzCheck">ss</div>
-          </div>
-          <div className="emailBox">
+          <div className="signUpInputBox">
             <div className="inputTitle">이름</div>
-            <div className="emailInput">
+            <div className="inputSpace">
               <input
                 type="text"
                 placeholder="이름"
-                name="email"
-                className="email"
-                autoFocus
+                name="name"
+                className="input"
+                onChange={e => {
+                  setSignUpinput({
+                    ...signUpinput,
+                    [e.target.name]: e.target.value,
+                  });
+                }}
+                onBlur={e => {
+                  setValidStartList({
+                    ...validStartList,
+                    [e.target.name]: true,
+                  });
+                }}
               />
-              <i className="fa-solid fa-check" />
+              <div className="plzCheck">{nameVaild()}</div>
+              {signUpinput.name.length > 2 && (
+                <i className="fa-solid fa-check" />
+              )}
             </div>
-            <div className="plzCheck">ss</div>
           </div>
+          <button className="loginBtn">가입완료</button>
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>
       </div>
@@ -78,3 +161,7 @@ const SignUp = () => {
   );
 };
 export default SignUp;
+
+const PASS_REG = /^[0-9a-zA-Z\d@$!%*#?&]{6,}$/;
+const NAME_REG = /^[가-힣]{2,4}$/;
+const PHONE_REG = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;

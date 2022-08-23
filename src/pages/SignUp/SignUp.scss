@@ -1,12 +1,12 @@
 .signUp {
   width: 100vw;
   height: 110vh;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   .signUpContainer {
     padding: 50px;
     background-color: white;
     position: absolute;
-    top: 25%;
+    top: 32%;
     left: 18%;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,15 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 500px;
     padding-top: 65px;
+
+    .signUpTitle {
+      font-size: 41px;
+      width: 100%;
+      .fontBold {
+        font-weight: bold;
+      }
+    }
+
     .singUpBox {
       display: flex;
       flex-direction: column;
@@ -22,79 +31,84 @@
       width: 100%;
       font-size: 18px;
       margin-bottom: 50px;
-    }
-  }
-}
-.signUpTitle {
-  font-size: 41px;
-  width: 100%;
-  .fontBold {
-    font-weight: bold;
-  }
-}
-.emailBox {
-  .inputTitle {
-    font-size: 12px;
-    color: #838383;
-    margin-bottom: 5px;
-  }
-  .emailInput {
-    position: relative;
-    .email {
-      width: 100%;
-      border-bottom: 2px solid #CBCBCB;
-      height: 30px;
-      padding-left: 10px;
-      padding-bottom: 13px;
-      margin-bottom: 5px;
-      &::placeholder {
-        font-size: 15px;
-        color: #CBCDD5;
+
+      .signUpInputBox {
+        position: relative;
+        margin-bottom: 30px;
+
+        .inputTitle {
+          font-size: 12px;
+          color: #838383;
+          margin-bottom: 5px;
+        }
+        .inputSpace {
+          position: relative;
+          .input {
+            width: 100%;
+            border-bottom: 2px solid #cbcbcb;
+            height: 30px;
+            padding-left: 10px;
+            padding-bottom: 13px;
+            margin-bottom: 5px;
+            &::placeholder {
+              font-size: 15px;
+              color: #cbcdd5;
+            }
+            &:focus {
+              border-bottom: 2px solid black;
+            }
+            &.true {
+              border-bottom: 2px solid #d91d1d;
+              caret-color: #d91d1d;
+            }
+          }
+          .fa-check {
+            position: absolute;
+            right: 7px;
+          }
+
+          .iconBox {
+            position: absolute;
+            right: 5px;
+            top: 1px;
+
+            .eyeBtn {
+              cursor: pointer;
+
+              .fa-eye {
+                margin-right: 1px;
+              }
+            }
+            .fa-check {
+              position: static;
+              margin-left: 6px;
+            }
+          }
+          .plzCheck {
+            font-size: 12px;
+            color: #d91d1d;
+          }
+        }
       }
-      &:focus {
-        border-bottom: 2px solid black;
+      .loginBtn {
+        margin-top: 30px;
+        color: white;
+        background-color: #cbcbcb;
+        width: 400px;
+        height: 60px;
+        border-radius: 10px;
+        cursor: default;
+
+        &.true {
+          background-color: black;
+          cursor: pointer;
+        }
       }
-      &.true {
-        border-bottom: 2px solid #D91D1D;
-        caret-color: #D91D1D;
-      }
-    }
-    .fa-check {
-      position: absolute;
-      right: 7px;
-    }
-  }
-  .plzCheck {
-    font-size: 12px;
-    color: #D91D1D;
-  }
-}
-.emailBox {
-  position: relative;
-  .password {
-    border-bottom: 2px solid #CBCBCB;
-    height: 30px;
-    padding-left: 10px;
-    padding-bottom: 13px;
-    margin-top: 30px;
-    width: 100%;
-    &::placeholder {
-      font-size: 15px;
-      color: #CBCDD5;
-    }
-    &:focus {
-      border-bottom: 2px solid black;
-    }
-  }
-  .eyeBox {
-    position: absolute;
-    right: 6px;
-    bottom: 10px;
-    cursor: pointer;
-    .fa-eye-slash {
-      position: absolute;
-      right: -1px;
-      bottom: 0px;
     }
   }
 }
+
+// .fa-check {
+//   position: absolute;
+//   right: 7px;
+// }
