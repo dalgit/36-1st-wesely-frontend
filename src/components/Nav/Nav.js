@@ -1,16 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Nav.scss';
 
-const Nav = ({ setCheckSearch }) => {
-  const [hasValue, setHasValue] = useState(false);
-
-  const handleInputChange = e => {
-    setCheckSearch(e.target.value);
-    setHasValue(true);
-  };
-
+const Nav = () => {
   return (
     <header className="mainHeader">
       <div className="headerGroup">
