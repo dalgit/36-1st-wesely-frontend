@@ -1,0 +1,12 @@
+@mixin flexSort($justify, $alignItems) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin flexColumnSort($justify, $alignItems) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $alignItems;
+}

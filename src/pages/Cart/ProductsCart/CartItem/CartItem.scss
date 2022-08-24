@@ -1,0 +1,84 @@
+@import '../../../../styles/variables.scss';
+
+.itemContainer {
+  @include flexSort(flex-end, center);
+  width: 100%;
+  height: 184px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0px 20px 0px;
+
+  .imgCover {
+    @include flexSort(center, center);
+    height: 100%;
+    width: 25%;
+  }
+  .itemImg {
+    width: 80%;
+    height: 80%;
+  }
+
+  .itemBox {
+    @include flexSort(space-between, none);
+    height: 100%;
+    width: 100%;
+    padding: 23px 0px 20px 0px;
+
+    .itemInfo {
+      @include flexColumnSort(space-between, none);
+      .itemName {
+        font-size: 18px;
+      }
+
+      .itemType {
+        color: gray;
+        padding-top: 10px;
+        font-size: 15px;
+      }
+
+      .itemPrice {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .iconBox {
+    @include flexColumnSort(space-between, flex-end);
+    width: 72px;
+
+    .fa-xmark {
+      margin-right: 5px;
+      color: #b2b2b2;
+      cursor: pointer;
+    }
+
+    .quantityBox {
+      @include flexSort(none, center);
+      height: 30px;
+      border: 1px solid #cbcbcb;
+      border-radius: 2px;
+
+      .quantityNum {
+        width: 27px;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .minusBtn {
+        height: 100%;
+        border-right: 1px solid #cbcbcb;
+
+        .fa-minus {
+          color: #b2b2b2;
+        }
+      }
+
+      .plusBtn {
+        height: 100%;
+        border-left: 1px solid #cbcbcb;
+        .fa-plus {
+          color: #b2b2b2;
+        }
+      }
+    }
+  }
+}

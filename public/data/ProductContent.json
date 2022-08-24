@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/200201000/main/ow-booster-porecontrol-main.png",
+    "desc": "탄력/잡티/모공 세럼80mL",
+    "price": "5,900원"
+  },
+  {
+    "id": 1,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/700101000/main/rz-sanitarypad-largemedium-main.png",
+    "desc": "유기농 순면 생리대 중형/대형",
+    "price": "2,300원"
+  },
+  {
+    "id": 2,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/400102000/main/hb-vitamin-main.png",
+    "desc": "활력충전 멀티비타민",
+    "price": "5,800원"
+  },
+  {
+    "id": 3,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/300101000/main/hw-shampoo-hairloss-main.png",
+    "desc": "탈모 케어 카페인 샴푸 500mL",
+    "price": "5,900원"
+  },
+  {
+    "id": 4,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/101050000/main/ws-startset-navy-pro-main.png",
+    "desc": "면도기 스타터세트",
+    "price": "4,900원"
+  },
+  {
+    "id": 5,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/500201000/main/pl-toothpaste-main.png",
+    "desc": "자연유래 성분 치약",
+    "price": "1,900원"
+  },
+  {
+    "id": 6,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/700101000/main/rz-sanitarypad-largemedium-main.png",
+    "desc": "유기농 순면 생리대 중형/대형",
+    "price": "2,300원"
+  },
+  {
+    "id": 7,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/400102000/main/hb-vitamin-main.png",
+    "desc": "활력충전 멀티비타민",
+    "price": "5,800원"
+  },
+  {
+    "id": 8,
+    "imgUrl": "https://wiselystatic.s3.amazonaws.com/THUMBNAIL/prod/assets/images/item/300101000/main/hw-shampoo-hairloss-main.png",
+    "desc": "탈모 케어 샴푸",
+    "price": "5,900원"
+  }
+]
