@@ -1,4 +1,5 @@
 import React from 'react';
+import './PhoneNumber.scss';
 
 const PhoneNumInput = ({
   inputUpdate,
@@ -19,7 +20,7 @@ const PhoneNumInput = ({
   }
 
   return (
-    <div className="signUpInputBox">
+    <div className="phoneNumberInput">
       <div className="inputTitle">휴대폰번호</div>
       <div className="inputSpace">
         <input

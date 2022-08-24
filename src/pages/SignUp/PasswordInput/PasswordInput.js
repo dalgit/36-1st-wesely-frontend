@@ -1,4 +1,6 @@
 import React from 'react';
+import './PasswordInput.scss';
+
 import { useState } from 'react';
 const PasswordInput = ({
   inputUpdate,
@@ -9,7 +11,7 @@ const PasswordInput = ({
   const [viewPassword, setViewPassword] = useState(false);
 
   return (
-    <div className="signUpInputBox">
+    <div className="passwordInput">
       <div className="inputTitle">비밀번호</div>
       <div className="inputSpace">
         <input

@@ -1,4 +1,5 @@
 import React from 'react';
+import './NameInput.scss';
 
 const NameInput = ({
   inputUpdate,
@@ -7,7 +8,7 @@ const NameInput = ({
   validStartUpdate,
 }) => {
   return (
-    <div className="signUpInputBox">
+    <div className="nameInput">
       <div className="inputTitle">이름</div>
       <div className="inputSpace">
         <input

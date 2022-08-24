@@ -1,5 +1,6 @@
 import React from 'react';
 import API from '../../../config';
+import './SignUpButton.scss';
 import { useNavigate } from 'react-router';
 
 const SignUpButton = ({

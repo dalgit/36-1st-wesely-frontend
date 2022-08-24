@@ -1,4 +1,4 @@
-.emailInput {
+.nameInput {
   position: relative;
   margin-bottom: 30px;
 
@@ -7,8 +7,10 @@
     color: #838383;
     margin-bottom: 5px;
   }
+
   .inputSpace {
     position: relative;
+
     .input {
       width: 100%;
       border-bottom: 2px solid #cbcbcb;
@@ -16,13 +18,31 @@
       padding-left: 10px;
       padding-bottom: 13px;
       margin-bottom: 5px;
+
       &::placeholder {
         font-size: 15px;
         color: #cbcdd5;
       }
+
       &:focus {
         border-bottom: 2px solid black;
       }
+
+      &.true {
+        border-bottom: 2px solid #d91d1d;
+        caret-color: #d91d1d;
+      }
+    }
+
+    .plzCheck {
+      font-size: 12px;
+      color: #d91d1d;
+    }
+
+    .fa-check {
+      position: absolute;
+      top: 3px;
+      right: 7px;
     }
   }
 }
