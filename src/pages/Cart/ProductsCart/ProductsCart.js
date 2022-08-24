@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from './CartItem/CartItem';
 import './ProductsCart.scss';
+import { Link } from 'react-router-dom';
 
 const ProductsCart = ({
   products,
@@ -64,7 +65,9 @@ const ProductsCart = ({
         </div>
       </div>
       <div className="cartBtnBox">
-        <button className="keepBtn"> 더 담으러 가기</button>
+        <Link to="/">
+          <button className="keepBtn"> 더 담으러 가기</button>
+        </Link>
         <button className="purchaseBtn"> 구매하기</button>
       </div>
     </>
