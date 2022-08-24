@@ -1,0 +1,62 @@
+.mainHeader {
+  height: 68px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(235, 235, 235);
+
+  .headerGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+
+    .navLeft {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        .logoTitle {
+          margin-right: 80px;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 3px;
+        }
+      }
+
+      .navGroup {
+        .navWrapper {
+          display: flex;
+
+          .navItem {
+            margin-right: 28px;
+            padding: 4px 6px;
+            color: #838383;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .navRight {
+      display: flex;
+      align-items: center;
+
+      .login {
+        padding: 4px 4px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .cart {
+        margin-left: 32px;
+        padding: 4px 4px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+  }
+}
