@@ -1,3 +1,5 @@
+import ProductContent from './ProductContent/ProductContent';
+
 import MainCarousel from './MainCarousel/MainCarousel';
 import MainCategory from './MainCategory/MainCategory';
 
@@ -9,6 +11,7 @@ function Main() {
       <h1>Header</h1>
       <MainCarousel />
       <MainCategory />
+      <ProductContent />
     </div>
   );
 }
