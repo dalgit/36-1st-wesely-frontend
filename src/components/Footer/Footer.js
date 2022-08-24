@@ -1,70 +1,64 @@
 import './Footer.scss';
 
 function Footer() {
+  const { footer } = FOOTER_DATA;
   return (
     <footer className="footerContainer">
-      {FOOTER_DATA.map(list => {
-        return (
-          <div key={list.id} className="footerBox">
-            <div className="footerTop">
-              <div className="footerTopItem">{list.login}</div>
-              <div className="footerTopItem2">{list.serviceCenter}</div>
-              <div className="footerTopItem2">{list.brandStory}</div>
-              <div className="footerTopItem2">{list.blog}</div>
-              <div className="footerTopItem2">{list.employment}</div>
+      <div className="footerBox">
+        <div className="footerTop">
+          <div className="footerTopItem">{footer.login}</div>
+          <div className="footerTopItem2">{footer.serviceCenter}</div>
+          <div className="footerTopItem2">{footer.brandStory}</div>
+          <div className="footerTopItem2">{footer.blog}</div>
+          <div className="footerTopItem2">{footer.employment}</div>
+        </div>
+        <div className="footerMiddle">
+          <div className="companyInfo">
+            <h1>{footer.company}</h1>
+            <div className="companyInfoItem">{footer.address}</div>
+            <div className="companyInfoItem">{footer.businessRegistration}</div>
+            <div className="companyInfoItem">{footer.privacyOfficer}</div>
+            <div className="companyInfoItem">{footer.email}</div>
+            <div className="companyInfoItem">{footer.partnershipInquiry}</div>
+          </div>
+          <div className="contactCompany">
+            <i className={footer.iconClassName} />
+            <div className="contactCompanyChannel">
+              {footer.kakaoTalkChennel}
             </div>
-            <div className="footerMiddle">
-              <div className="companyInfo">
-                <h1>{list.company}</h1>
-                <div className="companyInfoItem">{list.address}</div>
-                <div className="companyInfoItem">
-                  {list.businessRegistration}
-                </div>
-                <div className="companyInfoItem">{list.privacyOfficer}</div>
-                <div className="companyInfoItem">{list.email}</div>
-                <div className="companyInfoItem">{list.partnershipInquiry}</div>
-              </div>
-              <div className="contactCompany">
-                <i className={list.iconClassName} />
-                <div className="contactCompanyChannel">
-                  {list.kakaoTalkChennel}
-                </div>
-                <div className="contactCompanyServiceNumber">
-                  <div>{list.serviceCenterNumber}</div>
-                  <div className="contactCompanyServiceNumberItem">
-                    {list.serviceTime}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="footerBottom">
-              <div className="companyDocument">
-                <div>{list.privacyPolicy}</div>
-                <div className="companyDocumentItem">{list.informationUse}</div>
-                <div className="companyDocumentItem">
-                  {list.checkBusinessInfo}
-                </div>
-                <div className="companyDocumentItem">{list.termsOfService}</div>
-                <div className="companyDocumentItem">{list.naverBlog}</div>
-                <div className="companyDocumentItem">{list.naverPost}</div>
-                <div className="companyDocumentItem">{list.emailRejection}</div>
-              </div>
-              <div>
-                {list.reservedDate} <strong>{list.reservedCompany} </strong>
-                {list.reservedText}
+            <div className="contactCompanyServiceNumber">
+              <div>{footer.serviceCenterNumber}</div>
+              <div className="contactCompanyServiceNumberItem">
+                {footer.serviceTime}
               </div>
             </div>
           </div>
-        );
-      })}
+        </div>
+        <div className="footerBottom">
+          <div className="companyDocument">
+            <div>{footer.privacyPolicy}</div>
+            <div className="companyDocumentItem">{footer.informationUse}</div>
+            <div className="companyDocumentItem">
+              {footer.checkBusinessInfo}
+            </div>
+            <div className="companyDocumentItem">{footer.termsOfService}</div>
+            <div className="companyDocumentItem">{footer.naverBlog}</div>
+            <div className="companyDocumentItem">{footer.naverPost}</div>
+            <div className="companyDocumentItem">{footer.emailRejection}</div>
+          </div>
+          <div>
+            {footer.reservedDate} <strong>{footer.reservedCompany} </strong>
+            {footer.reservedText}
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
 export default Footer;
 
-const FOOTER_DATA = [
-  {
-    id: 1,
+const FOOTER_DATA = {
+  footer: {
     login: '로그인',
     serviceCenter: '고객센터',
     brandStory: '브랜드스토리',
@@ -94,4 +88,4 @@ const FOOTER_DATA = [
     reservedCompany: 'WESELYCOMPANY',
     reservedText: 'All right reserved',
   },
-];
+};
