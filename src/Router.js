@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp/SignUp';
 import Cart from './pages/Cart/Cart';
 import ListPage from './pages/ListPage/ListPage';
 import DetailPage from './pages/DetailPage/DetailPage';
+import Footer from './components/Footer/Footer';
 
 function Router() {
   return (
@@ -19,6 +20,7 @@ function Router() {
         <Route path="/ListPage" element={<ListPage />} />
         <Route path="/DetailPage" element={<DetailPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
