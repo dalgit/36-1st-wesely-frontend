@@ -51,6 +51,7 @@ const SignUp = ({ email }) => {
           <div>처음이시군요</div>
           <span className="fontBold">가입을 진행합니다.</span>
         </div>
+
         <form className="singUpBox">
           <EmailInput email={signUpinput.email} />
           <PasswordInput
