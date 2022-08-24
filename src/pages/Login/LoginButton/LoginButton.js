@@ -14,6 +14,14 @@ const LoginButton = ({
   const navigate = useNavigate();
   const isPasswordInputActive = userId.password.length > 0;
 
+  function emailDelivery() {
+    navigate('/signUp', {
+      state: {
+        email: userId.email,
+      },
+    });
+  }
+
   const emailValidation = e => {
     e.preventDefault();
     fetch(API.email, {
@@ -28,7 +36,7 @@ const LoginButton = ({
         if (validData.message === 'CONNECT_LOGIN') {
           setUserName(nameMasking(validData.name[0].name));
         } else if (validData.message === 'CONNECT_SIGNUP') {
-          navigate('/signUp');
+          navigate(emailDelivery);
         }
       });
   };
