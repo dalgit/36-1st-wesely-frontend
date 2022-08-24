@@ -4,7 +4,6 @@ import { useSearchParams } from 'react-router-dom';
 import ProductCard from './ContentItem/ProductCard';
 import PageBtn from './PageBtn/PageBtn';
 import API from '../../config';
-
 import './ListPage.scss';
 
 function ListPage() {

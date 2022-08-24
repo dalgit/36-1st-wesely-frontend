@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ItemList from './ItemList';
+import API from '../../../config';
 import './BuyModal.scss';
 
 function BuyModal({ setBuyModalToggle, product }) {
@@ -19,7 +20,7 @@ function BuyModal({ setBuyModalToggle, product }) {
   });
 
   const postData = () => {
-    fetch('http://10.58.0.224:3000/product/cartIn', {
+    fetch(`${API}/product/cartIn`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
