@@ -9,7 +9,7 @@ const ProductsCart = ({
   setSubscriptionCycle,
 }) => {
   const totalPrice = products?.reduce(
-    (acc, cur) => acc + Number(cur.price * cur.quantity),
+    (acc, cur) => acc + Number(cur.price * cur.totalQuantity),
     0
   );
 

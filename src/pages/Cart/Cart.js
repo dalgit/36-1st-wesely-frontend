@@ -2,12 +2,13 @@ import React from 'react';
 import './Cart.scss';
 import { useState, useEffect } from 'react';
 import ProductsCart from './ProductsCart/ProductsCart';
+import API from '../../config';
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const [subscriptionCycle, setSubscriptionCycle] = useState('');
   useEffect(() => {
-    fetch('data/cartData.json', {
+    fetch(API.cart, {
       method: 'GET',
     })
       .then(res => res.json())
