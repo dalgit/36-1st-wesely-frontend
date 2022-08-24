@@ -17,13 +17,7 @@ function DetailPage() {
       });
     setIsLoading(prev => false);
   }, [params.id]);
-  /* useEffect(() => {
-    fetch('/data/mockData.json')
-      .then(res => res.json())
-      .then(data => setProduct(data));
-  }, []); */
-  console.log('product : ', product);
-  console.log(isLoading);
+
   return (
     !isLoading && (
       <div>

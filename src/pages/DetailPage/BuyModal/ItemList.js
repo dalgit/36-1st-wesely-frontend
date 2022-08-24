@@ -9,6 +9,7 @@ function ItemList({ selectedItem, deleteItem }) {
     total3: 0,
     total4: 0,
   });
+  console.log('selectedItem', selectedItem);
 
   const deleteCount = id => {
     if (id === 1) {
@@ -28,7 +29,7 @@ function ItemList({ selectedItem, deleteItem }) {
     },
     0
   );
-
+  console.log(totalCount);
   const totalQuantity =
     selectedItem.reduce((previousValue, currentValue) => {
       return previousValue + currentValue.quantity;

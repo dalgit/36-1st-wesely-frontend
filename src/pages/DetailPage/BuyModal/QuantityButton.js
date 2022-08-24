@@ -5,6 +5,7 @@ function QuantityButton({ totalCount, setTotalCount, listId }) {
   const [count, setCount] = useState(1);
 
   const countUp = ({ target }) => {
+    console.log('countUp', target.id);
     setCount(count + 1);
     if (target.id === '1') {
       setTotalCount({ ...totalCount, total1: totalCount.total1 + 1 });
@@ -18,6 +19,7 @@ function QuantityButton({ totalCount, setTotalCount, listId }) {
   };
 
   const countDown = ({ target }) => {
+    console.log('countDown', target.id);
     if (count === 1) return;
     setCount(count - 1);
     if (target.id === '1') {

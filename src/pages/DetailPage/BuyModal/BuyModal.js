@@ -12,6 +12,7 @@ function BuyModal({ setBuyModalToggle, product }) {
         ...selectedItem,
         Object.assign(product.productDetail[Number(target.id)], {
           quantity: 1,
+          /* selectImageId: selectedItem.map(list => list.imageId), */
         }),
       ]);
     }
@@ -28,6 +29,13 @@ function BuyModal({ setBuyModalToggle, product }) {
 
   const closeBuyModal = () => {
     setBuyModalToggle(false);
+  };
+
+  const postData = () => {
+    fetch('http://10.58.0.224:3000/product/detail', {
+      method: 'POST',
+      body: JSON.stringify({}),
+    });
   };
 
   return (
@@ -67,7 +75,9 @@ function BuyModal({ setBuyModalToggle, product }) {
           <section className="itemContainerWrap">
             <ItemList selectedItem={selectedItem} deleteItem={deleteItem} />
             <div className="itemBuy">
-              <button className="cartButton">장바구니</button>
+              <button className="cartButton" onClick={postData}>
+                장바구니
+              </button>
               <button className="buyButton">일반구매</button>
             </div>
           </section>
