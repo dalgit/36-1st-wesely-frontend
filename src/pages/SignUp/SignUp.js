@@ -52,7 +52,7 @@ const SignUp = ({ email }) => {
           <span className="fontBold">가입을 진행합니다.</span>
         </div>
         <form className="singUpBox">
-          <EmailInput />
+          <EmailInput email={signUpinput.email} />
           <PasswordInput
             inputUpdate={inputUpdate}
             signUpinput={signUpinput}

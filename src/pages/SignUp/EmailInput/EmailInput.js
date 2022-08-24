@@ -1,7 +1,9 @@
 import React from 'react';
+import './EmailInput.scss';
+
 import { useNavigate } from 'react-router-dom';
 
-const EmailInput = () => {
+const EmailInput = email => {
   const navigate = useNavigate();
   return (
     <div className="signUpInputBox">
