@@ -1,5 +1,21 @@
+import Nav from '../../components/Nav/Nav';
+import ProductContent from './ProductContent/ProductContent';
+import MainCarousel from './MainCarousel/MainCarousel';
+import MainCategory from './MainCategory/MainCategory';
+import Footer from '../../components/Footer/Footer';
+
+import './Main.scss';
+
 function Main() {
-  return <h1>Main입니다.</h1>;
+  return (
+    <div className="Main">
+      <Nav />
+      <MainCarousel />
+      <MainCategory />
+      <ProductContent />
+      <Footer />
+    </div>
+  );
 }
 
 export default Main;
