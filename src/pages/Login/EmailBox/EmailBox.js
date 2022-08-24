@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import './EmailBox.scss';
 
 const EmailBox = ({
+  idUpdate,
   userId,
   setUserId,
   setIsEmailValidPass,
@@ -23,22 +24,22 @@ const EmailBox = ({
       : setIsBasicValidPass(false);
   }, [basciValidation, setIsBasicValidPass]);
 
+  function validReset() {
+    setIsEmailValidPass(false);
+    setUserId({ ...userId, password: '' });
+    setUserName('');
+  }
+
   return (
     <div className="emailBox">
       <div className="emailInput">
         <input
-          onChange={e => {
-            setUserId({ ...userId, [e.target.name]: e.target.value });
-          }}
+          onChange={idUpdate}
           type="text"
           placeholder="이메일"
           name="email"
           className={`email ${!isBasicValidPass}`}
-          onClick={() => {
-            setIsEmailValidPass(false);
-            setUserId({ ...userId, password: '' });
-            setUserName('');
-          }}
+          onClick={validReset}
           autoFocus
         />
         {isBasicValidPass ? <i className="fa-solid fa-check" /> : null}

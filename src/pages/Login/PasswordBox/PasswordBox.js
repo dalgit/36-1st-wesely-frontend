@@ -2,19 +2,15 @@ import React from 'react';
 import { useState } from 'react';
 import './PasswordBox.scss';
 
-const PasswordBox = ({ userId, setUserId, wrongPassword }) => {
+const PasswordBox = ({ idUpdate, wrongPassword }) => {
   const [viewPassword, setViewPassword] = useState(false);
 
   return (
     <div className="passwordBox">
       <div className="passwordInput">
         <input
-          onChange={e => {
-            setUserId({
-              ...userId,
-              [e.target.className]: e.target.value,
-            });
-          }}
+          onChange={idUpdate}
+          name="password"
           type={viewPassword ? 'text' : 'password'}
           placeholder="비밀번호 (6자 이상)"
           className="password"

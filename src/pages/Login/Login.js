@@ -15,12 +15,17 @@ function Login() {
     password: '',
   });
 
+  function idUpdate(e) {
+    setUserId({ ...userId, [e.target.name]: e.target.value });
+  }
+
   return (
     <div className="login">
       <div className="loginContainer">
         <LoginTitle userName={userName} />
         <form className="loginBox">
           <EmailBox
+            idUpdate={idUpdate}
             userId={userId}
             setUserId={setUserId}
             setUserName={setUserName}
@@ -30,11 +35,7 @@ function Login() {
           />
 
           {isEmailValidPass && (
-            <PasswordBox
-              userId={userId}
-              setUserId={setUserId}
-              wrongPassword={wrongPassword}
-            />
+            <PasswordBox idUpdate={idUpdate} wrongPassword={wrongPassword} />
           )}
 
           <LoginButton
