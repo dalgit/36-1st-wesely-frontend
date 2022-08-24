@@ -1,9 +1,12 @@
 import './SignUp.scss';
+import NameInput from './NameInput/NameInput';
+import PasswordInput from './PasswordInput/PasswordInput';
+import PhoneNumInput from './PhoneNumInput/PhoneNumInput';
+import SignUpButton from './SignUpButton/SignUpButton';
+import EmailInput from './EmailInput/EmailInput';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import InputForm from './InputForm/InputForm';
+
 const SignUp = () => {
-  const navigate = useNavigate();
   const [signUpinput, setSignUpinput] = useState({
     password: '',
     phoneNumber: '',
@@ -16,54 +19,28 @@ const SignUp = () => {
     name: false,
   });
 
-  function nameVaild() {
-    if (validStartList.name === true) {
-      return signUpinput.name === ''
-        ? '이름은 필수 입력 창입니다.'
-        : !NAME_REG.test(signUpinput.name)
-        ? '이름을 올바르게 입력해주세요.'
+  function inputVaildMsg(type, validReg, emptyMsg, errorMsg) {
+    if (validStartList[type] === true) {
+      return signUpinput[type] === ''
+        ? emptyMsg
+        : !validReg.test(signUpinput[type])
+        ? errorMsg
         : '';
     }
   }
 
-  const a = e => {
+  const inputUpdate = e => {
     setSignUpinput({
       ...signUpinput,
-      [e.target.name]: e.target.value.replace(/\-/g, ''),
+      [e.target.name]: e.target.value,
     });
   };
 
-  function hyphenNumber(number) {
-    number = number.replace(/\-/g, '');
-    if (number.length >= 8) {
-      return (
-        number.slice(0, 3) + '-' + number.slice(3, 7) + '-' + number.slice(7)
-      );
-    } else if (number.length >= 4) {
-      return number.slice(0, 3) + '-' + number.slice(3);
-    }
-    return number;
-  }
-
-  const valid = e => {
-    e.preventDefault();
-    fetch('./data/loginData.json', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: signUpinput.email,
-        password: signUpinput.password,
-        name: signUpinput.name,
-      }),
-    })
-      .then(response => response.json())
-      .then(validData => {
-        if (validData.message === 'success') {
-          navigate('/main');
-        } else if (validData.message === 'invalid') {
-          alert('필수 입력창을 확인해주세요');
-        }
-      });
+  const validStartUpdate = e => {
+    setValidStartList({
+      ...validStartList,
+      [e.target.name]: true,
+    });
   };
 
   return (
@@ -74,57 +51,32 @@ const SignUp = () => {
           <span className="fontBold">가입을 진행합니다.</span>
         </div>
         <form className="singUpBox">
-          <div className="signUpInputBox">
-            <div className="inputTitle">아이디</div>
-            <div className="inputSpace">
-              <div className="input">hahahoho33@navvar.com</div>
-            </div>
-          </div>
-          <InputForm
-            inputType="password"
+          <EmailInput />
+          <PasswordInput
+            inputUpdate={inputUpdate}
             signUpinput={signUpinput}
-            setSignUpinput={setSignUpinput}
             validStartList={validStartList}
             setValidStartList={setValidStartList}
+            inputVaildMsg={inputVaildMsg}
+            validStartUpdate={validStartUpdate}
           />
-          <InputForm
-            inputType="phoneNumber"
+          <PhoneNumInput
+            inputUpdate={inputUpdate}
             signUpinput={signUpinput}
-            setSignUpinput={setSignUpinput}
             validStartList={validStartList}
             setValidStartList={setValidStartList}
+            inputVaildMsg={inputVaildMsg}
+            validStartUpdate={validStartUpdate}
           />
-          <div className="signUpInputBox">
-            <div className="inputTitle">이름</div>
-            <div className="inputSpace">
-              <input
-                type="text"
-                placeholder="이름"
-                name="name"
-                className="input"
-                maxLength="20"
-                onChange={e => {
-                  setSignUpinput({
-                    ...signUpinput,
-                    [e.target.name]: e.target.value,
-                  });
-                }}
-                onBlur={e => {
-                  setValidStartList({
-                    ...validStartList,
-                    [e.target.name]: true,
-                  });
-                }}
-              />
-              <div className="plzCheck">{nameVaild()}</div>
-              {NAME_REG.test(signUpinput.name) && (
-                <i className="fa-solid fa-check" />
-              )}
-            </div>
-          </div>
-          <button className="loginBtn" onClick={valid}>
-            가입완료
-          </button>
+          <NameInput
+            inputUpdate={inputUpdate}
+            signUpinput={signUpinput}
+            validStartList={validStartList}
+            setValidStartList={setValidStartList}
+            inputVaildMsg={inputVaildMsg}
+            validStartUpdate={validStartUpdate}
+          />
+          <SignUpButton {...signUpinput} />
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>
       </div>
@@ -132,5 +84,3 @@ const SignUp = () => {
   );
 };
 export default SignUp;
-
-const NAME_REG = /^[가-힣]{2,4}$/;
