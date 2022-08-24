@@ -7,6 +7,8 @@ import EmailInput from './EmailInput/EmailInput';
 import { useState } from 'react';
 
 const SignUp = ({ email }) => {
+  const validManagement = { password: false, phoneNumber: false, name: false };
+
   const [signUpinput, setSignUpinput] = useState({
     email: email,
     password: '',
@@ -26,7 +28,7 @@ const SignUp = ({ email }) => {
         ? emptyMsg
         : !validReg.test(signUpinput[type])
         ? errorMsg
-        : '';
+        : (validManagement[type] = true);
     }
   }
 
@@ -78,7 +80,7 @@ const SignUp = ({ email }) => {
             inputVaildMsg={inputVaildMsg}
             validStartUpdate={validStartUpdate}
           />
-          <SignUpButton {...signUpinput} />
+          <SignUpButton {...signUpinput} validManagement={validManagement} />
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>
       </div>

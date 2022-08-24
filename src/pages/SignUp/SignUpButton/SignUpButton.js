@@ -2,8 +2,17 @@ import React from 'react';
 import API from '../../../config';
 import { useNavigate } from 'react-router';
 
-const SignUpButton = ({ email, password, name, phoneNumber }) => {
+const SignUpButton = ({
+  email,
+  password,
+  name,
+  phoneNumber,
+  validManagement,
+}) => {
   const navigate = useNavigate();
+  const isValidAllPass = Object.values(validManagement).every(
+    boolean => boolean === true
+  );
 
   const signUpValid = e => {
     e.preventDefault();
@@ -26,7 +35,11 @@ const SignUpButton = ({ email, password, name, phoneNumber }) => {
   };
 
   return (
-    <button className="loginBtn" onClick={signUpValid}>
+    <button
+      className={`loginBtn ${isValidAllPass}`}
+      disabled={!isValidAllPass}
+      onClick={signUpValid}
+    >
       가입완료
     </button>
   );
