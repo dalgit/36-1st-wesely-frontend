@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+
 import './MainCategory.scss';
+
 const MainCategory = () => {
   return (
     <section className="MainCategory">
@@ -22,41 +24,41 @@ const categoryData = [
   {
     id: 0,
     categoryName: '전체',
-    connectURL: '#',
+    connectURL: '/product/home',
   },
   {
     id: 1,
     categoryName: '면도용품',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=1',
   },
   {
     id: 2,
     categoryName: '스킨케어',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=2',
   },
   {
     id: 3,
     categoryName: '두피케어',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=3',
   },
   {
     id: 4,
     categoryName: '영양제',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=4',
   },
   {
     id: 5,
     categoryName: '덴탈케어',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=5',
   },
   {
     id: 6,
     categoryName: '바디케어',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=6',
   },
   {
     id: 7,
     categoryName: '생리대',
-    connectURL: '#',
+    connectURL: '/product/home?offset=0&limit=6&category=7',
   },
 ];

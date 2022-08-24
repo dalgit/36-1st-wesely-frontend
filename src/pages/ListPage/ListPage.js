@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import './ListPage.scss';
-import ProductCard from './ContentItem/ProductCard';
 import { useSearchParams } from 'react-router-dom';
-import PageBtn from './PageBtn/PageBtn';
 
+import ProductCard from './ContentItem/ProductCard';
+import PageBtn from './PageBtn/PageBtn';
 import API from '../../config';
+
+import './ListPage.scss';
 
 function ListPage() {
   const [productData, setProductData] = useState([]);
