@@ -15,7 +15,7 @@ const LoginButton = ({
 
   const emailValidation = e => {
     e.preventDefault();
-    fetch('http://10.58.0.32:3000/users/login', {
+    fetch('http://10.58.7.170:3000/users/check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -23,16 +23,18 @@ const LoginButton = ({
       }),
     })
       .then(response => response.json())
-      .then(validData =>
-        validData.name.length > 0
-          ? setUserName(nameMasking(validData.name))
-          : navigate('/signUp')
-      );
+      .then(validData => {
+        if (validData.message === 'CONNECT_LOGIN') {
+          setUserName(nameMasking(validData.name[0].name));
+        } else if (validData.message === 'CONNECT_SIGNUP') {
+          navigate('/signUp');
+        }
+      });
   };
 
   const passwordlValidation = e => {
     e.preventDefault();
-    fetch('http://10.58.0.32:3000/users/login', {
+    fetch('http://10.58.7.170:3000/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -42,10 +44,10 @@ const LoginButton = ({
     })
       .then(res => res.json())
       .then(validData => {
-        if (validData.message === 'success') {
+        if (validData.message === 'SUCCESS_LOGIN') {
           localStorage.setItem('token', validData.token);
           navigate('/main');
-        } else {
+        } else if (validData.message === 'UNABLE_LOGIN') {
           setWrongPassword(true);
         }
       });
