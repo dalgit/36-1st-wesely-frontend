@@ -22,15 +22,15 @@ function DetailPage() {
       .then(res => res.json())
       .then(data => setProduct(data));
   }, []); */
-  console.log('product : ', product);
-  console.log(isLoading);
+  /* console.log('product : ', product);
+  console.log(isLoading); */
   return (
     !isLoading && (
       <div>
         <h1>header</h1>
         <OverView product={product} />
         <OpenDetailView product={product} />
-        <Review />
+        <Review product={product} />
       </div>
     )
   );

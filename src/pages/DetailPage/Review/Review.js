@@ -1,7 +1,10 @@
-import ReviewList from './ReviewList';
+import ReviewList from './ReviewList/ReviewList';
 import './Review.scss';
 
-function Review() {
+function Review({ product }) {
+  const displayRating =
+    Math.floor(product?.optionData?.map(list => list.avgRating) * 10) / 10;
+
   return (
     <div className="reviewContainer">
       <div className="reviewHeader">
@@ -15,12 +18,12 @@ function Review() {
         <div className="reviewStarAverage">
           <div className="reviewStarAverageColor">
             <h1>
-              <strong>4.6</strong>/5
+              <strong>{displayRating}</strong>/5
             </h1>
             <p>★★★★☆</p>
           </div>
           <span>
-            <strong>172개</strong>의 후기
+            <strong>{`${product?.reviewsData?.length}개`}</strong>의 후기
           </span>
         </div>
         <div className="reviewBarAverage">
@@ -31,11 +34,9 @@ function Review() {
           <input type="range" />
         </div>
       </div>
-      <ReviewList />
-      <ReviewList />
-      <ReviewList />
-      <ReviewList />
-      <ReviewList />
+      {product?.reviewsData?.map((list, idx) => {
+        return <ReviewList key={idx} list={list} />;
+      })}
     </div>
   );
 }
