@@ -5,16 +5,80 @@ import './BuyModal.scss';
 function BuyModal({ setBuyModalToggle, product }) {
   const [arrowToggle, setArrowToggle] = useState(true);
   const [selectedItem, setSelectedItem] = useState([]);
+  const [totalCount, setTotalCount] = useState({
+    total1: 0,
+    total2: 0,
+    total3: 0,
+    total4: 0,
+  });
+  const [imageId, setImageId] = useState({
+    imageId1: 0,
+    imageId2: 0,
+    imageId3: 0,
+    imageId4: 0,
+  });
+  console.log('imageId', imageId);
+  console.log('totalCount', totalCount);
+  const postData = () => {
+    fetch('http://10.58.0.224:3000/product/cartIn', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        imageId1: imageId.imageId1,
+        quantity1: totalCount.total1,
+        imageId2: imageId.imageId2,
+        quantity2: totalCount.total2,
+        imageId3: imageId.imageId3,
+        quantity3: totalCount.total3,
+        imageId4: imageId.imageId4,
+        quantity4: totalCount.total4,
+      }),
+    }).then(res => console.log(res));
+  };
+  /* const [selectedItem1, selectedItem2, selectedItem3, selectedItem4] =
+    selectedItem;
 
+  console.log(
+    selectedItem1?.imageId,
+    selectedItem2?.imageId,
+    selectedItem3?.imageId,
+    selectedItem4?.imageId
+  ); */
+  /* console.log(
+    'filter',
+    product.productDetail.filter(list => list.imageId === 2)
+  );
+  console.log('product', product);
+  console.log('selectedItem', selectedItem);
+  console.log('imageId', imageId);
+  console.log('totalCount', totalCount); */
   const selectItem = ({ target }) => {
-    if (!selectedItem.includes(product.productDetail[Number(target.id)])) {
+    const selectObj = product.productDetail[Number(target.id)];
+    console.log('함수안에', selectObj.imageId);
+    if (!selectedItem.includes(selectObj)) {
       setSelectedItem([
         ...selectedItem,
-        Object.assign(product.productDetail[Number(target.id)], {
+        Object.assign(selectObj, {
           quantity: 1,
-          /* selectImageId: selectedItem.map(list => list.imageId), */
+          image: selectObj.imageId,
         }),
       ]);
+    }
+
+    if (selectObj.imageId === 1) {
+      setImageId({ ...imageId, imageId1: selectObj.imageId });
+      setTotalCount({ ...totalCount, total1: /* totalCount.total1 + */ 1 });
+    } else if (selectObj.imageId === 2) {
+      setImageId({ ...imageId, imageId2: selectObj.imageId });
+      setTotalCount({ ...totalCount, total2: /* totalCount.total2 +  */ 1 });
+    } else if (selectObj.imageId === 3) {
+      setImageId({ ...imageId, imageId3: selectObj.imageId });
+      setTotalCount({ ...totalCount, total3: /* totalCount.total3 +  */ 1 });
+    } else if (selectObj.imageId === 4) {
+      setImageId({ ...imageId, imageId4: selectObj.imageId });
+      setTotalCount({ ...totalCount, total4: /* totalCount.total4 +  */ 1 });
     }
   };
 
@@ -30,14 +94,6 @@ function BuyModal({ setBuyModalToggle, product }) {
   const closeBuyModal = () => {
     setBuyModalToggle(false);
   };
-
-  const postData = () => {
-    fetch('http://10.58.0.224:3000/product/detail', {
-      method: 'POST',
-      body: JSON.stringify({}),
-    });
-  };
-
   return (
     <div className="buyModalBox">
       <div className="toast">
@@ -73,7 +129,14 @@ function BuyModal({ setBuyModalToggle, product }) {
             </div>
           </section>
           <section className="itemContainerWrap">
-            <ItemList selectedItem={selectedItem} deleteItem={deleteItem} />
+            <ItemList
+              setImageId={setImageId}
+              imageId={imageId}
+              selectedItem={selectedItem}
+              deleteItem={deleteItem}
+              totalCount={totalCount}
+              setTotalCount={setTotalCount}
+            />
             <div className="itemBuy">
               <button className="cartButton" onClick={postData}>
                 장바구니

@@ -1,25 +1,28 @@
-import { useState } from 'react';
 import QuantityButton from './QuantityButton';
 import './ItemList.scss';
 
-function ItemList({ selectedItem, deleteItem }) {
-  const [totalCount, setTotalCount] = useState({
-    total1: 0,
-    total2: 0,
-    total3: 0,
-    total4: 0,
-  });
-  console.log('selectedItem', selectedItem);
-
+function ItemList({
+  selectedItem,
+  deleteItem,
+  totalCount,
+  setTotalCount,
+  imageId,
+  setImageId,
+}) {
+  console.log(selectedItem);
   const deleteCount = id => {
     if (id === 1) {
-      return setTotalCount({ ...totalCount, total1: 0 });
+      /* return */ setTotalCount({ ...totalCount, total1: 0 });
+      setImageId({ ...imageId, imageId1: 0 /* selectObj.imageId */ });
     } else if (id === 2) {
-      return setTotalCount({ ...totalCount, total2: 0 });
+      /* return */ setTotalCount({ ...totalCount, total2: 0 });
+      setImageId({ ...imageId, imageId2: 0 /* selectObj.imageId */ });
     } else if (id === 3) {
-      return setTotalCount({ ...totalCount, total3: 0 });
+      /* return */ setTotalCount({ ...totalCount, total3: 0 });
+      setImageId({ ...imageId, imageId3: 0 /* selectObj.imageId */ });
     } else if (id === 4) {
-      return setTotalCount({ ...totalCount, total4: 0 });
+      /* return */ setTotalCount({ ...totalCount, total4: 0 });
+      setImageId({ ...imageId, imageId4: 0 /* selectObj.imageId */ });
     }
   };
 
@@ -29,16 +32,16 @@ function ItemList({ selectedItem, deleteItem }) {
     },
     0
   );
-  console.log(totalCount);
-  const totalQuantity =
+
+  /* const totalQuantity =
     selectedItem.reduce((previousValue, currentValue) => {
       return previousValue + currentValue.quantity;
-    }, 0) + total;
+    }, 0) + total; */
 
   const totalPrice =
     selectedItem.reduce((previousValue, currentValue) => {
       return currentValue.price;
-    }, 0) * totalQuantity;
+    }, 0) * total;
 
   return (
     <div className="itemContentBox">
@@ -68,6 +71,8 @@ function ItemList({ selectedItem, deleteItem }) {
                   <span className="price">{list.price}</span>
                   <div className="count">
                     <QuantityButton
+                      imageId={imageId}
+                      setImageId={setImageId}
                       totalCount={totalCount}
                       setTotalCount={setTotalCount}
                       listId={list.imageId}
@@ -81,7 +86,7 @@ function ItemList({ selectedItem, deleteItem }) {
       })}
       <div className="itemTotal">
         <span>
-          총 수량 <strong>{totalQuantity}</strong>개
+          총 수량 <strong>{total}</strong>개
         </span>
         <span>{totalPrice}원</span>
       </div>
