@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-const SignUpButton = ({ email, password, name }) => {
+const SignUpButton = ({ email, password, name, phoneNumber }) => {
   const navigate = useNavigate();
 
   const signUpValid = e => {
@@ -13,6 +13,7 @@ const SignUpButton = ({ email, password, name }) => {
         email: email,
         password: password,
         name: name,
+        phoneNumber: phoneNumber.replace(/\-/g, ''),
       }),
     })
       .then(response => response.json())

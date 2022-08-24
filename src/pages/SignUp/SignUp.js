@@ -6,8 +6,9 @@ import SignUpButton from './SignUpButton/SignUpButton';
 import EmailInput from './EmailInput/EmailInput';
 import { useState } from 'react';
 
-const SignUp = () => {
+const SignUp = ({ email }) => {
   const [signUpinput, setSignUpinput] = useState({
+    email: email,
     password: '',
     phoneNumber: '',
     name: '',
