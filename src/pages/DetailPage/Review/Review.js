@@ -1,9 +1,12 @@
 import ReviewList from './ReviewList/ReviewList';
+import ReviewRange from './ReviewRange/ReviewRange';
 import './Review.scss';
 
 function Review({ product }) {
   const displayRating =
     Math.floor(product?.optionData?.map(list => list.avgRating) * 10) / 10;
+
+  const totalReview = product?.reviewsData?.length;
 
   return (
     <div className="reviewContainer">
@@ -23,15 +26,19 @@ function Review({ product }) {
             <p>★★★★☆</p>
           </div>
           <span>
-            <strong>{`${product?.reviewsData?.length}개`}</strong>의 후기
+            <strong>{`${totalReview}개`}</strong>의 후기
           </span>
         </div>
         <div className="reviewBarAverage">
-          <input type="range" />
-          <input type="range" />
-          <input type="range" />
-          <input type="range" />
-          <input type="range" />
+          {product?.reviewsDistribution?.map(list => {
+            return (
+              <ReviewRange
+                key={list.rating}
+                list={list}
+                totalReview={totalReview}
+              />
+            );
+          })}
         </div>
       </div>
       {product?.reviewsData?.map((list, idx) => {
