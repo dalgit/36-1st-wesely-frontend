@@ -1,5 +1,6 @@
+import UnderBar from './UnderBar/UnderBar';
 function DetailPage() {
-  return <h1>DetailPage입니다.</h1>;
+  return <UnderBar />;
 }
 
 export default DetailPage;
