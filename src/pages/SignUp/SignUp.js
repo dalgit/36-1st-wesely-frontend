@@ -5,9 +5,11 @@ import PhoneNumInput from './PhoneNumInput/PhoneNumInput';
 import SignUpButton from './SignUpButton/SignUpButton';
 import EmailInput from './EmailInput/EmailInput';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const SignUp = ({ email }) => {
-  const validManagement = { password: false, phoneNumber: false, name: false };
+const SignUp = () => {
+  const location = useLocation();
+  const { email } = location.state;
 
   const [signUpinput, setSignUpinput] = useState({
     email: email,
@@ -31,6 +33,8 @@ const SignUp = ({ email }) => {
         : (validManagement[type] = true);
     }
   }
+
+  const validManagement = { password: false, phoneNumber: false, name: false };
 
   const inputUpdate = e => {
     setSignUpinput({
