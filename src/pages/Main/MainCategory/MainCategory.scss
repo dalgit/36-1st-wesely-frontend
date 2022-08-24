@@ -1,12 +1,12 @@
 .MainCategory {
-  max-width: 1300px;
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 70px 16px;
 
   .categoryWrapper {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 50px 0;
 
     .categoryName {
       display: flex;
@@ -14,7 +14,7 @@
       align-items: center;
       width: 164px;
       padding: 12px 16px;
-      margin: 4px 16px;
+      margin: 10px 16px;
       border: 1px solid #f0f0f0;
       border-radius: 2px;
 

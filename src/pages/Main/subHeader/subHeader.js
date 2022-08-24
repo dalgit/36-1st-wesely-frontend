@@ -1,24 +1,21 @@
+import './subHeader.scss';
 import { Link } from 'react-router-dom';
 
-import './MainCategory.scss';
-
-const MainCategory = () => {
+const SubHeader = () => {
   return (
-    <section className="MainCategory">
-      <nav>
-        <ul className="categoryWrapper">
-          {categoryData.map(category => (
-            <li key={category.id} className="categoryName">
-              <Link to={category.connectURL}>{category.categoryName}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </section>
+    <header className="subHeader">
+      <ul className="categoryWrapper">
+        {categoryData.map(category => (
+          <li key={category.id} className="categoryName">
+            <Link to={category.connectURL}>{category.categoryName}</Link>
+          </li>
+        ))}
+      </ul>
+    </header>
   );
 };
 
-export default MainCategory;
+export default SubHeader;
 
 const categoryData = [
   {
