@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginButton.scss';
+import API from '../../../config';
 
 const LoginButton = ({
   userId,
@@ -15,7 +16,7 @@ const LoginButton = ({
 
   const emailValidation = e => {
     e.preventDefault();
-    fetch('http://10.58.7.170:3000/users/check', {
+    fetch(API.email, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -34,7 +35,7 @@ const LoginButton = ({
 
   const passwordlValidation = e => {
     e.preventDefault();
-    fetch('http://10.58.7.170:3000/users/login', {
+    fetch(API.password, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
