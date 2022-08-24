@@ -17,8 +17,7 @@ function BuyModal({ setBuyModalToggle, product }) {
     imageId3: 0,
     imageId4: 0,
   });
-  console.log('imageId', imageId);
-  console.log('totalCount', totalCount);
+
   const postData = () => {
     fetch('http://10.58.0.224:3000/product/cartIn', {
       method: 'POST',
@@ -35,28 +34,12 @@ function BuyModal({ setBuyModalToggle, product }) {
         imageId4: imageId.imageId4,
         quantity4: totalCount.total4,
       }),
-    }).then(res => console.log(res));
+    });
   };
-  /* const [selectedItem1, selectedItem2, selectedItem3, selectedItem4] =
-    selectedItem;
 
-  console.log(
-    selectedItem1?.imageId,
-    selectedItem2?.imageId,
-    selectedItem3?.imageId,
-    selectedItem4?.imageId
-  ); */
-  /* console.log(
-    'filter',
-    product.productDetail.filter(list => list.imageId === 2)
-  );
-  console.log('product', product);
-  console.log('selectedItem', selectedItem);
-  console.log('imageId', imageId);
-  console.log('totalCount', totalCount); */
   const selectItem = ({ target }) => {
     const selectObj = product.productDetail[Number(target.id)];
-    console.log('함수안에', selectObj.imageId);
+
     if (!selectedItem.includes(selectObj)) {
       setSelectedItem([
         ...selectedItem,

@@ -9,20 +9,19 @@ function ItemList({
   imageId,
   setImageId,
 }) {
-  console.log(selectedItem);
   const deleteCount = id => {
     if (id === 1) {
-      /* return */ setTotalCount({ ...totalCount, total1: 0 });
-      setImageId({ ...imageId, imageId1: 0 /* selectObj.imageId */ });
+      setTotalCount({ ...totalCount, total1: 0 });
+      setImageId({ ...imageId, imageId1: 0 });
     } else if (id === 2) {
-      /* return */ setTotalCount({ ...totalCount, total2: 0 });
-      setImageId({ ...imageId, imageId2: 0 /* selectObj.imageId */ });
+      setTotalCount({ ...totalCount, total2: 0 });
+      setImageId({ ...imageId, imageId2: 0 });
     } else if (id === 3) {
-      /* return */ setTotalCount({ ...totalCount, total3: 0 });
-      setImageId({ ...imageId, imageId3: 0 /* selectObj.imageId */ });
+      setTotalCount({ ...totalCount, total3: 0 });
+      setImageId({ ...imageId, imageId3: 0 });
     } else if (id === 4) {
-      /* return */ setTotalCount({ ...totalCount, total4: 0 });
-      setImageId({ ...imageId, imageId4: 0 /* selectObj.imageId */ });
+      setTotalCount({ ...totalCount, total4: 0 });
+      setImageId({ ...imageId, imageId4: 0 });
     }
   };
 
@@ -32,12 +31,6 @@ function ItemList({
     },
     0
   );
-
-  /* const totalQuantity =
-    selectedItem.reduce((previousValue, currentValue) => {
-      return previousValue + currentValue.quantity;
-    }, 0) + total; */
-
   const totalPrice =
     selectedItem.reduce((previousValue, currentValue) => {
       return currentValue.price;
