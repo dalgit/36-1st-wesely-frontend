@@ -10,7 +10,7 @@ function DropDown() {
   return (
     <>
       <div className="dropDownBox" onClick={dropDownToggleChange}>
-        <div>주문 빛 배송 안내</div>
+        <div>주문 및 배송 안내</div>
         <button>˅</button>
       </div>
       {dropDown && (

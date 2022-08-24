@@ -5,31 +5,34 @@ import Review from './Review/Review';
 import { useParams } from 'react-router-dom';
 function DetailPage() {
   const params = useParams();
-  const [product, setProduct] = useState([]);
-  console.log('product', product);
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    fetch(`http://10.58.0.224:3000/product/detail/${params.id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    setIsLoading(prev => true);
+    fetch(`http://10.58.0.224:3000/product/detail/${params.id}`)
       .then(res => res.json())
-      .then(data => setProduct(data));
+      .then(data => {
+        setProduct(data);
+      });
+    setIsLoading(prev => false);
   }, [params.id]);
   /* useEffect(() => {
     fetch('/data/mockData.json')
       .then(res => res.json())
       .then(data => setProduct(data));
   }, []); */
-
+  console.log('product : ', product);
+  console.log(isLoading);
   return (
-    <div>
-      <h1>header</h1>
-      <OverView product={product} />
-      <OpenDetailView product={product} />
-      <Review />
-    </div>
+    !isLoading && (
+      <div>
+        <h1>header</h1>
+        <OverView product={product} />
+        <OpenDetailView product={product} />
+        <Review />
+      </div>
+    )
   );
 }
 

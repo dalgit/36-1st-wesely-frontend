@@ -1,3 +1,4 @@
+import ReviewList from './ReviewList';
 import './Review.scss';
 
 function Review() {
@@ -12,18 +13,29 @@ function Review() {
       </div>
       <div className="reviewAverage">
         <div className="reviewStarAverage">
-          <h1>
-            <strong>4.6</strong>/5
-          </h1>
-          <p>★★★★☆</p>
+          <div className="reviewStarAverageColor">
+            <h1>
+              <strong>4.6</strong>/5
+            </h1>
+            <p>★★★★☆</p>
+          </div>
           <span>
             <strong>172개</strong>의 후기
           </span>
         </div>
         <div className="reviewBarAverage">
-          <input type="range" value={50} />
+          <input type="range" />
+          <input type="range" />
+          <input type="range" />
+          <input type="range" />
+          <input type="range" />
         </div>
       </div>
+      <ReviewList />
+      <ReviewList />
+      <ReviewList />
+      <ReviewList />
+      <ReviewList />
     </div>
   );
 }

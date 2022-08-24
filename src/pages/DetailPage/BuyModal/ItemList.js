@@ -43,24 +43,24 @@ function ItemList({ selectedItem, deleteItem }) {
     <div className="itemContentBox">
       {selectedItem.map(list => {
         return (
-          <div key={list.id} className="itemMain">
+          <div key={list.imageId} className="itemMain">
             <h1 className="itemImage">
-              <img src={list.image} alt="" />
+              <img src={list.optionImg} alt="" />
             </h1>
             <div className="itemInfoWrap">
               <div>
                 <div className="titleWrap">
-                  <h3>{list.title}</h3>
+                  <h3>{list.productName}</h3>
                   <button
                     onClick={() => {
-                      deleteItem(list.id);
-                      deleteCount(list.id);
+                      deleteItem(list.imageId);
+                      deleteCount(list.imageId);
                     }}
                   >
                     ×
                   </button>
                 </div>
-                <p>{list.subTitle}</p>
+                <p>{list.description}</p>
               </div>
               <div>
                 <div className="itemCount">
@@ -69,7 +69,7 @@ function ItemList({ selectedItem, deleteItem }) {
                     <QuantityButton
                       totalCount={totalCount}
                       setTotalCount={setTotalCount}
-                      listId={list.id}
+                      listId={list.imageId}
                     />
                   </div>
                 </div>

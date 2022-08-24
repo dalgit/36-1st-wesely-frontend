@@ -4,24 +4,22 @@ import './OverView.scss';
 
 function OverView({ product }) {
   const [buyModalToggle, setBuyModalToggle] = useState(false);
-  console.log(product);
-  const optionArray = product[0]?.options.slice('');
-  console.log(optionArray);
 
-  const displayRating = Math.floor(product[2]?.avgRating * 10) / 10;
-
+  const displayRating =
+    Math.floor(product?.keyValue?.map(list => list.avgRating) * 10) / 10;
+  /* {product.keyValue.thumbImg} */
   return (
     <>
       <div className="overView">
         <div className="overViewContainer">
           <h1 className="productImage">
-            <img src={product[0]?.thumbImg} alt="" />
+            <img src={product?.keyValue?.map(list => list.thumbImg)} alt="" />
           </h1>
           <div className="productInfoWrap">
             <div className="productInfo">
               <h2>해비추얼</h2>
-              <h3>{product[0]?.productName}</h3>
-              <p>{product[0]?.description}</p>
+              <h3>{product?.keyValue?.map(list => list.productName)}</h3>
+              <p>{product?.keyValue?.map(list => list.description)}</p>
             </div>
             <div className="productMain">
               <div className="productLike">
@@ -31,11 +29,17 @@ function OverView({ product }) {
                     {Number(displayRating).toLocaleString()}
                   </p>
                   <span>
-                    ({Number(product[0]?.countRating).toLocaleString()})
+                    (
+                    {Number(
+                      product?.keyValue?.map(list => list.countRating)
+                    ).toLocaleString()}
+                    )
                   </span>
                 </div>
                 <span className="price">
-                  {Number(product[0]?.price).toLocaleString()}
+                  {Number(
+                    product?.keyValue?.map(list => list.price)
+                  ).toLocaleString()}
                 </span>
               </div>
               <div className="productBuy">

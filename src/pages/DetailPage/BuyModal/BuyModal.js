@@ -5,20 +5,20 @@ import './BuyModal.scss';
 function BuyModal({ setBuyModalToggle, product }) {
   const [arrowToggle, setArrowToggle] = useState(true);
   const [selectedItem, setSelectedItem] = useState([]);
+
   const selectItem = ({ target }) => {
-    if (!selectedItem.includes(product[0].options[Number(target.id)])) {
+    if (!selectedItem.includes(product.productDetail[Number(target.id)])) {
       setSelectedItem([
         ...selectedItem,
-        Object.assign(product[0].options[Number(target.id)], {
+        Object.assign(product.productDetail[Number(target.id)], {
           quantity: 1,
-          price: product[0].price,
         }),
       ]);
     }
   };
 
   const deleteItem = id => {
-    const filteredItem = [...selectedItem].filter(item => item.id !== id);
+    const filteredItem = [...selectedItem].filter(item => item.imageId !== id);
     setSelectedItem(filteredItem);
   };
 
@@ -48,18 +48,18 @@ function BuyModal({ setBuyModalToggle, product }) {
               </div>
               {arrowToggle && (
                 <div className="selectOption">
-                  {/* {product?.option.map((list, idx) => {
+                  {product.productDetail.map((list, idx) => {
                     return (
                       <div
                         className="option"
-                        key={idx}
+                        key={list.imageId}
                         id={idx}
                         onClick={selectItem}
                       >
-                        {list.option}
+                        {list.options}
                       </div>
                     );
-                  })} */}
+                  })}
                 </div>
               )}
             </div>
