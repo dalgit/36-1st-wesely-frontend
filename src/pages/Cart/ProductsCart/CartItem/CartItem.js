@@ -1,7 +1,9 @@
 import React from 'react';
+import API from '../../../../config';
 import './CartItem.scss';
 
 const CartItem = ({
+  user_id,
   image_id,
   name,
   options,
@@ -32,6 +34,10 @@ const CartItem = ({
   }
 
   function productDelete() {
+    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
     setProducts(products.filter(product => product.image_id !== image_id));
   }
 

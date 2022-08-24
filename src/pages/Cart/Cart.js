@@ -8,7 +8,7 @@ const Cart = () => {
   const [products, setProducts] = useState([]);
   const [subscriptionCycle, setSubscriptionCycle] = useState('');
   useEffect(() => {
-    fetch(API.cart, {
+    fetch(`${API.cart}/1`, {
       method: 'GET',
     })
       .then(res => res.json())
