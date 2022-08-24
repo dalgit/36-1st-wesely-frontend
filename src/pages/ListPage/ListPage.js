@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import ProductCard from './ContentItem/ProductCard';
 import PageBtn from './PageBtn/PageBtn';
+import API from '../../config';
 
 import './ListPage.scss';
 
@@ -11,6 +12,8 @@ function ListPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [category, setCategory] = useState(0);
   const [offset, setOffSet] = useState(0);
+
+  const maxLimit = 6;
 
   useEffect(() => {
     const checkStatus = res => {
@@ -22,10 +25,10 @@ function ListPage() {
     };
 
     fetch(
-      `http://10.58.0.224:3000/product/home?${
+      `${API.product}?${
         category === 0
-          ? `offset=${offset}&limit=6`
-          : `offset=${offset}&limit=6&category=${category}`
+          ? `offset=${offset}&limit=${maxLimit}`
+          : `offset=${offset}&limit=${maxLimit}&categoryId=${category}`
       }`,
       {
         method: 'GET',
@@ -40,7 +43,6 @@ function ListPage() {
   }, [category, offset]);
 
   const movePage = pageNumber => {
-    const maxLimit = 6;
     const settingOffset = (pageNumber - 1) * 6;
     searchParams.set('offset', settingOffset);
     searchParams.set('limit', maxLimit);
@@ -52,7 +54,7 @@ function ListPage() {
     if (categoryId !== 0) {
       searchParams.set('category', categoryId);
       searchParams.set('offset', 0);
-      searchParams.set('limit', 6);
+      searchParams.set('limit', maxLimit);
       setOffSet(0);
     } else {
       searchParams.delete('category');
@@ -62,7 +64,7 @@ function ListPage() {
   };
 
   return (
-    <div className="ListPage">
+    <div className="listPage">
       <div className="contentTitle">
         <h1>제품보기</h1>
       </div>
