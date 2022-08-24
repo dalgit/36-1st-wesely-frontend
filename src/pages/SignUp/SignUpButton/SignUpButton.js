@@ -1,4 +1,5 @@
 import React from 'react';
+import API from '../../../config';
 import { useNavigate } from 'react-router';
 
 const SignUpButton = ({ email, password, name, phoneNumber }) => {
@@ -6,7 +7,7 @@ const SignUpButton = ({ email, password, name, phoneNumber }) => {
 
   const signUpValid = e => {
     e.preventDefault();
-    fetch('./data/loginData.json', {
+    fetch(API.signUp, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
