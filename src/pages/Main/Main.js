@@ -1,4 +1,5 @@
 import Nav from '../../components/Nav/Nav';
+import ProductContent from './ProductContent/ProductContent';
 import MainCarousel from './MainCarousel/MainCarousel';
 import MainCategory from './MainCategory/MainCategory';
 
@@ -10,6 +11,7 @@ function Main() {
       <Nav />
       <MainCarousel />
       <MainCategory />
+      <ProductContent />
     </div>
   );
 }
