@@ -1,4 +1,4 @@
-.UnderBarContainer {
+.underBarContainer {
   width: 100%;
   display: flex;
   padding: 0px 16px;
@@ -6,48 +6,56 @@
   align-items: center;
   box-shadow: #00000014 0 0 24px;
 
-  .UnderBarBox {
+  &.underBar {
+    position: fixed;
+    height: 80px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+  }
+
+  .underBarBox {
     width: 1140px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .UnderBarMainContent {
+    .underBarMainContent {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .UnderBarAverage {
+      .underBarAverage {
         display: flex;
         align-items: center;
 
-        .UnderBarAverageStar {
+        .underBarAverageStar {
           color: red;
         }
 
-        .UnderBarAverageRating {
+        .underBarAverageRating {
           margin: 0px 0px 0px 10px;
           color: red;
         }
 
-        .UnderBarAverageTotalReview {
+        .underBarAverageTotalReview {
           margin: 0px 0px 0px 10px;
           color: #838383;
         }
 
-        .UnderBarAveragePrice {
+        .underBarAveragePrice {
           margin: 0px 32px 0px 10px;
           font-size: 26px;
           font-weight: 900;
         }
       }
 
-      .UnderBarBuyButtonWrap {
+      .underBarBuyButtonWrap {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .UnderBarSubscribeButton {
+        .underBarSubscribeButton {
           width: 160px;
           height: 50px;
           border: 1px solid #1c1c1c;
@@ -57,7 +65,7 @@
           background-color: #fff;
         }
 
-        .UnderBarBuyButton {
+        .underBarBuyButton {
           width: 160px;
           height: 50px;
           margin-left: 8px;

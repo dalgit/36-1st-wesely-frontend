@@ -1,24 +1,50 @@
+import { useState, useEffect } from 'react';
+import Nav from '../../../components/Nav/Nav';
 import './UnderBar.scss';
 
 function UnderBar() {
+  const [barState, setUnderBarState] = useState('');
+
+  useEffect(() => {
+    window.addEventListener('wheel', e => navHandleScroll(e));
+    return () => {
+      window.removeEventListener('wheel', e => navHandleScroll(e));
+    };
+  }, []);
+
+  const navHandleScroll = e => {
+    e.deltaY > 0 && setUnderBarState('noHeader');
+    window.scrollY > 689 && setUnderBarState('underBar');
+    e.deltaY < 0 && setUnderBarState('fixed');
+  };
+
   return (
-    <div className="UnderBarContainer">
-      <div className="UnderBarBox">
-        <h1>탈모 고민용 부스터 100ml</h1>
-        <div className="UnderBarMainContent">
-          <div className="UnderBarAverage">
-            <div className="UnderBarAverageStar">★★★★☆</div>
-            <div className="UnderBarAverageRating">4.6</div>
-            <div className="UnderBarAverageTotalReview">(327)</div>
-            <div className="UnderBarAveragePrice">4,900원</div>
-          </div>
-          <div className="UnderBarBuyButtonWrap">
-            <button className="UnderBarSubscribeButton">정기구독</button>
-            <button className="UnderBarBuyButton">일반구매</button>
+    <>
+      {barState === '' || barState === 'noHeader' || barState === 'fixed' ? (
+        <Nav navState={barState} />
+      ) : (
+        ''
+      )}
+      {barState === 'underBar' && (
+        <div className={`underBarContainer ${barState}`}>
+          <div className="underBarBox">
+            <h1>탈모 고민용 부스터 100ml</h1>
+            <div className="underBarMainContent">
+              <div className="underBarAverage">
+                <div className="underBarAverageStar">★★★★☆</div>
+                <div className="underBarAverageRating">4.6</div>
+                <div className="underBarAverageTotalReview">(327)</div>
+                <div className="underBarAveragePrice">4,900원</div>
+              </div>
+              <div className="underBarBuyButtonWrap">
+                <button className="underBarSubscribeButton">정기구독</button>
+                <button className="underBarBuyButton">일반구매</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
