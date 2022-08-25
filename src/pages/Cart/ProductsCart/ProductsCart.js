@@ -1,19 +1,38 @@
 import React from 'react';
 import CartItem from './CartItem/CartItem';
+import API from '../../../config';
 import './ProductsCart.scss';
-
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react';
 const ProductsCart = ({
   products,
   setProducts,
   subscriptionCycle,
   setSubscriptionCycle,
 }) => {
+  const navigate = useNavigate();
   const totalPrice = products?.reduce(
-    (acc, cur) => acc + Number(cur.price * cur.quantity),
+    (acc, cur) => acc + Number(cur.price * cur.totalQuantity),
     0
   );
 
+  const point = products[0].point;
+  const holdPoint = Number(point).toLocaleString();
   const totalWon = totalPrice.toLocaleString() + '원';
+  const remainPoint = (Number(point) - Number(totalPrice)).toLocaleString();
+  const isPurchaseUnable = point - totalPrice < 0;
+
+  function pay() {
+    fetch(`${API.cart}/order/user/1`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        subscription_id: subscriptionCycle || 0,
+        point: Number(point) - Number(totalPrice),
+      },
+    });
+    navigate('/');
+  }
 
   return (
     <>
@@ -42,7 +61,7 @@ const ProductsCart = ({
       {products.map(product => {
         return (
           <CartItem
-            key={product.id}
+            key={product.image_id}
             {...product}
             products={products}
             setProducts={setProducts}
@@ -62,10 +81,28 @@ const ProductsCart = ({
           <span>결제 예정 금액</span>
           <span>{totalWon}</span>
         </div>
+        <div className="pointBillBox">
+          <div className="pointBill">
+            <div className="pointInfo">보유 포인트</div>
+            <div className="point">{holdPoint}</div>
+          </div>
+          <div className="pointBill">
+            <div className={`pointInfo ${isPurchaseUnable}`}>잔여 포인트</div>
+            <div className={`point ${isPurchaseUnable}`}>{remainPoint}</div>
+          </div>
+        </div>
       </div>
       <div className="cartBtnBox">
-        <button className="keepBtn"> 더 담으러 가기</button>
-        <button className="purchaseBtn"> 구매하기</button>
+        <Link to="/">
+          <button className="keepBtn"> 더 담으러 가기</button>
+        </Link>
+        <button
+          className={`purchaseBtn ${!isPurchaseUnable}`}
+          disabled={isPurchaseUnable}
+          onClick={pay}
+        >
+          결제하기
+        </button>
       </div>
     </>
   );
@@ -74,8 +111,8 @@ const ProductsCart = ({
 export default ProductsCart;
 
 const PERIOD_LIST = [
-  { id: 1, period: '4주' },
-  { id: 2, period: '8주' },
-  { id: 3, period: '12주' },
+  { id: 2, period: '4주' },
+  { id: 3, period: '8주' },
+  { id: 4, period: '12주' },
   { id: 5, period: '16주' },
 ];

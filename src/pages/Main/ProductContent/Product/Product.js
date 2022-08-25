@@ -4,7 +4,7 @@ import './product.scss';
 
 const Product = ({ thumbImg, name, price, id }) => {
   return (
-    <Link to={`/DetailPage/${id}`}>
+    <Link to={`/product/detail/${id}`}>
       <li className="productRigth">
         <div className="product">
           <img className="productImg" src={thumbImg} alt="" />
