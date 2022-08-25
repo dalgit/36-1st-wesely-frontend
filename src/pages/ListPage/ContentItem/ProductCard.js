@@ -14,7 +14,7 @@ const ProductCard = ({
   const displayRating = Math.floor(avgRating * 10) / 10;
 
   const navigate = useNavigate();
-  const moveDetail = () => navigate(`/DetailPage/${id}`);
+  const moveDetail = () => navigate(`/product/detail/${id}`);
   const maxScore = 5;
 
   const rating = (rating, i) => {
