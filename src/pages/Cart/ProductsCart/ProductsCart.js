@@ -1,14 +1,16 @@
 import React from 'react';
 import CartItem from './CartItem/CartItem';
+import API from '../../../config';
 import './ProductsCart.scss';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react';
 const ProductsCart = ({
   products,
   setProducts,
   subscriptionCycle,
   setSubscriptionCycle,
 }) => {
+  const navigate = useNavigate();
   const totalPrice = products?.reduce(
     (acc, cur) => acc + Number(cur.price * cur.totalQuantity),
     0
@@ -19,6 +21,18 @@ const ProductsCart = ({
   const totalWon = totalPrice.toLocaleString() + '원';
   const remainPoint = (Number(point) - Number(totalPrice)).toLocaleString();
   const isPurchaseUnable = point - totalPrice < 0;
+
+  function pay() {
+    fetch(`${API.cart}/order/user/`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        subscription_id: subscriptionCycle || 0,
+        point: Number(point) - Number(totalPrice),
+      },
+    });
+    navigate('/');
+  }
 
   return (
     <>
@@ -85,6 +99,7 @@ const ProductsCart = ({
         <button
           className={`purchaseBtn ${!isPurchaseUnable}`}
           disabled={isPurchaseUnable}
+          onClick={pay}
         >
           결제하기
         </button>
@@ -96,8 +111,8 @@ const ProductsCart = ({
 export default ProductsCart;
 
 const PERIOD_LIST = [
-  { id: 1, period: '4주' },
-  { id: 2, period: '8주' },
-  { id: 3, period: '12주' },
+  { id: 2, period: '4주' },
+  { id: 3, period: '8주' },
+  { id: 4, period: '12주' },
   { id: 5, period: '16주' },
 ];
