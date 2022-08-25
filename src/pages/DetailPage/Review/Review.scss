@@ -32,6 +32,7 @@
 
       .reviewStarAverageColor {
         color: #58c3cc;
+        text-align: center;
       }
 
       span {
@@ -46,5 +47,12 @@
       align-items: center;
       justify-content: center;
     }
+  }
+
+  .reviewPaginationContainer {
+    display: flex;
+    width: 100%;
+    margin: 100px 0px 100px 0px;
+    justify-content: center;
   }
 }

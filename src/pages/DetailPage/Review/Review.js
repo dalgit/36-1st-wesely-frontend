@@ -1,12 +1,40 @@
 import ReviewList from './ReviewList/ReviewList';
 import ReviewRange from './ReviewRange/ReviewRange';
+import PaginationButton from './PaginationButton/PaginationButton';
 import './Review.scss';
 
-function Review({ product }) {
+function Review({ product, offset, setOffset, LIMIT }) {
+  console.log('pr', product);
   const displayRating =
     Math.floor(product?.optionData?.map(list => list.avgRating) * 10) / 10;
 
   const totalReview = product?.reviewsData?.length;
+
+  const changeOffset = id => {
+    console.log(id);
+    setOffset(id * 7);
+  };
+
+  const buttonCount =
+    product?.reviewsDistribution?.reduce(
+      (prev, curr) => prev + Number(curr.countRating),
+      0
+    ) / LIMIT;
+
+  const buttonRender = () => {
+    const array = [];
+    for (let i = 0; i < buttonCount; i++) {
+      array.push(
+        <PaginationButton
+          key={i}
+          id={i + 1}
+          changeOffset={changeOffset}
+          offset={offset}
+        />
+      );
+    }
+    return array;
+  };
 
   return (
     <div className="reviewContainer">
@@ -21,7 +49,7 @@ function Review({ product }) {
         <div className="reviewStarAverage">
           <div className="reviewStarAverageColor">
             <h1>
-              <strong>{displayRating}</strong>/5
+              <strong>{`${displayRating}`}</strong>/5
             </h1>
             <p>★★★★☆</p>
           </div>
@@ -41,9 +69,10 @@ function Review({ product }) {
           })}
         </div>
       </div>
-      {product?.reviewsData?.map((list, idx) => {
-        return <ReviewList key={idx} list={list} />;
-      })}
+      {product?.reviewsData?.map((list, idx) => (
+        <ReviewList key={idx} list={list} />
+      ))}
+      <div className="reviewPaginationContainer">{buttonRender()}</div>
     </div>
   );
 }

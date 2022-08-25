@@ -8,16 +8,19 @@ function DetailPage() {
   const params = useParams();
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
+  const [offset, setOffset] = useState(0);
+  console.log(product);
+  const LIMIT = 7;
+  const OFFSET = LIMIT + offset;
   useEffect(() => {
     setIsLoading(prev => true);
-    fetch(`${API.detail}/${params.id}`)
+    fetch(`${API.detail}/${params.id}?limit=${LIMIT}&offset=${OFFSET - 7}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data);
       });
     setIsLoading(prev => false);
-  }, [params.id]);
+  }, [OFFSET, params.id]);
 
   return (
     !isLoading && (
@@ -25,7 +28,12 @@ function DetailPage() {
         <h1>header</h1>
         <OverView product={product} />
         <OpenDetailView product={product} />
-        <Review />
+        <Review
+          product={product}
+          offset={offset}
+          setOffset={setOffset}
+          LIMIT={LIMIT}
+        />
       </div>
     )
   );
