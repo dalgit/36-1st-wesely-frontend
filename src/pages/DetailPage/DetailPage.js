@@ -1,5 +1,7 @@
+import GoCartModal from './GoCartModal/GoCartModal';
+
 function DetailPage() {
-  return <h1>DetailPage입니다.</h1>;
+  return <GoCartModal />;
 }
 
 export default DetailPage;
