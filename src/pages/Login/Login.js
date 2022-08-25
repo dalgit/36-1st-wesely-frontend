@@ -20,7 +20,7 @@ function Login() {
   }
 
   return (
-    <div className="login">
+    <div className="loginComponent">
       <div className="loginContainer">
         <LoginTitle userName={userName} />
         <form className="loginBox">
