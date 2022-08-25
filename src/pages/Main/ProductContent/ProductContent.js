@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import './ProductContent.scss';
 
 import ContentCarousel from './ContentCarousel/ContentCarousel';
+import API from '../../../config';
 
 const ProductContent = () => {
   const [productData, setProductData] = useState([]);
-
   const [productPos1, setProductPos1] = useState(0);
   const [productPos2, setProductPos2] = useState(0);
 
@@ -31,12 +31,13 @@ const ProductContent = () => {
     const uploadProductData = data => {
       setProductData(data);
     };
-    const getProductData = url =>
-      fetch(url, {
-        method: 'GET',
-      });
 
-    getProductData('http://10.58.0.224:3000/home/main')
+    fetch(`${API.home}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then(checkStatus)
       .then(uploadProductData)
       .catch(error => console.error(error));

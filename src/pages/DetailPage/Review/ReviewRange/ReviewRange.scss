@@ -1,0 +1,19 @@
+.reviewRangeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .reviewRangePercent {
+    height: 100px;
+  }
+
+  input {
+    width: 100px;
+    background-color: red;
+    transform: rotate(270deg);
+  }
+
+  .reviewRangeRating {
+    margin-top: 80px;
+  }
+}

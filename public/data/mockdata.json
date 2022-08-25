@@ -1,0 +1,379 @@
+{
+  "productDetail": [
+    {
+      "countRating": "7",
+
+      "avgRating": "2.8571",
+
+      "productId": 1,
+
+      "imageId": 1,
+
+      "options": "빨강",
+
+      "optionImg": "url_빨강",
+
+      "sales": 100,
+
+      "stock": 0,
+
+      "categoryId": 2,
+
+      "productName": "피부에 좋은 세럼",
+
+      "price": "50000",
+
+      "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+
+      "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+
+      "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
+    },
+
+    {
+      "countRating": "7",
+
+      "avgRating": "2.8571",
+
+      "productId": 1,
+
+      "imageId": 2,
+
+      "options": "건성",
+
+      "optionImg": "url_건성",
+
+      "sales": 100,
+
+      "stock": 0,
+
+      "categoryId": 2,
+
+      "productName": "피부에 좋은 세럼",
+
+      "price": "50000",
+
+      "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+
+      "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+
+      "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
+    },
+
+    {
+      "countRating": "7",
+
+      "avgRating": "2.8571",
+
+      "productId": 1,
+
+      "imageId": 3,
+
+      "options": "abcd",
+
+      "optionImg": "www.wesley.com",
+
+      "sales": 100,
+
+      "stock": 0,
+
+      "categoryId": 2,
+
+      "productName": "피부에 좋은 세럼",
+
+      "price": "50000",
+
+      "description": "트러블을 효과적으로 케어하는 고기능성 세럼",
+
+      "descImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbDdqPX%2FbtrJ0UidvT8%2FXkD6VbIi7XfBVwO8CB4DhK%2Fimg.png",
+
+      "thumbImg": "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcwYQjQ%2FbtrJ4FDRA64%2FsJ77YKRN8JmLDVaPlV1u7k%2Fimg.jpg"
+    }
+  ],
+
+  "reviewsData": [
+    {
+      "name": "고식복",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "고식복",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "고식복",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "노복나",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "노복나",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "노복나",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "윤나잎",
+
+      "rating": 2,
+
+      "content": "음.. 생각보다 별로에요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "윤나잎",
+
+      "rating": 2,
+
+      "content": "음.. 생각보다 별로에요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "윤나잎",
+
+      "rating": 2,
+
+      "content": "음.. 생각보다 별로에요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "육잎이",
+
+      "rating": 5,
+
+      "content": "배송이 빨라요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "육잎이",
+
+      "rating": 5,
+
+      "content": "배송이 빨라요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "육잎이",
+
+      "rating": 5,
+
+      "content": "배송이 빨라요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "인란자",
+
+      "rating": 3,
+
+      "content": "쓸만하네요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "인란자",
+
+      "rating": 3,
+
+      "content": "쓸만하네요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "인란자",
+
+      "rating": 3,
+
+      "content": "쓸만하네요",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "염자기",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "염자기",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "염자기",
+
+      "rating": 1,
+
+      "content": "품질 별로에요 개선이 필요합니다",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    },
+
+    {
+      "name": "이기상",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "빨강"
+    },
+
+    {
+      "name": "이기상",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "건성"
+    },
+
+    {
+      "name": "이기상",
+
+      "rating": 4,
+
+      "content": "좋아요 빠른배송",
+
+      "postReviewDate": "2022-08-21T04:45:27.000Z",
+
+      "options": "abcd"
+    }
+  ],
+
+  "reviewsDistribution": [
+    {
+      "rating": 1,
+
+      "countRating": "6"
+    },
+
+    {
+      "rating": 4,
+
+      "countRating": "6"
+    },
+
+    {
+      "rating": 2,
+
+      "countRating": "3"
+    },
+
+    {
+      "rating": 5,
+
+      "countRating": "3"
+    },
+
+    {
+      "rating": 3,
+
+      "countRating": "3"
+    }
+  ]
+}

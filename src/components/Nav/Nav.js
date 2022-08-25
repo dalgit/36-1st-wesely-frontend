@@ -15,7 +15,7 @@ const Nav = ({ navState }) => {
           <nav className="navGroup">
             <ul className="navWrapper">
               <li className="navItem">
-                <Link to="/product/home">제품보기</Link>
+                <Link to="/product/all">제품보기</Link>
               </li>
               <li className="navItem">브랜드 스토리</li>
               <li className="navItem">블로그</li>
@@ -24,10 +24,14 @@ const Nav = ({ navState }) => {
           </nav>
         </div>
         <div className="navRight">
-          <div className="login">로그인</div>
-          <div className="cart">
-            <i className="fa-solid fa-cart-shopping" />
-          </div>
+          <Link to="/login">
+            <div className="login">로그인</div>
+          </Link>
+          <Link to="/Cart">
+            <div className="cart">
+              <i className="fa-solid fa-cart-shopping" />
+            </div>
+          </Link>
         </div>
       </div>
     </header>
