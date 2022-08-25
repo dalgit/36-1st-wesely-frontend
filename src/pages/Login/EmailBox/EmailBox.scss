@@ -8,7 +8,6 @@
       height: 30px;
       padding-left: 10px;
       padding-bottom: 13px;
-      margin-bottom: 5px;
 
       &::placeholder {
         font-size: 15px;
@@ -32,5 +31,6 @@
   .plzCheck {
     font-size: 12px;
     color: #d91d1d;
+    margin-top: -20px;
   }
 }

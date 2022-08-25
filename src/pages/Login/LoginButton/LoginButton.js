@@ -33,6 +33,7 @@ const LoginButton = ({
     })
       .then(response => response.json())
       .then(validData => {
+        console.log(validData);
         if (validData.message === 'CONNECT_LOGIN') {
           setUserName(nameMasking(validData.name[0].name));
         } else if (validData.message === 'CONNECT_SIGNUP') {
@@ -55,7 +56,7 @@ const LoginButton = ({
       .then(validData => {
         if (validData.message === 'SUCCESS_LOGIN') {
           localStorage.setItem('token', validData.token);
-          navigate('/main');
+          navigate('/');
         } else if (validData.message === 'UNABLE_LOGIN') {
           setWrongPassword(true);
         }
