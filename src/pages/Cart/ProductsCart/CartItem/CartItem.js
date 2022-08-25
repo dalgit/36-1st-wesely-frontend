@@ -14,6 +14,10 @@ const CartItem = ({
   setProducts,
 }) => {
   function quantityPlus() {
+    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
     setProducts(
       products.map(product =>
         product.image_id === image_id
@@ -24,6 +28,10 @@ const CartItem = ({
   }
 
   function quantityMinus() {
+    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
     setProducts(
       products.map(product =>
         product.image_id === image_id && product.totalQuantity > 1
