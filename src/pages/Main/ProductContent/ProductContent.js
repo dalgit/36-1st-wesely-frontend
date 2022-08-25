@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './ProductContent.scss';
 
 import ContentCarousel from './ContentCarousel/ContentCarousel';
+import API from '../../../config';
 
 const ProductContent = () => {
   const [productData, setProductData] = useState([]);
@@ -36,7 +37,7 @@ const ProductContent = () => {
         method: 'GET',
       });
 
-    getProductData('http://10.58.0.224:3000/home/main')
+    getProductData(`${API.home}`)
       .then(checkStatus)
       .then(uploadProductData)
       .catch(error => console.error(error));
