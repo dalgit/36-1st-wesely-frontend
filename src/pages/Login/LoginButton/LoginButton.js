@@ -24,7 +24,7 @@ const LoginButton = ({
 
   const emailValidation = e => {
     e.preventDefault();
-    fetch(API.email, {
+    fetch(API.auth, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -43,7 +43,7 @@ const LoginButton = ({
 
   const passwordlValidation = e => {
     e.preventDefault();
-    fetch(API.password, {
+    fetch(API.signIn, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
