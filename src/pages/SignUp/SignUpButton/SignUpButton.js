@@ -13,6 +13,7 @@ const SignUpButton = ({ email, password, name, phoneNumber }) => {
       body: JSON.stringify({
         email: email,
         password: password,
+        // eslint-disable-next-line no-useless-escape
         phone_number: phoneNumber.replace(/\-/g, ''),
         name: name,
       }),
