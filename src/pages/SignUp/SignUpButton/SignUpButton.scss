@@ -1,14 +1,9 @@
 .loginBtn {
   margin-top: 30px;
   color: white;
-  background-color: #cbcbcb;
+  background-color: black;
   width: 400px;
   height: 60px;
   border-radius: 10px;
-  cursor: default;
-
-  &.true {
-    background-color: black;
-    cursor: pointer;
-  }
+  cursor: pointer;
 }

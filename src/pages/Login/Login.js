@@ -4,6 +4,7 @@ import LoginTitle from './LoginTitle/LoginTitle';
 import EmailBox from './EmailBox/EmailBox';
 import PasswordBox from './PasswordBox/PasswordBox';
 import LoginButton from './LoginButton/LoginButton';
+import SubNav from '../../components/SubNav/SubNav';
 
 function Login() {
   const [isBasicValidPass, setIsBasicValidPass] = useState(false);
@@ -21,6 +22,7 @@ function Login() {
 
   return (
     <div className="loginComponent">
+      <SubNav />
       <div className="loginContainer">
         <LoginTitle userName={userName} />
         <form className="loginBox">

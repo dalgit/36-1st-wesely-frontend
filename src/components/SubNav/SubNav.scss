@@ -1,0 +1,40 @@
+.subNav {
+  position: fixed;
+  margin: 0 auto;
+  width: 100%;
+  height: 68px;
+  background-color: rgba(255, 255, 255, 0);
+  top: 0;
+  z-index: 1000;
+  transition: all 0.4s;
+  &.noHeader {
+    visibility: hidden;
+    height: 0px;
+  }
+  &.fixed {
+    height: 68px;
+    visibility: visible;
+    z-index: 1000;
+  }
+  .headerGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    .navLeft {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .logo {
+        .logoTitle {
+          margin-right: 80px;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: 3px;
+        }
+      }
+    }
+  }
+}

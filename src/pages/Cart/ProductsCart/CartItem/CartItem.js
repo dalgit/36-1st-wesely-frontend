@@ -22,7 +22,6 @@ const CartItem = ({
     })
       .then(response => response.json())
       .then(validData => {
-        console.log(validData.message);
         if (validData.message === 'MAXIMUM STOCK OVER') {
           setiIOutOfstock(true);
         } else {

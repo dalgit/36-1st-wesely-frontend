@@ -3,7 +3,7 @@ import './Cart.scss';
 import { useState, useEffect } from 'react';
 import ProductsCart from './ProductsCart/ProductsCart';
 import API from '../../config';
-
+import SubNav from '../../components/SubNav/SubNav';
 const Cart = () => {
   const [products, setProducts] = useState([]);
   const [subscriptionCycle, setSubscriptionCycle] = useState('');
@@ -19,6 +19,7 @@ const Cart = () => {
 
   return (
     <div className="cartContainer">
+      <SubNav />
       <div className="cartTitle">장바구니</div>
       <div className="cartMenu">
         {subscriptionCycle === '' ? '일반구매' : '정기구독'}

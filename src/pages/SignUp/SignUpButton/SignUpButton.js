@@ -3,18 +3,8 @@ import API from '../../../config';
 import './SignUpButton.scss';
 import { useNavigate } from 'react-router';
 
-const SignUpButton = ({
-  email,
-  password,
-  name,
-  phoneNumber,
-  validManagement,
-}) => {
+const SignUpButton = ({ email, password, name, phoneNumber }) => {
   const navigate = useNavigate();
-  const isValidAllPass = Object.values(validManagement).every(
-    boolean => boolean === true
-  );
-
   const signUpValid = e => {
     e.preventDefault();
     fetch(API.signUp, {
@@ -23,24 +13,22 @@ const SignUpButton = ({
       body: JSON.stringify({
         email: email,
         password: password,
+        // eslint-disable-next-line no-useless-escape
+        phone_number: phoneNumber.replace(/\-/g, ''),
         name: name,
-        phoneNumber: phoneNumber.replace(/\-/g, ''),
       }),
     })
       .then(response => response.json())
       .then(validData => {
-        if (validData.message === 'success') {
+        if (validData.message === 'USER_CREATED') {
+          alert('회원가입이 완료되었습니다.');
           navigate('/login');
         }
       });
   };
 
   return (
-    <button
-      className={`loginBtn ${isValidAllPass}`}
-      disabled={!isValidAllPass}
-      onClick={signUpValid}
-    >
+    <button className="loginBtn" onClick={signUpValid}>
       가입완료
     </button>
   );
