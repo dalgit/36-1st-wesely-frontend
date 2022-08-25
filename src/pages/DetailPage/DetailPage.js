@@ -11,7 +11,7 @@ function DetailPage() {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [offset, setOffset] = useState(0);
-  console.log(product);
+
   const LIMIT = 7;
   const OFFSET = LIMIT + offset;
   useEffect(() => {
