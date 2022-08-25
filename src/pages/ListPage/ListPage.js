@@ -12,6 +12,7 @@ function ListPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [category, setCategory] = useState(0);
   const [offset, setOffSet] = useState(0);
+  const [sortType, setSortType] = useState('price');
 
   const maxLimit = 6;
 
@@ -27,8 +28,8 @@ function ListPage() {
     fetch(
       `${API.product}?${
         category === 0
-          ? `offset=${offset}&limit=${maxLimit}`
-          : `offset=${offset}&limit=${maxLimit}&categoryId=${category}`
+          ? `offset=${offset}&limit=${maxLimit}&ordering=${sortType}`
+          : `offset=${offset}&limit=${maxLimit}&categoryId=${category}&ordering=${sortType}`
       }`,
       {
         method: 'GET',
@@ -40,7 +41,7 @@ function ListPage() {
       .then(checkStatus)
       .then(uploadProductData)
       .catch(error => console.error(error));
-  }, [category, offset]);
+  }, [category, offset, sortType]);
 
   const movePage = pageNumber => {
     const settingOffset = (pageNumber - 1) * 6;
@@ -61,6 +62,10 @@ function ListPage() {
     }
     setCategory(categoryId);
     setSearchParams(searchParams);
+  };
+
+  const changeCategorySort = sortId => {
+    setSortType(sortId);
   };
 
   return (
@@ -85,6 +90,19 @@ function ListPage() {
           ))}
         </ul>
       </nav>
+      <div className="listSortWrapper">
+        <ul className="listSort">
+          {sortCategoryNames.map(sortItem => (
+            <li
+              className="sortBtn"
+              key={sortItem.sortId}
+              onClick={() => changeCategorySort(sortItem.sortId)}
+            >
+              {sortItem.sortName}
+            </li>
+          ))}
+        </ul>
+      </div>
       <main className="productWrapper">
         <div className="productList">
           {productData.map(product => (
@@ -131,5 +149,24 @@ const categoryData = [
   {
     id: 7,
     categoryName: '생리대',
+  },
+];
+
+const sortCategoryNames = [
+  {
+    sortId: 'price',
+    sortName: '높은 가격순',
+  },
+  {
+    sortId: '-price',
+    sortName: '낮은 가격순',
+  },
+  {
+    sortId: 'sales',
+    sortName: '판매량순',
+  },
+  {
+    sortId: 'avgRating',
+    sortName: '평점순',
   },
 ];

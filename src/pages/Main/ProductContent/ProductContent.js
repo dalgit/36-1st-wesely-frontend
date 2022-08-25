@@ -32,7 +32,7 @@ const ProductContent = () => {
       setProductData(data);
     };
 
-    fetch(API.home, {
+    fetch(`${API.home}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
