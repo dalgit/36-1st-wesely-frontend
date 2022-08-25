@@ -1,0 +1,81 @@
+.underBarContainer {
+  width: 100%;
+  display: flex;
+  padding: 0px 16px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #00000014 0 0 24px;
+
+  &.underBar {
+    position: fixed;
+    height: 80px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+  }
+
+  .underBarBox {
+    width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .underBarMainContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .underBarAverage {
+        display: flex;
+        align-items: center;
+
+        .underBarAverageStar {
+          color: red;
+        }
+
+        .underBarAverageRating {
+          margin: 0px 0px 0px 10px;
+          color: red;
+        }
+
+        .underBarAverageTotalReview {
+          margin: 0px 0px 0px 10px;
+          color: #838383;
+        }
+
+        .underBarAveragePrice {
+          margin: 0px 32px 0px 10px;
+          font-size: 26px;
+          font-weight: 900;
+        }
+      }
+
+      .underBarBuyButtonWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .underBarSubscribeButton {
+          width: 160px;
+          height: 50px;
+          border: 1px solid #1c1c1c;
+          color: #1c1c1c;
+          border-radius: 10px;
+          font-size: 16px;
+          background-color: #fff;
+        }
+
+        .underBarBuyButton {
+          width: 160px;
+          height: 50px;
+          margin-left: 8px;
+          border: 1px solid #1c1c1c;
+          color: #fff;
+          border-radius: 10px;
+          font-size: 16px;
+          background-color: #1c1c1c;
+        }
+      }
+    }
+  }
+}
