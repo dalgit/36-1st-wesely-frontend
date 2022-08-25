@@ -23,7 +23,7 @@ const ProductsCart = ({
   const isPurchaseUnable = point - totalPrice < 0;
 
   function pay() {
-    fetch(`${API.cart}/order/user/`, {
+    fetch(`${API.cart}/order/user/1`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: {
