@@ -70,16 +70,17 @@ function ListPage() {
       </div>
       <nav className="contentCategory">
         <ul className="categoryWrapper">
-          {categoryData.map(category => (
+          {categoryData.map(cateData => (
             <li
-              className="categoryName"
-              key={category.id}
+              className={`categoryName ${
+                cateData.id === category && 'currentCategory'
+              }`}
+              key={cateData.id}
               onClick={() => {
-                moveCategory(category.id);
+                moveCategory(cateData.id);
               }}
-              id={category.id}
             >
-              {category.categoryName}
+              {cateData.categoryName}
             </li>
           ))}
         </ul>
