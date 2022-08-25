@@ -8,13 +8,11 @@
   .active-true {
     opacity: 1;
     position: relative;
-    z-index: 10;
   }
 
   .active-false {
     position: absolute;
     opacity: 0;
-    z-index: 1;
   }
 
   .movePrev {

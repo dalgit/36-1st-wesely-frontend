@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 import './Nav.scss';
 
-const Nav = () => {
+const Nav = ({ navState }) => {
   return (
-    <header className="mainHeader">
+    <header className={`mainHeader ${navState}`}>
       <div className="headerGroup">
         <div className="navLeft">
           <div className="logo">
