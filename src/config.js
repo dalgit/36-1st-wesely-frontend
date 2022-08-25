@@ -3,7 +3,9 @@ const API = {
   home: `${BASE_URL}/home/main`,
   product: `${BASE_URL}/product/home`,
   cart: `${BASE_URL}/cart`,
-  signUp: `${BASE_URL}/users/signUp`,
+  signIn: `${BASE_URL}/Users/signIn`,
+  signUp: `${BASE_URL}/Users/signUp`,
+  auth: `${BASE_URL}/Users/authRouter`,
 };
 
 export default API;
