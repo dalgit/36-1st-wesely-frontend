@@ -6,6 +6,7 @@ import PageBtn from './PageBtn/PageBtn';
 import API from '../../config';
 
 import './ListPage.scss';
+import NavScroll from '../../components/NavScroll/NavScroll';
 
 function ListPage() {
   const [productData, setProductData] = useState([]);
@@ -69,49 +70,52 @@ function ListPage() {
   };
 
   return (
-    <div className="listPage">
-      <div className="contentTitle">
-        <h1>제품보기</h1>
-      </div>
-      <nav className="contentCategory">
-        <ul className="categoryWrapper">
-          {categoryData.map(cateData => (
-            <li
-              className={`categoryName ${
-                cateData.id === category && 'currentCategory'
-              }`}
-              key={cateData.id}
-              onClick={() => {
-                moveCategory(cateData.id);
-              }}
-            >
-              {cateData.categoryName}
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="listSortWrapper">
-        <ul className="listSort">
-          {sortCategoryNames.map(sortItem => (
-            <li
-              className="sortBtn"
-              key={sortItem.sortId}
-              onClick={() => changeCategorySort(sortItem.sortId)}
-            >
-              {sortItem.sortName}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <main className="productWrapper">
-        <div className="productList">
-          {productData.map(product => (
-            <ProductCard key={product.id} {...product} />
-          ))}
+    <>
+      <NavScroll />
+      <div className="listPage">
+        <div className="contentTitle">
+          <h1>제품보기</h1>
         </div>
-        <PageBtn movePage={movePage} />
-      </main>
-    </div>
+        <nav className="contentCategory">
+          <ul className="categoryWrapper">
+            {categoryData.map(cateData => (
+              <li
+                className={`categoryName ${
+                  cateData.id === category && 'currentCategory'
+                }`}
+                key={cateData.id}
+                onClick={() => {
+                  moveCategory(cateData.id);
+                }}
+              >
+                {cateData.categoryName}
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="listSortWrapper">
+          <ul className="listSort">
+            {sortCategoryNames.map(sortItem => (
+              <li
+                className="sortBtn"
+                key={sortItem.sortId}
+                onClick={() => changeCategorySort(sortItem.sortId)}
+              >
+                {sortItem.sortName}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <main className="productWrapper">
+          <div className="productList">
+            {productData.map(product => (
+              <ProductCard key={product.id} {...product} />
+            ))}
+          </div>
+          <PageBtn movePage={movePage} />
+        </main>
+      </div>
+    </>
   );
 }
 
