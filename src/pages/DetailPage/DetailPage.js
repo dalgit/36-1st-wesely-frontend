@@ -3,7 +3,9 @@ import OverView from './OverView/OverView';
 import OpenDetailView from './OpenDetailView/OpenDetailView';
 import API from '../../config';
 import Review from '../DetailPage/Review/Review';
+import Footer from '../../components/Footer/Footer';
 import { useParams } from 'react-router-dom';
+
 function DetailPage() {
   const params = useParams();
   const [product, setProduct] = useState({});
@@ -34,6 +36,7 @@ function DetailPage() {
           setOffset={setOffset}
           LIMIT={LIMIT}
         />
+        <Footer />
       </div>
     )
   );
