@@ -96,7 +96,7 @@ function BuyModal({ setBuyModalToggle, product }) {
               </div>
               {arrowToggle && (
                 <div className="selectOption">
-                  {product.productDetail.map((list, idx) => {
+                  {product?.productDetail?.map((list, idx) => {
                     return (
                       <div
                         className="option"

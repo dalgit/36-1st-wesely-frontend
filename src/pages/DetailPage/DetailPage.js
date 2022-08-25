@@ -10,7 +10,7 @@ function DetailPage() {
 
   useEffect(() => {
     setIsLoading(prev => true);
-    fetch(`${API.detail}/product/detail/${params.id}`)
+    fetch(`${API.detail}/${params.id}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data);
