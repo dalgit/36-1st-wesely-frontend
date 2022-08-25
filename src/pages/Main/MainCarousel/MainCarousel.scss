@@ -1,7 +1,8 @@
 .MainCarousel {
   position: relative;
-  height: 452px;
-  margin: 0 auto;
+  height: 492px;
+  // margin: 68px auto 0 auto;
+  margin-top: 68px;
   overflow: hidden;
 
   .currentIndex {
@@ -9,11 +10,10 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     right: 16%;
     width: 2rem;
     height: 1rem;
-    z-index: 100;
     font-weight: 200;
     border-radius: 25%;
     color: #fff;
