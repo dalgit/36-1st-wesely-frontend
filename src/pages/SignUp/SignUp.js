@@ -86,7 +86,11 @@ const SignUp = () => {
             inputVaildMsg={inputVaildMsg}
             validStartUpdate={validStartUpdate}
           />
-          <SignUpButton {...signUpinput} validManagement={validManagement} />
+          <SignUpButton
+            {...signUpinput}
+            validManagement={validManagement}
+            validStartList={validStartList}
+          />
         </form>
         <div>위즐리컴퍼니 통합 회원으로 진행됩니다.</div>
       </div>
