@@ -66,6 +66,24 @@
     padding-top: 25px;
     border-top: 1px solid #f0f0f0;
   }
+  .pointBillBox {
+    margin-top: 15px;
+
+    .pointBill {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 15px;
+      color: #1e65d0;
+
+      .point {
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    }
+  }
 }
 
 .cartBtnBox {
@@ -83,9 +101,14 @@
   .purchaseBtn {
     width: 200px;
     height: 65px;
-    background-color: black;
-    color: white;
+    background-color: #cbcbcb;
     border-radius: 9px;
     font-size: 18px;
+
+    &.true {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
   }
 }

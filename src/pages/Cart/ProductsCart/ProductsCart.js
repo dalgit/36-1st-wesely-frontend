@@ -14,7 +14,10 @@ const ProductsCart = ({
     0
   );
 
+  const { holdPoint } = products[0];
   const totalWon = totalPrice.toLocaleString() + '원';
+  const remainPoint = (holdPoint - totalPrice).toLocaleString();
+  const isPurchaseUnable = holdPoint - totalPrice < 0;
 
   return (
     <>
@@ -63,12 +66,27 @@ const ProductsCart = ({
           <span>결제 예정 금액</span>
           <span>{totalWon}</span>
         </div>
+        <div className="pointBillBox">
+          <div className="pointBill">
+            <div className="pointInfo">보유 포인트</div>
+            <div className="point">{holdPoint}</div>
+          </div>
+          <div className="pointBill">
+            <div className="pointInfo">잔여 포인트</div>
+            <div className="point">{remainPoint}</div>
+          </div>
+        </div>
       </div>
       <div className="cartBtnBox">
         <Link to="/">
           <button className="keepBtn"> 더 담으러 가기</button>
         </Link>
-        <button className="purchaseBtn"> 구매하기</button>
+        <button
+          className={`purchaseBtn ${isPurchaseUnable}`}
+          disabled={!isPurchaseUnable}
+        >
+          결제하기
+        </button>
       </div>
     </>
   );
