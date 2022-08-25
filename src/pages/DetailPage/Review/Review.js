@@ -1,12 +1,73 @@
 import ReviewList from './ReviewList/ReviewList';
 import ReviewRange from './ReviewRange/ReviewRange';
+import PaginationButton from './PaginationButton/PaginationButton';
 import './Review.scss';
 
-function Review({ product }) {
+function Review({ product, offset, setOffset, LIMIT }) {
   const displayRating =
     Math.floor(product?.optionData?.map(list => list.avgRating) * 10) / 10;
 
   const totalReview = product?.reviewsData?.length;
+
+  const changeOffset = id => {
+    setOffset(id * 7);
+  };
+
+  const maxScore = 5;
+
+  const rating = (rating, i) => {
+    if (rating > i) {
+      if (rating - i === 0.5) {
+        return (
+          <img
+            key={i}
+            src="/images/star-half2.png"
+            alt=""
+            style={{ width: '15px' }}
+          />
+        );
+      } else {
+        return (
+          <img
+            key={i}
+            src="/images/star2.png"
+            alt=""
+            style={{ width: '15px' }}
+          />
+        );
+      }
+    } else {
+      return (
+        <img
+          key={i}
+          src="/images/star-empty.png"
+          alt=""
+          style={{ width: '15px' }}
+        />
+      );
+    }
+  };
+
+  const buttonCount =
+    product?.reviewsDistribution?.reduce(
+      (prev, curr) => prev + Number(curr.countRating),
+      0
+    ) / LIMIT;
+
+  const buttonRender = () => {
+    const array = [];
+    for (let i = 0; i < buttonCount; i++) {
+      array.push(
+        <PaginationButton
+          key={i}
+          id={i + 1}
+          changeOffset={changeOffset}
+          offset={offset}
+        />
+      );
+    }
+    return array;
+  };
 
   return (
     <div className="reviewContainer">
@@ -21,9 +82,11 @@ function Review({ product }) {
         <div className="reviewStarAverage">
           <div className="reviewStarAverageColor">
             <h1>
-              <strong>{displayRating}</strong>/5
+              <strong>{`${displayRating}`}</strong>/5
             </h1>
-            <p>★★★★☆</p>
+            <p>
+              {[...Array(maxScore)].map((_, i) => rating(displayRating, i))}
+            </p>
           </div>
           <span>
             <strong>{`${totalReview}개`}</strong>의 후기
@@ -41,9 +104,16 @@ function Review({ product }) {
           })}
         </div>
       </div>
-      {product?.reviewsData?.map((list, idx) => {
-        return <ReviewList key={idx} list={list} />;
-      })}
+      {product?.reviewsData?.map((list, idx) => (
+        <ReviewList
+          key={idx}
+          list={list}
+          rating={rating}
+          maxScore={maxScore}
+          displayRating={displayRating}
+        />
+      ))}
+      <div className="reviewPaginationContainer">{buttonRender()}</div>
     </div>
   );
 }

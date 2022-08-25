@@ -1,9 +1,11 @@
 import './ReviewList.scss';
 
-function ReviewList({ list }) {
+function ReviewList({ list, rating, maxScore, displayRating }) {
   return (
     <div className="reviewListContainer">
-      <div className="reviewListStar">★★★★☆</div>
+      <div className="reviewListStar">
+        {[...Array(maxScore)].map((_, i) => rating(displayRating, i))}
+      </div>
       <div className="reviewListText">{list.content}</div>
       <div className="reviewListUserInfo">
         <div className="reviewListUser">
