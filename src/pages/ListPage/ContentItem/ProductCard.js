@@ -79,15 +79,11 @@ const ProductCard = ({
               {[...Array(maxScore)].map((_, i) => rating(displayRating, i))}
             </div>
             <span className="sales">
-              (
-              {countRating
-                .toLocaleString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-              )
+              ({parseInt(countRating, 10).toLocaleString()})
             </span>
           </div>
           <strong className="productPrice">
-            {price.toLocaleString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+            {parseInt(price, 10).toLocaleString()}원
           </strong>
         </div>
       </div>
