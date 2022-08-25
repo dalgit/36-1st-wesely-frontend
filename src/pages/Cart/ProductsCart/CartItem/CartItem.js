@@ -1,7 +1,7 @@
 import React from 'react';
 import API from '../../../../config';
 import './CartItem.scss';
-
+import { useState } from 'react';
 const CartItem = ({
   user_id,
   image_id,
@@ -13,36 +13,49 @@ const CartItem = ({
   products,
   setProducts,
 }) => {
+  const [isOutOfstock, setiIOutOfstock] = useState(false);
+
   function quantityPlus() {
-    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
-      method: 'POST',
+    fetch(`${API.cart}/plus/user/${user_id}/image/${image_id}`, {
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-    });
-    setProducts(
-      products.map(product =>
-        product.image_id === image_id
-          ? { ...product, totalQuantity: Number(totalQuantity) + 1 }
-          : product
-      )
-    );
+    })
+      .then(response => response.json())
+      .then(validData => {
+        console.log(validData.message);
+        if (validData.message === 'MAXIMUM STOCK OVER') {
+          setiIOutOfstock(true);
+        } else {
+          setProducts(
+            products.map(product =>
+              product.image_id === image_id
+                ? { ...product, totalQuantity: Number(totalQuantity) + 1 }
+                : product
+            )
+          );
+        }
+      });
   }
 
   function quantityMinus() {
-    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    });
-    setProducts(
-      products.map(product =>
-        product.image_id === image_id && product.totalQuantity > 1
-          ? { ...product, totalQuantity: Number(totalQuantity) - 1 }
-          : product
-      )
-    );
+    if (totalQuantity > 1) {
+      fetch(`${API.cart}/minus/user/${user_id}/image/${image_id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (isOutOfstock) setiIOutOfstock(false);
+      setProducts(
+        products.map(product =>
+          product.image_id === image_id
+            ? { ...product, totalQuantity: Number(totalQuantity) - 1 }
+            : product
+        )
+      );
+    }
   }
 
   function productDelete() {
-    fetch(`${API.cart}/${user_id}/image/${image_id}`, {
+    fetch(`${API.cart}/user/${user_id}/image/${image_id}`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -68,6 +81,7 @@ const CartItem = ({
           <div>
             <i className="fa-solid fa-xmark" onClick={productDelete} />
           </div>
+          <div className="outOfStock">{isOutOfstock && '재고 부족'}</div>
           <div className="quantityBox">
             <button className="minusBtn" onClick={quantityMinus}>
               <i className="fa-solid fa-minus" />

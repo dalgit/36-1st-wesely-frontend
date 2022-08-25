@@ -50,7 +50,10 @@
       color: #b2b2b2;
       cursor: pointer;
     }
-
+    .outOfStock {
+      font-size: 15px;
+      color: red;
+    }
     .quantityBox {
       @include flexSort(none, center);
       height: 30px;
