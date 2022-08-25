@@ -23,13 +23,14 @@ const SignUpButton = ({
       body: JSON.stringify({
         email: email,
         password: password,
+        phone_number: phoneNumber.replace(/\-/g, ''),
         name: name,
-        phoneNumber: phoneNumber.replace(/\-/g, ''),
       }),
     })
       .then(response => response.json())
       .then(validData => {
-        if (validData.message === 'success') {
+        if (validData.message === 'USER_CREATED') {
+          alert('회원가입이 완료되었습니다.');
           navigate('/login');
         }
       });

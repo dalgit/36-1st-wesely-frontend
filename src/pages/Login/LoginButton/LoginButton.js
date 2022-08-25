@@ -33,11 +33,10 @@ const LoginButton = ({
     })
       .then(response => response.json())
       .then(validData => {
-        console.log(validData);
         if (validData.message === 'CONNECT_LOGIN') {
           setUserName(nameMasking(validData.name[0].name));
         } else if (validData.message === 'CONNECT_SIGNUP') {
-          navigate(emailDelivery);
+          navigate(emailDelivery());
         }
       });
   };
