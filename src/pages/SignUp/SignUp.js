@@ -4,6 +4,7 @@ import PasswordInput from './PasswordInput/PasswordInput';
 import PhoneNumInput from './PhoneNumInput/PhoneNumInput';
 import SignUpButton from './SignUpButton/SignUpButton';
 import EmailInput from './EmailInput/EmailInput';
+import SubNav from '../../components/SubNav/SubNav';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -52,6 +53,7 @@ const SignUp = () => {
 
   return (
     <div className="signUp">
+      <SubNav />
       <div className="signUpContainer">
         <div className="signUpTitle">
           <div>처음이시군요</div>
