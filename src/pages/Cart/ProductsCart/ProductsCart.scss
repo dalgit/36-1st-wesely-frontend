@@ -71,16 +71,26 @@
 
     .pointBill {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       margin-top: 5px;
       display: flex;
       justify-content: flex-end;
       font-size: 15px;
       color: #1e65d0;
 
+      .pointInfo {
+        &.true {
+          color: red;
+        }
+      }
       .point {
+        text-align: end;
+        width: 60px;
         font-weight: bold;
         margin-left: 5px;
+        &.true {
+          color: red;
+        }
       }
     }
   }
@@ -102,12 +112,12 @@
     width: 200px;
     height: 65px;
     background-color: #cbcbcb;
+    color: white;
     border-radius: 9px;
     font-size: 18px;
 
     &.true {
       background-color: black;
-      color: white;
       cursor: pointer;
     }
   }
