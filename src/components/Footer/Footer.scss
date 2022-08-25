@@ -1,0 +1,93 @@
+.footerContainer {
+  width: 100%;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #1c1c1c;
+  vertical-align: baseline;
+
+  .footerBox {
+    width: 1140px;
+
+    .footerWebLinkBox {
+      width: 100%;
+      display: flex;
+      padding: 28px 20px;
+      font-size: 14px;
+      border-bottom: 1px solid #838383;
+
+      .footerWebLinkTopItem {
+        margin-right: 50px;
+      }
+    }
+
+    .footerInfoBox {
+      display: flex;
+      padding: 0px 16px;
+      justify-content: space-between;
+
+      .companyInfo {
+        display: flex;
+        font-size: 12px;
+        flex-direction: column;
+
+        h1 {
+          font-size: 12px;
+          margin: 25px 0px 10px 0px;
+        }
+
+        .companyInfoItem {
+          margin-top: 10px;
+        }
+      }
+
+      .contactCompany {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        i {
+          font-size: 40px;
+        }
+
+        .contactCompanyChannel {
+          margin-top: 10px;
+        }
+
+        .contactCompanyServiceNumber {
+          display: flex;
+          margin-top: 10px;
+
+          .contactCompanyServiceNumberItem {
+            margin-right: 28px;
+            font-size: 12px;
+            color: #a7a7a7;
+          }
+        }
+      }
+    }
+
+    .footerDocumentBox {
+      display: flex;
+      padding: 0px 16px;
+      margin: 40px 0px 0px;
+      justify-content: space-between;
+      color: #838383;
+
+      .companyDocument {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .companyDocumentItem {
+          margin-right: 20px;
+          border-right: 1px solid #838383;
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}
