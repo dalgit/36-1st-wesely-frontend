@@ -19,7 +19,7 @@
       flex-wrap: nowrap;
       align-items: center;
       overflow-x: scroll;
-      // overflow-y: hidden;
+      overflow-y: hidden;
 
       &::-webkit-scrollbar {
         display: none;
@@ -32,7 +32,8 @@
         color: #838383;
         cursor: pointer;
       }
-      .categorySelector {
+
+      .currentCategory {
         border-bottom: 3px solid #1c1c1c;
         color: #1c1c1c;
         font-weight: 700;
