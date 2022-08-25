@@ -1,0 +1,39 @@
+.reviewListContainer {
+  width: 100%;
+  display: flax;
+  margin-top: 15px;
+  font-size: 16px;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+
+  .reviewListStar {
+    color: #58c3cc;
+    margin-top: 10px;
+  }
+
+  .reviewListText {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #1c1c1c;
+  }
+
+  .reviewListUserInfo {
+    display: flex;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 100;
+    justify-content: space-between;
+    color: #a8a8a8;
+
+    .reviewListUser {
+      display: flex;
+      align-items: center;
+
+      .user {
+        margin-right: 5px;
+        padding-right: 8px;
+        border-right: 1px solid #a8a8a8;
+      }
+    }
+  }
+}

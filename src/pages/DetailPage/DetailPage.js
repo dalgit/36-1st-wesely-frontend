@@ -24,6 +24,7 @@ function DetailPage() {
         <h1>header</h1>
         <OverView product={product} />
         <OpenDetailView product={product} />
+        <Review />
       </div>
     )
   );
