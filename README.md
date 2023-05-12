@@ -17,9 +17,6 @@
 - 개발기간 : 2022년 08월 16일 ~ 2022년 08월 25일 (10일)
 - 개발인원 : 프론트엔드 3명, 백엔드 3명
   - FE : 김다현, 김진혁, 문준기
-    - [FE-김다현 github 링크](https://github.com/dalgit/36-1st-wesely-frontend.git)
-    - [FE-문준기 github 링크](https://github.com/wecode-bootcamp-korea/36-1st-wesely-frontend.git)
-    - [FE-김진혁 github 링크](https://github.com/HYUKSKEE/36-1st-wesely-frontend.git)
   - BE : 박명호, 이솔, 정재하
 
 ---
@@ -29,7 +26,6 @@
 - 프론트엔드 : <img src="https://img.shields.io/badge/JavaScript-FFCA28?style=flat-square&logo=javascript&logoColor=white"/>
   <img src="https://img.shields.io/badge/React.js-58c3cc?style=flat-square&logo=React&logoColor=white"/>
   <img src="https://img.shields.io/badge/Sass-58c3cc?style=flat-square&logo=Sass&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React.js-58c3cc?style=flat-square&logo=React&logoColor=white"/>
   <img src="https://img.shields.io/badge/CRA-58c3cc?style=flat-square&logo=Create-React-App&logoColor=white"/>
   <img src="https://img.shields.io/badge/React Router Dom-gray?style=flat-square&logo=React-Router&logoColor=F6BB43"/>
   <img src="https://img.shields.io/badge/scss-4AA8D8?style=flat-square&logo=Sass&logoColor=white"/>
